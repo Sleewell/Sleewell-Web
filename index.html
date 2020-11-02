@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="icon" href="./sources/icons/sleewell.ico">
+        <link rel="stylesheet" type="text/css" href="./css/main_page.css">
+        <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> Sleewell </title>
+    </head>
+    <body cz-shortcut-listen="true">
+        <div class="Degrade" id="main">
+            <img  src="./sources/imgs/logo.png" alt="Sleewell logo">
+            <!-- style="height: 1240px; width: 874px;" -->
+            <h1 style="color:#D98635">Sleewell</h1>
+            <h2 style="color:white" id="typer"></h2>
+            
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/sleewell"><img style="height: 40px; width: 45px;" src="./sources/imgs/logo-twitter.webp" alt="Twitter logo"></a>
+
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/sleewell/"><img style="margin-left: 20px; height: 45px; width: 45px;" src="./sources/imgs/logo_linkedin.png" alt="Linkedin logo"></a>
+
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/sleewell_"><img style="margin-left: 20px; height: 45px; width: 45px;" src="./sources/imgs/instagram-logo.webp" alt="Instagram logo"></a>
+            
+        </div>
+        <link href="./sources/imgs/css" rel="stylesheet" type="text/css" property="stylesheet">
+        
+        
+        <script type="application/javascript">
+            let i = 0;
+            let txt = "Bienvenue ! Le site est en cours de construction, il sera bientôt disponible.";
+            let speed = 25;
+        
+            function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("typer").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            window.onload = function () {
+                setTimeout(typeWriter, 1500);
+            };
+        </script>
+</html>
