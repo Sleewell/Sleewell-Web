@@ -15,7 +15,7 @@
 			<img src="img/bed.png" style="float:left"/>
 		</h4>
 		<h4 style="line-height:100px;text-align:right"><img src="img/reveil.png" style="float:right"/>Votre portable devient un réveil complet</h4>
-		<h4 style="line-height:100px;text-align:left">Déconnexion totale au coucher..<img src="img/deconnexion.png" style="float:left"/></h4>
+		<h4 style="line-height:100px;text-align:left">Déconnexion totale au coucher<img src="img/deconnexion.png" style="float:left"/></h4>
 		<h4 style="line-height:100px;text-align:right"><img src="img/masque.png" style="float:right"/>Isolez-vous de toutes distractions durant la nuit !</h4>
     </div>
     <div id="produits">
