@@ -1,3 +1,16 @@
+<?php
+session_start();
+if ( ! isset($_SESSION['lang'])) $_SESSION['lang'] = 'eng';
+require ("lang/{$_SESSION['lang']}.php");
+
+if (isset($_GET['lang']))
+{
+    $_SESSION['lang'] = $_GET['lang'];
+    header("Location: {$_SERVER['PHP_SELF']}");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
