@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
     <link href="css/font_color_sleewell.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
@@ -52,7 +51,7 @@
                         <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
                         <!-- Card image -->
                         <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                            <h2 class="mb-0 font-weight-bold">Votre profile</h5>
+                            <h3 class="mb-0 font-weight-bold">Votre profile</h5>
                         </div>
                         <!-- End of Card image -->
                         <!-- Card content -->
@@ -75,7 +74,7 @@
                         <div class="card card-cascade narrower SecondBackground " style="border:2px solid; border-color:#EF952C;">
                         <!-- Card image -->
                         <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                            <h2 class="mb-0 font-weight-bold">Votre compte</h5>
+                            <h3 class="mb-0 font-weight-bold">Votre compte</h5>
                         </div>
                         <!-- End of  Card image -->
                         <!-- Card content -->
