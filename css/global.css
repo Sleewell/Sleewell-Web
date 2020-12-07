@@ -1,3 +1,5 @@
+@font-face { font-family: White_Smith; src: url('White_Smith.otf'); } 
+
 body {
     height: 100vh;
     margin: 0;
@@ -5,45 +7,58 @@ body {
   
     width: 100%;
     height: 100%;
-	color: rgb(240, 135, 16);
-	/* color: #EF952C; */
-	/* color: #FF4654; */
-	background: #001822;
-	/* background: #101823; */
+	color: #FF8F00;
+	background: #00111F;
     font-family:'Roboto', sans-serif;
 }
 
-#global {
-    text-align: center;
-	background: #002F3F;
-	/* background: #275D7E; */
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff09;
+    box-shadow: 2px 1px 2px 1px #ffffff05;
 }
 
-.global-footer {
-	background-color: #002F3F;
-	/* background-color: #275D7E; */
+footer {
+    width: 100%;
+    background-color: #ffffff09;
+}
+
+
+
+#products {
+    width: 100%;
+    background-color: #ffffff0f;
+}
+
+
+
+.vertical-center {
+    float: right;
+    margin-right:30px;
+    margin-top: 15px;
+}
+
+.oldblue-rounded-top {
+	background-color: #001822;
     height: 100px;
-    border-bottom-left-radius: 50%;
-	border-bottom-right-radius: 50%;
-	margin-bottom: 50px;
+    border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
 }
 
-#projet {
-    margin-bottom: 150px;
+.rounded-top {
+	background-color: #00111F;
+    height: 100px;
+    margin-top: 50px;
+    border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
 }
 
-#produits {
-    margin-bottom: 100px;
-}
 
-#contacts {
-	/* background: #275D7E; */
-	background: #002F3F;
-}
+
 
 .contacts-header {
 	background-color: #002F3F;
-	/* background-color: #275D7E; */
     height: 100px;
     border-top-left-radius: 50%;
 	border-top-right-radius: 50%;
@@ -55,26 +70,36 @@ body {
 }
 
 .submit-button {
-    background-color: rgb(240, 135, 16);
+    background-color: #EF952C;
+    color: #ffffff;
     text-align:center;
     border: 0;
     outline: 0;
     padding: 0.8rem 1rem;
     min-width: 150px;
     font-size: 16px;
-    border-radius: 3px;
+    font-weight: bold;
+    border-radius: 25px;
     cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#title {
-	font-family:'white_smithregular', sans-serif;
+
+
+
+.title {
+    color: #EF952C;
+	font-family: 'white_smithregular';
     text-align: center;
-	font-size: 100px;
+	font-size: 3rem;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
 h1 {
+    font-family: White_Smith, sans-serif;
     text-align: center;
 	font-size: 3rem;
 	margin-top: 0px;
@@ -82,448 +107,77 @@ h1 {
 }
 
 h2 {
+    font-family:'Roboto', sans-serif;
     font-size: 1.8rem;
-    margin-left: 150px;
     margin-bottom: 50px;
+    text-align:center;
+    text-decoration: underline;
 }
 
 h3 {
-	text-align:center;
-    font-size: 1.6rem;
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 h4 {
-	line-height: 2;
-    font-size: 1.8rem;
+    font-family:'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 1.1rem;
     margin-left: 100px;
     margin-right: 100px;
-    margin-bottom: 50px;
 }
 
-#slideshow {
-	position: relative;
-	width: 500px;
-	height: 375px;
-	padding: 15px;
-	margin: 0 auto 2em;
-	border: 1px solid #00555E;
-	background: #FFF;
-	/* CSS3 effects */
-	background: linear-gradient(#00555E, #FFF 50%, #FFF 50%, #00555E);
-	border-radius: 2px 2px 2px 2px;
-	box-shadow: 0 0 3px rgba(0,0,0, 0.2);
+a {
+    color: #EF952C;
 }
- 
 
+label {
+    color: #EF952C;
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
 
-
-
-
-/* animation
- * défilement des photos de l'app
- * + pause et play lié à cette diapo
+/*
+    SLIDESHOW
 */
-#slideshow:before,
-#slideshow:after {
-	position: absolute;
-	bottom:16px;
-	z-index: -10;
-	width: 50%;
-	height: 20px;
-	content: " ";
-	background: rgba(0,0,0,0.1);
-	border-radius: 50%;
-	box-shadow: 0 0 3px rgba(0,0,0, 0.4), 0 20px 10px rgba(0,0,0, 0.7);
-}
-#slideshow:before {
-	left:0;
-	transform: rotate(-4deg);
-}
-#slideshow:after {
-	right:0;
-	transform: rotate(4deg);
-}
-
-/* gestion des dimensions et débordement du conteneur */
-#slideshow .container {
-	position:relative;
-	width: 500px;
-	height: 375px;
-	overflow: hidden;
-}
-	
-/* on prévoit un petit espace gris pour la timeline */
-#slideshow .container:after {
-	position:absolute;
-	bottom: 0; left:0;
-	content: " ";
-	width: 100%;
-	height: 1px;
-	background: #999;
-}
-/* 
-   le conteneur des slides
-   en largeur il fait 100% x le nombre de slides
-*/
-#slideshow .slider {
-	position: absolute;
-	left:0; top:0;
-	width: 400%;
-	height: 375px;
-}
-
-/* annulation des marges sur figure */
-#slideshow figure {
-	position:relative;
-	display:inline-block;
-	padding:0; margin:0;
-}
-/* petit effet de vignette sur les images */
-#slideshow figure:after {
-	position: absolute;
-	display:block;
-	content: " ";
-	top:0; left:0;
-	width: 100%; height: 100%;
-	box-shadow: 0 0 65px rgba(0,0,0, 0.5) inset;
-}
-
-/* styles de nos légendes */
-#slideshow figcaption {
-	position:absolute;
-	left:0; right:0; bottom: 5px;
-	padding: 20px;
-	margin:0;
-	border-top: 1px solid rgb(225,225,225);
-	text-align:center;
-	letter-spacing: 0.05em;
-	word-spacing: 0.05em;
-	font-family: Georgia, Times, serif;
-	background: #fff;
-	background: rgba(255,255,255,0.7);
-	color: #555;
-	text-shadow: -1px -1px 0 rgba(255,255,255,0.3);
-}
-
-/* fonction d'animation, n'oubliez pas de prefixer ! */
-@keyframes slider {
-	0%, 20%, 100%	{ left: 0 }
-	25%, 45%		{ left: -100% }
-	50%, 70%		{ left: -200% }
-	75%, 95%		{ left: -300% }
-}
-
-/* complétez le sélecteur : */
-#slideshow .slider {
-	/* ... avec la propriété animation */
-	animation: slider 20s infinite;
-}
-
-#timeline {
-	position: absolute;
-	background: #999;
-	bottom: 15px;
-	left: 15px;
-	height: 3px;
-	background: rgb(214,98,13);
-	background: rgba(214,98,13,.8);
-	width: 0;
-	/* fonction d'animation */
-	animation: timeliner 20s infinite;
-}
-
-@keyframes timeliner {
-	0%, 25%, 50%, 75%, 100%	{ width: 0;		}
-	20%, 45%, 70%, 90%		{ width: 500px;	}
-}
-
-@keyframes figcaptionner {
-	0%, 25%, 50%, 75%, 100%						{ bottom: -55px;	}
-	5%, 20%, 30%, 45%, 55%, 70%, 80%, 95%		{ bottom: 5px;		}
-}
-
-/* ajouter à l'élément : */
-#slideshow figcaption {
-	/* ... la propriété animation */
-	animation: figcaptionner 20s infinite;
-}
-
-.play_commands {
-	/* positionnement en haut à droite */ 
-	position: absolute;
-	top: 25px; right: 25px;
-	z-index: 10;
-	/* dimensionnement des icônes */
-	width: 22px;
-	height: 22px;
-	text-indent: -9999px;
-	border:0 none;
-	/* placez l'opacité à 1 si vous souhaitez voir les commandes */
-	opacity: 0;
-	/* préparation de transition sur opacicty et right */
-	transition: opacity 1s, right 1s;
-}
-/* on décale play légèrement sur la gauche */
-.play { right: 55px; cursor: default; }
- 
-/* création de l'icône pause avec 2 pseudos éléments */
-.pause:after,
-.pause:before {
-	position: absolute;
-	display: block;
-	content: " ";
-	top:0;
-	width:38%;
-	height: 22px;
-	background: #fff;
-	background: rgba(255,255,255,0.5);
-}
-.pause:after { right:0; }
-.pause:before {	left:0; }
- 
-/* création de l'icône play avec des bordures */
-.play {
-	width: 1px; 
-	height: 1px; 
-	/* les transparentes forment la flèche */
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 20px solid #fff; 
-	border-left: 20px solid rgba(255,255,255,0.5); 
-	/* renseignez 1 pour voir l'icône de suite */
-	opacity: 0;
-}
- 
-/* apparition du bouton pause au survole */
-/* apparition des boutons au focus */
-#slideshow:hover .pause,
-.play_commands:focus {
-	opacity: 1;
-	outline: none;
-}
-
-/* stopper les animation */
-.sl_command:target ~ #slideshow .slider,
-.sl_command:target ~ #slideshow figcaption,
-.sl_command:target ~ #slideshow #timeline,
-.sl_command:target ~ #slideshow .dots_commands li:first-child a:after {
-	animation-play-state: paused;
-}
- 
-/* redémarrer les animations */
-#sl_play:target ~ #slideshow .slider,
-#sl_play:target ~ #slideshow figcaption,
-#sl_play:target ~ #slideshow #timeline,
-#sl_play:target ~ #slideshow .dots_commands li:first-child a:after {
-	animation-play-state: running;
-}
- 
-/* switch entre les boutons */
-.sl_command:target ~ #slideshow .pause 		{ opacity:0; }
-#sl_play:target ~ #slideshow:hover .pause,
-#sl_play:target ~ #slideshow .pause:focus 	{ opacity:1; }
-.sl_command:target ~ #slideshow .play 		{ opacity:1; right: 25px; cursor: pointer; }
-#sl_play:target ~ #slideshow .play 			{ opacity:0; right: 55px; cursor: default; }
 
 
-
-
-
-
-/* animation
- * défilement des photos de l'app
- * + pause et play lié à cette diapo
-*/
-#slideshow2 {
-	position: relative;
-	width: 230px;
-	height: 500px;
-	padding: 15px;
-	margin: 0 auto 2em;
-	border: 1px solid #00555E;
-	background: #FFF;
-	/* CSS3 effects */
-	background: linear-gradient(#00555E, #FFF 50%, #EEE 50%, #00555E);
-	border-radius: 2px 2px 2px 2px;
-	box-shadow: 0 0 3px rgba(0,0,0, 0.2);
-}
- 
-#slideshow2:before,
-#slideshow2:after {
-	position: absolute;
-	bottom:16px;
-	z-index: -10;
-	width: 50%;
-	height: 20px;
-	content: " ";
-	background: rgba(0,0,0,0.1);
-	border-radius: 50%;
-	box-shadow: 0 0 3px rgba(0,0,0, 0.4), 0 20px 10px rgba(0,0,0, 0.7);
-}
-#slideshow2:before {
-	left:0;
-	transform: rotate(-5deg);
-}
-#slideshow2:after {
-	right:0;
-	transform: rotate(5deg);
-}
-
-#slideshow2 .container2 {
-	position:relative;
-	width: 230px;
-	height: 500px;
-	overflow: hidden;
-}
-	
-#slideshow2 .container2:after {
-	position:absolute;
-	bottom: 0; left:0;
-	content: " ";
-	width: 100%;
-	height: 1px;
-	background: #999;
-}
-
-#slideshow2 .slider2 {
-	position: absolute;
-	left:0; top:0;
-	width: 500%;
-	height: 500px;
-}
-
-
-#slideshow2 figure {
-	position:relative;
-	display:inline-block;
-	padding:0; margin:0;
-}
-
-#slideshow2 figure:after {
-	position: absolute;
-	display:block;
-	content: " ";
-	top:0; left:0;
-	width: 100%; height: 100%;
-	box-shadow: 0 0 65px rgba(0,0,0, 0.5) inset;
-}
-
-
-#slideshow2 figcaption {
-	position:absolute;
-	left:0; right:0; bottom: 5px;
-	padding: 20px;
-	margin:0;
-	border-top: 1px solid rgb(225,225,225);
-	text-align:center;
-	letter-spacing: 0.05em;
-	word-spacing: 0.05em;
-	font-family: Georgia, Times, serif;
-	background: #fff;
-	background: rgba(255,255,255,0.7);
-	color: #555;
-	text-shadow: -1px -1px 0 rgba(255,255,255,0.3);
-}
-
-
-@keyframes slider2 {
-	0%, 15%, 100%	{ left: 0 }
-	20%, 35%		{ left: -100% }
-	40%, 55%		{ left: -200% }
-	60%, 75%		{ left: -300% }
-	80%, 95%		{ left: -400% }
-}
-
-
-#slideshow2 .slider2 {
-	animation: slider2 25s infinite;
-}
-
-#timeline2 {
-	position: absolute;
-	background: #999;
-	bottom: 15px;
-	left: 15px;
-	height: 3px;
-	background: rgb(214,98,13);
-	background: rgba(214,98,13,.8);
-	width: 0;
-	animation: timeliner2 25s infinite;
-}
-
-@keyframes timeliner2 {
-	0%, 20%, 40%, 60%, 80%, 100%	{ width: 0;		}
-	15%, 35%, 55%, 75%, 95%	{ width: 230px;	}
-}
-
-@keyframes figcaptionner2 {
-	0%, 20%, 40%, 60%, 80%, 100%					{ bottom: -55px;	}
-	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%	{ bottom: 5px;		}
-}
-
-#slideshow2 figcaption {
-	animation: figcaptionner2 25s infinite;
-}
-
-.play_commands2 {
-	position: absolute;
-	top: 25px; right: 25px;
-	z-index: 10;
-	width: 22px;
-	height: 22px;
-	text-indent: -9999px;
-	border:0 none;
-	opacity: 0;
-	transition: opacity 1s, right 1s;
-}
-.play2 { right: 55px; cursor: default; }
-
-.pause2:after,
-.pause2:before {
-	position: absolute;
-	display: block;
-	content: " ";
-	top:0;
-	width:38%;
-	height: 22px;
-	background: #fff;
-	background: rgba(255,255,255,0.5);
-}
-.pause2:after { right:0; }
-.pause2:before {	left:0; }
-
-.play2 {
-	width: 1px;
-	height: 1px;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 20px solid #fff;
-	border-left: 20px solid rgba(255,255,255,0.5);
-	opacity: 0;
-}
-
-#slideshow2:hover .pause2,
-.play_commands2:focus {
-	opacity: 1;
-	outline: none;
-}
-
-.sl_command2:target ~ #slideshow2 .slider2,
-.sl_command2:target ~ #slideshow2 figcaption,
-.sl_command2:target ~ #slideshow2 #timeline2,
-.sl_command2:target ~ #slideshow2 .dots_commands2 li:first-child a:after {
-	animation-play-state: paused;
-}
-
-#sl_play2:target ~ #slideshow2 .slider2,
-#sl_play2:target ~ #slideshow2 figcaption,
-#sl_play2:target ~ #slideshow2 #timeline2,
-#sl_play2:target ~ #slideshow2 .dots_commands2 li:first-child a:after {
-	animation-play-state: running;
-}
-
-.sl_command2:target ~ #slideshow2 .pause2 		{ opacity:0; }
-#sl_play2:target ~ #slideshow2:hover .pause2,
-#sl_play2:target ~ #slideshow2 .pause2:focus 	{ opacity:1; }
-.sl_command2:target ~ #slideshow2 .play2 		{ opacity:1; right: 25px; cursor: pointer; }
-#sl_play2:target ~ #slideshow2 .play2 			{ opacity:0; right: 55px; cursor: default; }
+.select-css {
+    display: block;
+    float: right;
+    margin-right:30px;
+    margin-top: 5px;
+    width: 70px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #EF952C;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    box-sizing: border-box;
+    border: 1px solid #ffffff00;
+    box-shadow: 2px 1px 2px 1px #ffffff00;
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff00;
+    /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 
+      for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+      
+    */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .7em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: .65em auto, 100%;
+  }
+  /* Hide arrow icon in IE browsers */
+  .select-css::-ms-expand {
+    display: none;
+  }
