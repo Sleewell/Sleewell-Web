@@ -35,7 +35,6 @@ if (isset($_GET['lang']))
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/anime.min.js"></script>
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
-
     </head>
     <body>
 
@@ -52,8 +51,6 @@ if (isset($_GET['lang']))
                 </select>
                 <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
                 <a href="" class=" vertical-center btn btn-rounded my-3 Amber" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
-                <!-- <a class="vertical-center" href="contact_us.php"><?php echo $lang['register-redirection'];?></a>
-                <a class="vertical-center" href="contact_us.php"><?php echo $lang['connexion-redirection'];?></a> -->
             </div>
         </header>
 

@@ -15,13 +15,27 @@ if (isset($_GET['lang']))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title> Sleewell </title>
+        <title>Sleewell - Contact</title>
         <link rel="icon" href="./css/icons/sleewell.ico">
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" href="css/cssanimation.css"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/mdb.min.css" rel="stylesheet"> 
+        <link href="css/font_color_sleewell.css" rel="stylesheet">
+        <link href="css/registerform.css" rel="stylesheet">
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/anime.min.js"></script>
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
+
     </head>
     <body>
 
@@ -30,15 +44,14 @@ if (isset($_GET['lang']))
         <!--################################-->
         <header>
             <div id="langSelect">
-            <a href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
+                <a href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
                 <select class="select-css" name="choose-lang" onchange="location = this.value;">
                     <option value=""><?php echo $lang['selected-lang'];?></option>
                     <option class="fr" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre" style="background-image:url('img/eng.png');" >French</option>
                     <option class="en" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng" style="background-image:url('img/fra.png');" >English</option>
                 </select>
-                <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5pxmargin-right:30px;margin-top: 18px;"/>
-                <a class="vertical-center" href="contact_us.php"><?php echo $lang['register-redirection'];?></a>
-                <a class="vertical-center" href="contact_us.php"><?php echo $lang['connexion-redirection'];?></a>
+                <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
+                <a href="" class=" vertical-center btn btn-rounded my-3 Amber" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
             </div>
         </header>
 
