@@ -197,13 +197,13 @@ if (isset($_GET['lang']))
                                 <div class="modal-body mb-1">
                                     <div class="md-form form-sm mb-5">
                                         <i class="fas fa-user prefix"></i>
-                                        <input type="text" onkeyup="updateLoginInput()" name="id" id="modalLRInput10" class="form-control form-control-sm validate">
-                                        <label data-success="Super !" for="modalLRInput10">Votre identifiant</label>
+                                        <input type="text" onkeyup="updateLoginInput()" name="id" id="loginUsername" class="form-control form-control-sm validate">
+                                        <label data-success="Super !" for="loginUsername">Votre identifiant</label>
                                     </div>
                                     <div class="md-form form-sm mb-4">
                                         <i class="fas fa-lock prefix"></i>
-                                        <input type="password" onkeyup="updateLoginInput()" id="modalLRInput11" class="form-control form-control-sm">
-                                        <label name="password" for="modalLRInput11">Votre superbe mot de passe</label>
+                                        <input type="password" onkeyup="updateLoginInput()" id="loginPassword" class="form-control form-control-sm">
+                                        <label name="password" for="loginPassword">Votre superbe mot de passe</label>
                                     </div>
                                     <div class="text-center mt-2">
                                         <input type="button" id="LoginButton" class="btn Mango" value="Se connecter" disabled></input>
@@ -235,7 +235,7 @@ if (isset($_GET['lang']))
                                         </div>
                                     </div>
                                     <div class="md-form mt-0">
-                                        <input type="text" id="registerUsername" class="form-control">
+                                        <input type="text" id="registerUsername" name="id" class="form-control">
                                         <label for="registerUsername">Votre identifiant</label>
                                     </div>
                                     <div class="md-form mt-0">

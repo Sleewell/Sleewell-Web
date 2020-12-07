@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Votre profil</title>
+    <link rel="icon" href="./css/icons/sleewell.ico">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/cssanimation.css"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
@@ -16,6 +20,18 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
 </head>
+
+<header>
+    <div id="langSelect">
+        <a href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
+        <select class="select-css" name="choose-lang" onchange="location = this.value;">
+            <option value=""><?php echo $lang['selected-lang'];?></option>
+            <option class="fr" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre" style="background-image:url('img/eng.png');" >French</option>
+            <option class="en" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng" style="background-image:url('img/fra.png');" >English</option>
+        </select>
+        <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
+    </div>
+</header>
 
 <body class="GlobalBackground">
     <table style="width:100%;">
@@ -36,7 +52,7 @@
                         <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
                         <!-- Card image -->
                         <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                            <h5 class="mb-0 font-weight-bold">Votre profile</h5>
+                            <h2 class="mb-0 font-weight-bold">Votre profile</h5>
                         </div>
                         <!-- End of Card image -->
                         <!-- Card content -->
@@ -59,7 +75,7 @@
                         <div class="card card-cascade narrower SecondBackground " style="border:2px solid; border-color:#EF952C;">
                         <!-- Card image -->
                         <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                            <h5 class="mb-0 font-weight-bold">Votre compte</h5>
+                            <h2 class="mb-0 font-weight-bold">Votre compte</h5>
                         </div>
                         <!-- End of  Card image -->
                         <!-- Card content -->

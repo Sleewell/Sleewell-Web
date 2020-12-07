@@ -2,8 +2,8 @@ $(document).ready(function() {
     console.log( "ready!" );
     $("#LoginButton").click(function(){
         var form = new FormData();
-        var login = $("#modalLRInput10").val();
-        var password = $("#modalLRInput11").val();
+        var login = $("#loginUsername").val();
+        var password = $("#loginPassword").val();
         console.log(login);
         console.log(password);
         form.append("login", login);
@@ -82,8 +82,8 @@ function checkRegisterMail()
 
 function updateLoginInput()
 {
-    var loginCheck = $("#modalLRInput10").val();
-    var passwordCheck = $("#modalLRInput11").val();
+    var loginCheck = $("#loginUsername").val();
+    var passwordCheck = $("#loginPassword").val();
     if (loginCheck.length === 0 || passwordCheck.length < 8) {
         $("#LoginButton").prop("disabled", true);
         return;
