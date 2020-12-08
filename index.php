@@ -84,7 +84,7 @@ if (isset($_GET['lang']))
                     </td>
                     <td colspan="1" width="50%">
                         <div class="text" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <img src="img/img1stpres.svg" style="width:200px;height:250px;display: block;margin-left: auto;margin-right: auto;"/>
+                            <img src="img/img1stpres.svg" style="width:400px;height:312.5px;display: block;margin-left: auto;margin-right: auto;"/>
                         </div>
                     </td>
                 </tr></table>
@@ -95,7 +95,7 @@ if (isset($_GET['lang']))
                 <table ><tr>
                     <td colspan="1" width="50%">
                         <div class="text" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <img src="img/img2ndpres.svg" style="width:200px;height:250px;display: block;margin-left: auto;margin-right: auto;"/>
+                            <img src="img/img2ndpres.svg" style="width:400px;height:312.5px;display: block;margin-left: auto;margin-right: auto;"/>
                         </div>
                     </td>
                     <td colspan="1" width="50%">
@@ -118,7 +118,7 @@ if (isset($_GET['lang']))
                     </td>
                     <td colspan="1" width="50%">
                         <div class="text" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <img src="img/img3rdpres.svg" style="width:200px;height:250px;display: block;margin-left: auto;margin-right: auto;"/>
+                            <img src="img/img3rdpres.svg" style="width:400px;height:312.5px;display: block;margin-left: auto;margin-right: auto;"/>
                         </div>
                     </td>
                 </tr></table>
@@ -129,7 +129,7 @@ if (isset($_GET['lang']))
                 <table ><tr>
                     <td colspan="1" width="50%">
                         <div class="text" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <img src="img/img4thpres.svg" style="width:200px;height:250px;display: block;margin-left: auto;margin-right: auto;"/>
+                            <img src="img/img4thpres.svg" style="width:400px;height:312.5px;display: block;margin-left: auto;margin-right: auto;"/>
                         </div>
                     </td>
                     <td colspan="1" width="50%">
@@ -163,17 +163,24 @@ if (isset($_GET['lang']))
                     <img src="img/app.png" style="width:300px;height:650px;display:block;margin-left:auto;margin-right:auto;text-align:center;margin-bottom:50px"/>
                 </td>
             </tr></table>
-            <form action="contact_us.php">
-                <input class="submit-button" type="submit" value="<?php echo $lang['Products-button'];?>"><br/>
-            </form>
+                <a href="" class="btn btn-rounded my-3 Mango" style="display:block;margin-left:auto;margin-right:auto;max-width:300px" data-toggle="modal" data-target="#modalproductPres"><?php echo $lang['Products-button'];?></a>
+            <br><br><br>
         </div>
 
-        <script type="text/javascript" src="js/scrolly.js"></script>
-        <script>
-            window.onload = function() {
-                scrolly();
-            };
-        </script>
+        <!--################################-->
+        <!--          PIED DE PAGE          -->
+        <!--################################-->
+        <footer>
+            <table style="width:100%"><tr>
+                <td colspan="1" width="60%">
+                    <img src="img/logo_sleewell.png" style="float:left;width:120px;height:150px;margin-left:100px"/>
+                </td>
+                <td colspan="1" width="40%">
+                    <h3 class="AmeberText">SUPPORT</h3>
+                    <a href="contact_us.php"><h4 class="AmeberText"><?php echo $lang['contact-redirection'];?></h4></a>
+                </td>
+            </tr></table>
+        </footer>
 
         <!--################################-->
         <!--      MODAL LOGIN REGISTER      -->
@@ -278,18 +285,199 @@ if (isset($_GET['lang']))
         </div>
 
         <!--################################-->
-        <!--          PIED DE PAGE          -->
+        <!--          MODAL BASE APP        -->
         <!--################################-->
-        <footer>
-            <table style="width:100%"><tr>
-                <td colspan="1" width="60%">
-                    <img src="img/logo_sleewell.png" style="float:left;width:120px;height:150px;margin-left:100px"/>
-                </td>
-                <td colspan="1" width="40%">
-                    <h3 class="AmeberText">SUPPORT</h3>
-                    <a href="contact_us.php"><h4 class="AmeberText"><?php echo $lang['contact-redirection'];?></h4></a>
-                </td>
-            </tr></table>
-        </footer>
+
+        <div class="modal fade " id="modalproductPres" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog GlobalBackground cascading-modal" role="document">
+                <div class="modal-content">
+                    <div class="modal-c-tabs">
+                        <ul class="nav nav-tabs md-tabs tabs-2 white darken-3" role="tablist">
+                            <li class="nav-item">
+                                <a class="notActive nav-link active" data-toggle="tab" href="#panelbase" role="tab">Base</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="notActive nav-link" data-toggle="tab" href="#panelapp" role="tab">App</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in show active" id="panelbase" role="tabpanel">
+                                <!-- Slideshow container -->
+                                <div class="modal-body mb-1">
+                                    <div class="slideshow-container">
+
+                                        <!-- Full-width images with number and caption text -->
+                                        <div class="mySlides fadebase">
+                                            <div class="numbertext">1 / 4</div>
+                                            <img src="img/base.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
+                                            <div class="AmeberText"><?php echo $lang['base-pres1'];?></div>
+                                        </div>
+
+                                        <div class="mySlides fadebase">
+                                            <div class="numbertext">2 / 4</div>
+                                            <img src="img/base1.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
+                                            <div class="AmeberText"><?php echo $lang['base-pres2'];?></div>
+                                        </div>
+
+                                        <div class="mySlides fadebase">
+                                            <div class="numbertext">3 / 4</div>
+                                            <img src="img/base2.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
+                                            <div class="AmeberText"><?php echo $lang['base-pres3'];?></div>
+                                        </div>
+
+                                        <div class="mySlides fadebase">
+                                            <div class="numbertext">4 / 4</div>
+                                            <img src="img/base3.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
+                                            <div class="AmeberText"><?php echo $lang['base-pres4'];?></div>
+                                        </div>
+
+                                        <!-- Next and previous buttons -->
+                                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                    </div>
+                                    </br></br>
+
+                                        <!-- The dots/circles -->
+                                    <div style="text-align:center">
+                                        <span class="dot" onclick="currentSlide(1)"></span>
+                                        <span class="dot" onclick="currentSlide(2)"></span>
+                                        <span class="dot" onclick="currentSlide(3)"></span>
+                                        <span class="dot" onclick="currentSlide(4)"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane " id="panelapp" role="tabpanel">
+                                <h3>PUTE</h3>
+                                <!-- Slideshow container -->
+                                <div class="modal-body">
+                                    <div class="slideshow-containerApp">
+                                        <!-- Full-width images with number and caption text -->
+                                        <div class="mySlidesApp fadeApp">
+                                            <div class="numbertextApp">1 / 5</div>
+                                            <img src="img/app.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
+                                            <div class="AmeberText"><?php echo $lang['app-pres1'];?></div>
+                                        </div>
+
+                                        <div class="mySlidesApp fadeApp">
+                                            <div class="numbertextApp">2 / 5</div>
+                                            <img src="img/app1.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
+                                            <div class="AmeberText"><?php echo $lang['app-pres2'];?></div>
+                                        </div>
+
+                                        <div class="mySlidesApp fadeApp">
+                                            <div class="numbertextApp">3 / 5</div>
+                                            <img src="img/app2.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
+                                            <div class="AmeberText"><?php echo $lang['app-pres3'];?></div>
+                                        </div>
+
+                                        <div class="mySlidesApp fadeApp">
+                                            <div class="numbertextApp">4 / 5</div>
+                                            <img src="img/app3.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
+                                            <div class="AmeberText"><?php echo $lang['app-pres4'];?></div>
+                                        </div>
+
+                                        <div class="mySlidesApp fadeApp">
+                                            <div class="numbertextApp">5 / 5</div>
+                                            <img src="img/app4.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
+                                            <div class="AmeberText"><?php echo $lang['app-pres5'];?></div>
+                                        </div>
+
+                                        <!-- Next and previous buttons -->
+                                        <a class="prevApp" onclick="plusSlidesApp(-1)">&#10094;</a>
+                                        <a class="nextApp" onclick="plusSlidesApp(1)">&#10095;</a>
+                                    </div>
+                                    </br></br>
+
+                                        <!-- The dots/circles -->
+                                    <div style="text-align:center">
+                                        <span class="dotApp" onclick="currentSlideApp(1)"></span>
+                                        <span class="dotApp" onclick="currentSlideApp(2)"></span>
+                                        <span class="dotApp" onclick="currentSlideApp(3)"></span>
+                                        <span class="dotApp" onclick="currentSlideApp(4)"></span>
+                                        <span class="dotApp" onclick="currentSlideApp(5)"></span>
+                                    </div>
+                                <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
+
+    <!--################################-->
+    <!--    SCRIPTS SCROLL SLIDESHOW    -->
+    <!--################################-->
+
+    <script type="text/javascript" src="js/scrolly.js"></script>
+    <script>
+        window.onload = function() {
+            scrolly();
+        };
+        //BASE INDEX//
+       var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+        
+            if (n > slides.length) {
+                slideIndex = 1
+            }    
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+
+        //APP INDEX//
+        var slideIndexApp = 1;
+        showSlidesApp(slideIndexApp);
+
+        function plusSlidesApp(n) {
+            showSlidesApp(slideIndexApp += n);
+        }
+
+        function currentSlideApp(n) {
+            showSlidesApp(slideIndexApp = n);
+        }
+
+        function showSlidesApp(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlidesApp");
+            var dots = document.getElementsByClassName("dotApp");
+        
+            if (n > slides.length) {
+                slideIndexApp = 1
+            }    
+            if (n < 1) {
+                slideIndexApp = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndexApp-1].style.display = "block";  
+            dots[slideIndexApp-1].className += " active";
+        }
+    </script>
 </html>
