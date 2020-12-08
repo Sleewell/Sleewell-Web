@@ -155,11 +155,11 @@ label {
 .container .text-title {
     z-index: 1;
     position: absolute;
-    left: 30%;
-    top: 20%;
+    top: 15%;
+    left: 18%;
     color: #EF952C;
     width: 70%;
-    font-size: 100px;
+    font-size: 180px;
 }
 
 
