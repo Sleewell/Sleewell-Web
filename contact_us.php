@@ -59,14 +59,14 @@ if (isset($_GET['lang']))
         <!-- ENTÊTE / LOGO SLEEWELL SECTION -->
         <!--################################-->
         <table style="width:100%"><tr>
-        <td colspan="1" width="35%"></td>
-            <td colspan="1" width="30%">
+            <td colspan="1" width="33%"></td>
+            <td colspan="1" width="34%">
                 <div class="container" data-scrolly-down="blurInBottom, timing-function:cubic-bezier(.17,.67,.83,.67)">
                     <img src="img/logo_sleewell.png" style="float:left;width:200px;height:250px;margin-top:50px;"/>
                     <h1 class="title text-title">leewell</h1>
                 </div>
             </td>
-            <td colspan="1" width="35%"></td>
+            <td colspan="1" width="33%"></td>
         </tr></table>
 
         <!--################################-->
