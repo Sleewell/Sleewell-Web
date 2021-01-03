@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'white_smithregular';
-    src: url('https://dev.sleewell.fr/css/webkit/fonts/white_smith-webfont.woff2') format('woff2'),
-         url('https://dev.sleewell.fr/css/webkit/white_smith-webfont.woff') format('woff');
+    src: url('https://dev.sleewell.fr/css/webkit/white_smith-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
