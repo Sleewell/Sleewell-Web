@@ -47,6 +47,10 @@ Background color (Dark Blue: #00111F)
     border:2px solid #FF8F00;;
 }
 
+.textMango {
+    color: #EF952C;
+}
+
 .card.card-cascade .view.view-cascade.gradient-card-header{
     padding:1.6rem 1rem;
     text-align:center;

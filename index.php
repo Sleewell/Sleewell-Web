@@ -43,12 +43,15 @@ if (isset($_GET['lang']))
         <!--################################-->
         <header>
             <div id="langSelect">
-                <a href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
-                <select class="select-css" name="choose-lang" onchange="location = this.value;">
-                    <option value=""><?php echo $lang['selected-lang'];?></option>
-                    <option class="fr" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre" style="background-image:url('img/eng.png');" >French</option>
-                    <option class="en" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng" style="background-image:url('img/fra.png');" >English</option>
-                </select>
+                <a id="mainpage_btn" href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
+                <form>
+                    <label for="change_lang" style="display:none">Langage</label>
+                    <select id="change_lang" class="select-css" name="choose-lang" onchange="location = this.value;">
+                        <option value=""><?php echo $lang['selected-lang'];?></option>
+                        <option class="fr" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre" style="background-image:url('img/eng.png');" >French</option>
+                        <option class="en" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng" style="background-image:url('img/fra.png');" >English</option>
+                    </select>
+                </form>
                 <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
                 <a href="" class=" vertical-center btn btn-rounded my-3 Mango" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
             </div>
@@ -165,7 +168,7 @@ if (isset($_GET['lang']))
                     <img src="img/app.png" style="width:300px;height:650px;display:block;margin-left:auto;margin-right:auto;text-align:center;margin-bottom:50px"/>
                 </td>
             </tr></table>
-                <a href="" class="btn btn-rounded my-3 Mango" style="display:block;margin-left:auto;margin-right:auto;max-width:300px" data-toggle="modal" data-target="#modalproductPres"><?php echo $lang['Products-button'];?></a>
+                <a id="info_btn" href="" class="btn btn-rounded my-3 Mango" style="display:block;margin-left:auto;margin-right:auto;max-width:300px" data-toggle="modal" data-target="#modalproductPres"><?php echo $lang['Products-button'];?></a>
             <br><br><br>
         </div>
 
@@ -179,7 +182,7 @@ if (isset($_GET['lang']))
                 </td>
                 <td colspan="1" width="40%">
                     <h3 class="AmeberText">SUPPORT</h3>
-                    <a href="contact_us.php"><h4 class="AmeberText"><?php echo $lang['contact-redirection'];?></h4></a>
+                    <a id="contactus_btn" href="contact_us.php"><h4 class="AmeberText"><?php echo $lang['contact-redirection'];?></h4></a>
                 </td>
             </tr></table>
         </footer>
@@ -190,9 +193,9 @@ if (isset($_GET['lang']))
 
         <div class="modal fade " id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog GlobalBackground cascading-modal" role="document">
-                <div class="modal-content">
+                <div class="modal-content GlobalBackground">
                     <div class="modal-c-tabs">
-                        <ul class="nav nav-tabs md-tabs tabs-2 white darken-3" role="tablist">
+                        <ul class="nav nav-tabs md-tabs tabs-2 darken-3 SecondBackground" role="tablist">
                             <li class="nav-item">
                                 <a class="notActive nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i>Se connecter</a>
                             </li>
@@ -220,9 +223,9 @@ if (isset($_GET['lang']))
                                 </div>
                                 <div class="modal-footer">
                                     <div class="options text-center text-md-right mt-1">
-                                        <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                                        <p>Forgot <a href="#" class="textMango">Password?</a></p>
                                     </div>
-                                    <button type="button" class="btn waves-effect ml-auto closeButtonMango" data-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
                                 </div>
                                 </form>
                             </div>
@@ -276,7 +279,7 @@ if (isset($_GET['lang']))
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn  waves-effect ml-auto closeButtonMango" data-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn  waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
                                 </div>
                                 </form>
                             </div>
@@ -292,14 +295,14 @@ if (isset($_GET['lang']))
 
         <div class="modal fade " id="modalproductPres" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog GlobalBackground cascading-modal" role="document">
-                <div class="modal-content">
+                <div class="modal-content GlobalBackground">
                     <div class="modal-c-tabs">
-                        <ul class="nav nav-tabs md-tabs tabs-2 white darken-3" role="tablist">
+                        <ul class="nav nav-tabs md-tabs tabs-2 darken-3 SecondBackground" role="tablist">
                             <li class="nav-item">
-                                <a class="notActive nav-link active" data-toggle="tab" href="#panelbase" role="tab">Base</a>
+                                <a id="info_base" class="notActive nav-link active" data-toggle="tab" href="#panelbase" role="tab">Base</a>
                             </li>
                             <li class="nav-item">
-                                <a class="notActive nav-link" data-toggle="tab" href="#panelapp" role="tab">App</a>
+                                <a id="info_app" class="notActive nav-link" data-toggle="tab" href="#panelapp" role="tab">App</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -310,25 +313,25 @@ if (isset($_GET['lang']))
 
                                         <!-- Full-width images with number and caption text -->
                                         <div class="mySlides fadebase">
-                                            <div class="numbertext">1 / 4</div>
+                                            <div class="numbertext">1 / 4</div><br/><br/>
                                             <img src="img/base.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
                                             <div class="AmeberText"><?php echo $lang['base-pres1'];?></div>
                                         </div>
 
                                         <div class="mySlides fadebase">
-                                            <div class="numbertext">2 / 4</div>
+                                            <div class="numbertext">2 / 4</div><br/><br/>
                                             <img src="img/base1.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
                                             <div class="AmeberText"><?php echo $lang['base-pres2'];?></div>
                                         </div>
 
                                         <div class="mySlides fadebase">
-                                            <div class="numbertext">3 / 4</div>
+                                            <div class="numbertext">3 / 4</div><br/><br/>
                                             <img src="img/base2.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
                                             <div class="AmeberText"><?php echo $lang['base-pres3'];?></div>
                                         </div>
 
                                         <div class="mySlides fadebase">
-                                            <div class="numbertext">4 / 4</div>
+                                            <div class="numbertext">4 / 4</div><br/><br/>
                                             <img src="img/base3.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
                                             <div class="AmeberText"><?php echo $lang['base-pres4'];?></div>
                                         </div>
@@ -341,45 +344,44 @@ if (isset($_GET['lang']))
 
                                         <!-- The dots/circles -->
                                     <div style="text-align:center">
-                                        <span class="dot" onclick="currentSlide(1)"></span>
-                                        <span class="dot" onclick="currentSlide(2)"></span>
-                                        <span class="dot" onclick="currentSlide(3)"></span>
-                                        <span class="dot" onclick="currentSlide(4)"></span>
+                                        <span id="1Base_info" class="dot" onclick="currentSlide(1)"></span>
+                                        <span id="2Base_info" class="dot" onclick="currentSlide(2)"></span>
+                                        <span id="3Base_info" class="dot" onclick="currentSlide(3)"></span>
+                                        <span id="4Base_info" class="dot" onclick="currentSlide(4)"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane " id="panelapp" role="tabpanel">
-                                <h3>PUTE</h3>
                                 <!-- Slideshow container -->
                                 <div class="modal-body">
                                     <div class="slideshow-containerApp">
                                         <!-- Full-width images with number and caption text -->
                                         <div class="mySlidesApp fadeApp">
-                                            <div class="numbertextApp">1 / 5</div>
+                                            <div class="numbertextApp">1 / 5</div><br/>
                                             <img src="img/app.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
                                             <div class="AmeberText"><?php echo $lang['app-pres1'];?></div>
                                         </div>
 
                                         <div class="mySlidesApp fadeApp">
-                                            <div class="numbertextApp">2 / 5</div>
+                                            <div class="numbertextApp">2 / 5</div><br/>
                                             <img src="img/app1.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
                                             <div class="AmeberText"><?php echo $lang['app-pres2'];?></div>
                                         </div>
 
                                         <div class="mySlidesApp fadeApp">
-                                            <div class="numbertextApp">3 / 5</div>
+                                            <div class="numbertextApp">3 / 5</div><br/>
                                             <img src="img/app2.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
                                             <div class="AmeberText"><?php echo $lang['app-pres3'];?></div>
                                         </div>
 
                                         <div class="mySlidesApp fadeApp">
-                                            <div class="numbertextApp">4 / 5</div>
+                                            <div class="numbertextApp">4 / 5</div><br/>
                                             <img src="img/app3.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
                                             <div class="AmeberText"><?php echo $lang['app-pres4'];?></div>
                                         </div>
 
                                         <div class="mySlidesApp fadeApp">
-                                            <div class="numbertextApp">5 / 5</div>
+                                            <div class="numbertextApp">5 / 5</div><br/>
                                             <img src="img/app4.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
                                             <div class="AmeberText"><?php echo $lang['app-pres5'];?></div>
                                         </div>
@@ -392,11 +394,11 @@ if (isset($_GET['lang']))
 
                                         <!-- The dots/circles -->
                                     <div style="text-align:center">
-                                        <span class="dotApp" onclick="currentSlideApp(1)"></span>
-                                        <span class="dotApp" onclick="currentSlideApp(2)"></span>
-                                        <span class="dotApp" onclick="currentSlideApp(3)"></span>
-                                        <span class="dotApp" onclick="currentSlideApp(4)"></span>
-                                        <span class="dotApp" onclick="currentSlideApp(5)"></span>
+                                        <span id="1App_info" class="dotApp" onclick="currentSlideApp(1)"></span>
+                                        <span id="2App_info" class="dotApp" onclick="currentSlideApp(2)"></span>
+                                        <span id="3App_info" class="dotApp" onclick="currentSlideApp(3)"></span>
+                                        <span id="4App_info" class="dotApp" onclick="currentSlideApp(4)"></span>
+                                        <span id="5App_info" class="dotApp" onclick="currentSlideApp(5)"></span>
                                     </div>
                                 <div>
                             </div>

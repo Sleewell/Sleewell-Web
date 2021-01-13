@@ -44,12 +44,15 @@ if (isset($_GET['lang']))
         <!--################################-->
         <header>
             <div id="langSelect">
-                <a href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
-                <select class="select-css" name="choose-lang" onchange="location = this.value;">
-                    <option value=""><?php echo $lang['selected-lang'];?></option>
-                    <option class="fr" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre" style="background-image:url('img/eng.png');" >French</option>
-                    <option class="en" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng" style="background-image:url('img/fra.png');" >English</option>
-                </select>
+                <a id="mainpage_btn" href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
+                <form>
+                    <label for="change_lang" style="display:none">Langage</label>
+                    <select id="change_lang" class="select-css" name="choose-lang" onchange="location = this.value;">
+                        <option value=""><?php echo $lang['selected-lang'];?></option>
+                        <option class="fr" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre" style="background-image:url('img/eng.png');" >French</option>
+                        <option class="en" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng" style="background-image:url('img/fra.png');" >English</option>
+                    </select>
+                </form>
                 <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
                 <a href="" class=" vertical-center btn btn-rounded my-3 Mango" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
             </div>

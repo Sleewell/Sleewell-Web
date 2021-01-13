@@ -138,6 +138,14 @@ a {
     color: #EF952C;
 }
 
+a:not([href]) {
+    color: #EF952C;
+}
+
+a:not([href]):hover {
+    color: #EF952C;
+}
+
 label {
     color: #EF952C;
     font-family:'Roboto', sans-serif;
