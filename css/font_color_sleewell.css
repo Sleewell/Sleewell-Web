@@ -1,0 +1,74 @@
+/* In this file, you can have all ours colors and fonts used*/
+
+/* 
+Text #FFFFFF on Mango background
+Mango: #EF952C
+
+Text #000000 on Amber background
+Amber: #FF8F00
+
+Roboto Bold --> Title / Headline
+Roboto Medium --> Stand alone text
+Roboto Regular --> Paragraph
+Roboto Light --> Comments
+
+Background color (Dark Blue: #00111F)
+*/
+
+.GlobalBackground {
+    background-color: #00111F;
+    color: #FFFFFF;
+}
+
+.SecondBackground {
+    background-color: #001125;
+    color: #FFFFFF;
+}
+
+.Mango {
+    background-color: #EF952C;
+    color: #FFFFFF;
+}
+
+.Amber {
+    background-color: #FF8F00;
+    color: #000000
+}
+
+.closeButtonMango {
+    background-color: #FFFFFF;
+    color: black;
+    border:2px solid #EF952C;;
+}
+
+.closeButtonAmber {
+    background-color: #FFFFFF;
+    color: black;
+    border:2px solid #FF8F00;;
+}
+
+.textMango {
+    color: #EF952C;
+}
+
+.card.card-cascade .view.view-cascade.gradient-card-header{
+    padding:1.6rem 1rem;
+    text-align:center;
+}
+
+.card.card-cascade .view.view-cascade.gradient-card-header .btn-floating{
+    background-color:rgba(255,255,255,.2);
+}
+
+.btn.btn-flat,.card.card-cascade .view.view-cascade.gradient-card-header .card-header-title,.stepper-vertical li.completed a .label{
+    font-weight:500;
+}
+
+.notActive {
+    background-color: #CCCCCC;
+}
+
+.AmeberText {
+    color: #FF8F00 !important;
+    text-align:center;
+}

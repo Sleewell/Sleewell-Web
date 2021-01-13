@@ -1,0 +1,376 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0px;
+  
+    width: 100%;
+    height: 100%;
+	color: #FF8F00;
+	background: #00111F !important;
+    font-family:'Roboto', sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff09;
+    box-shadow: 2px 1px 2px 1px #ffffff05;
+}
+
+footer {
+    width: 100%;
+    background-color: #ffffff09;
+}
+
+
+
+#products {
+    width: 100%;
+    background-color: #ffffff0f;
+}
+
+
+
+.vertical-center {
+    float: right;
+    padding: 200px;
+    margin-right:50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.oldblue-rounded-top {
+	background-color: #001822;
+    height: 100px;
+    border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+}
+
+.rounded-top {
+	background-color: #00111F;
+    height: 100px;
+    margin-top: 50px;
+    border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+}
+
+
+
+
+.contacts-header {
+	background-color: #002F3F;
+    height: 100px;
+    border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+}
+
+.contact {
+    height: 100px;
+	width: 100px;
+}
+
+.submit-button {
+    background-color: #EF952C;
+    color: #ffffff;
+    text-align:center;
+    border: 0;
+    outline: 0;
+    padding: 0.8rem 1rem;
+    min-width: 150px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit-button:hover {
+    color: #000000;
+}
+
+
+
+
+.title {
+    color: #EF952C;
+	font-family: 'white_smithregular';
+    text-align: center;
+	font-size: 3rem;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+h1 {
+    font-family: White_Smith, sans-serif;
+    text-align: center;
+	font-size: 3rem;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+h2 {
+    font-family:'Roboto', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+    text-align:center;
+    text-decoration: underline;
+}
+
+h3 {
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+h4 {
+    font-family:'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 1.1rem;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+a {
+    color: #EF952C;
+}
+
+a:not([href]) {
+    color: #EF952C;
+}
+
+a:not([href]):hover {
+    color: #EF952C;
+}
+
+label {
+    color: #EF952C;
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+
+.container {
+    display: inline-block;
+    position: relative;
+}
+.container .text-title {
+    z-index: 1;
+    position: absolute;
+    top: 15%;
+    left: 28%;
+    color: #EF952C;
+    width: 70%;
+    font-size: 180px;
+}
+
+
+
+/*
+    SLIDESHOW
+*/
+
+
+.select-css {
+    display: block;
+    float: right;
+    margin-right:30px;
+    margin-top: 8px;
+    width: 70px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #EF952C;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    box-sizing: border-box;
+    border: 1px solid #ffffff00;
+    box-shadow: 2px 1px 2px 1px #ffffff00;
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff00;
+    /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 
+      for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+      
+    */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .7em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: .65em auto, 100%;
+}
+
+/* Hide arrow icon in IE browsers */
+.select-css::-ms-expand {
+display: none;
+}
+
+
+/* SLIDESHOW BASE */
+
+
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color:  #FF8F00;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color:  #FF8F00;
+    font-size: 1.2rem;
+    padding: 4px 6px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color:  #FF8F00;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Fading animation */
+.fadebase {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+.prev, .next,.text {font-size: 11px}
+}
+
+
+
+/* SLIDESHOW APP */
+
+
+* {box-sizing: border-box}
+.mySlidesApp {display: none}
+imgApp {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-containerApp {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prevApp, .nextApp {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color:  #FF8F00;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.nextApp {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prevApp:hover, .nextApp:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertextApp {
+    color:  #FF8F00;
+    font-size: 1.2rem;
+    padding: 4px 6px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dotApp {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color:  #FF8F00;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Fading animation */
+.fadeApp {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+.prevApp, .nextApp, .text {font-size: 11px}
+}
