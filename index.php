@@ -53,7 +53,7 @@ if (isset($_GET['lang']))
                     </select>
                 </form>
                 <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
-                <a href="" class=" vertical-center btn btn-rounded my-3 Mango" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
+                <a id="logInBtn" href="" class=" vertical-center btn btn-rounded my-3 Mango" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
             </div>
         </header>
 
@@ -197,10 +197,10 @@ if (isset($_GET['lang']))
                     <div class="modal-c-tabs">
                         <ul class="nav nav-tabs md-tabs tabs-2 darken-3 SecondBackground" role="tablist">
                             <li class="nav-item">
-                                <a class="notActive nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i>Se connecter</a>
+                                <a id="connectionTab" class="notActive nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i>Se connecter</a>
                             </li>
                             <li class="nav-item">
-                                <a class="notActive nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i>S'enregistrer</a>
+                                <a id="registerTab" class="notActive nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i>S'enregistrer</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -225,7 +225,7 @@ if (isset($_GET['lang']))
                                     <div class="options text-center text-md-right mt-1">
                                         <p>Forgot <a href="#" class="textMango">Password?</a></p>
                                     </div>
-                                    <button type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
+                                    <button id="CloseButton" type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
                                 </div>
                                 </form>
                             </div>
@@ -279,7 +279,7 @@ if (isset($_GET['lang']))
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn  waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
+                                    <button id="CloseButton" type="button" class="btn  waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
                                 </div>
                                 </form>
                             </div>
@@ -419,7 +419,7 @@ if (isset($_GET['lang']))
             scrolly();
         };
         //BASE INDEX//
-       var slideIndex = 1;
+        var slideIndex = 1;
         showSlides(slideIndex);
 
         function plusSlides(n) {
@@ -437,17 +437,17 @@ if (isset($_GET['lang']))
         
             if (n > slides.length) {
                 slideIndex = 1
-            }    
+            }
             if (n < 1) {
                 slideIndex = slides.length
             }
             for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+                slides[i].style.display = "none";
             }
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
-            slides[slideIndex-1].style.display = "block";  
+            slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
         }
 
@@ -470,17 +470,17 @@ if (isset($_GET['lang']))
         
             if (n > slides.length) {
                 slideIndexApp = 1
-            }    
+            }
             if (n < 1) {
                 slideIndexApp = slides.length
             }
             for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+                slides[i].style.display = "none";
             }
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
-            slides[slideIndexApp-1].style.display = "block";  
+            slides[slideIndexApp-1].style.display = "block";
             dots[slideIndexApp-1].className += " active";
         }
     </script>
