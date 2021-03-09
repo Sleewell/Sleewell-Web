@@ -19,7 +19,34 @@ $(document).ready(function() {
             "data": form
         };
         $.ajax(settings).done(function(response) {
-            $('#loginForm').submit();
+            var obj = jQuery.parseJSON(response);
+            token = obj.AccessToken;
+            document.cookie ="token=" + token;
+
+            form.append("token", token);
+            var settings = {
+            "url": "https://api.sleewell.fr/user/information",
+            "method": "POST",
+            "timeout": 0,
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+            "data": form
+            };
+            $.ajax(settings).done(function (response) {
+                var obj2 = jQuery.parseJSON(response);
+                document.cookie ="login=" + obj2.login;
+                document.cookie ="firstname=" + obj2.firstname;
+                document.cookie ="lastname=" + obj2.lastname;
+                // document.cookie ="email=" + obj2.lastname;
+                // document.cookie ="phonenumber=" + obj2.lastname;
+                // document.cookie ="about=" + obj2.lastname;
+                $('#loginForm').submit();
+            });
+            $.ajax(settings).fail(function(response) {
+                console.clear();
+                alert("Problem to get profile information");
+            });
         });
         $.ajax(settings).fail(function(response) {
             console.clear();
@@ -57,13 +84,52 @@ $(document).ready(function() {
         };
     
         $.ajax(settings).done(function(response) {
-            $('#registerForm').submit();
+            var obj = jQuery.parseJSON(response);
+            console.log(response);
+            token = obj.AccessToken;
+
+            console.log(token);
+            document.cookie ="token=" + token;
+            form.append("token", token);
+            var settings = {
+            "url": "https://api.sleewell.fr/user/information",
+            "method": "POST",
+            "timeout": 0,
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+            "data": form
+            };
+            $.ajax(settings).done(function (response) {
+                var obj2 = jQuery.parseJSON(response);
+                document.cookie ="login=" + obj2.login;
+                document.cookie ="firstname=" + obj2.firstname;
+                document.cookie ="lastname=" + obj2.lastname;
+                // document.cookie ="email=" + obj2.lastname;
+                // document.cookie ="phonenumber=" + obj2.lastname;
+                // document.cookie ="about=" + obj2.lastname;
+                $('#registerForm').submit();
+            });
+            $.ajax(settings).fail(function(response) {
+                // console.clear();
+                alert("Problem to get profile information");
+            });
         });
         $.ajax(settings).fail(function(response) {
             // alert("L'email ou le noom d'utilisateur est déjà utilisé !");
             console.clear();
             alert("Something went wrong");
         });
+    });
+    $("#Deconnexion").click(function(){
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        document.cookie = "login=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        document.cookie = "firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        document.cookie = "lastname=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        // document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        // document.cookie = "phonenumber=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        // document.cookie = "about=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        location.reload();
     });
 });
 
@@ -136,4 +202,9 @@ function checkRegisterPassword()
         document.getElementById("message").style.display = "block";
         document.getElementById("RegisterButton").disabled = true;
     }
+}
+
+function fillProfile()
+{
+
 }

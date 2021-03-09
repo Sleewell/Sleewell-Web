@@ -53,7 +53,12 @@ if (isset($_GET['lang']))
                     </select>
                 </form>
                 <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
-                <a id="logInBtn" href="" class=" vertical-center btn btn-rounded my-3 Mango" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
+                <?php if(!isset($_COOKIE["login"])) : ?>
+                    <a id="logInBtn" href="" class=" vertical-center btn btn-rounded my-3 Mango" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
+                <?php else :?>
+                    <a id="Deconnexion" href="#" class="vertical-center btn btn-rounded my-3 Mango"><?php echo "Deconnexion";?></a>
+                    <a id="ProfilButton" href="profile.php" class="vertical-center btn btn-rounded my-3 Mango"><?php echo "Profil";?></a>
+                <?php endif; ?>
             </div>
         </header>
 

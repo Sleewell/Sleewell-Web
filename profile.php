@@ -9,6 +9,7 @@ if (isset($_GET['lang']))
     header("Location: {$_SERVER['PHP_SELF']}");
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +32,7 @@ if (isset($_GET['lang']))
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/profile.js"></script>
 </head>
 
 <header>
@@ -50,6 +52,20 @@ if (isset($_GET['lang']))
 
 <body class="GlobalBackground">
     <table style="width:100%;">
+    <?php
+    if(!isset($_COOKIE["login"])) {
+        echo "Cookie named '" . "login" . "' is not set!";
+      } else {
+        echo "Cookie '" . "login" . "' is set!<br>";
+        echo "Value is: " . $_COOKIE["login"];
+    }
+    if(!isset($_COOKIE["token"])) {
+        echo "Cookie named '" . "token" . "' is not set!";
+      } else {
+        echo "Cookie '" . "token" . "' is set!<br>";
+        echo "Value is: " . $_COOKIE["token"];
+    }
+    ?>
         <tr>
             <br><br><br>
         </tr>
@@ -102,7 +118,7 @@ if (isset($_GET['lang']))
                                 <!-- First column -->
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input style="color:white;"  type="text" id="form1" class="form-control validate" value="<?php echo $_POST['id'];?>" disabled="">
+                                    <input style="color:white;"  type="text" id="profileId" class="form-control validate" value="<?php echo $_COOKIE["login"]?>" disabled="">
                                     <label style="color:white;" for="form1" class="active">Votre identifiant</label>
                                 </div>
                                 </div>
@@ -114,14 +130,14 @@ if (isset($_GET['lang']))
                                 <!-- First column -->
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input style="color:white;" type="text" id="form81" class="form-control validate">
+                                    <input style="color:white;" type="text" id="profileFirstname" value="<?php echo $_COOKIE["firstname"]?>" class="form-control validate">
                                     <label style="color:white;" for="form81" data-error="Incorrect" data-success="Super" class="">Prénom</label>
                                 </div>
                                 </div>
                                 <!-- Second column -->
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input style="color:white;" type="text" id="form82" class="form-control validate">
+                                    <input style="color:white;" type="text" id="profileLastName" value="<?php echo $_COOKIE["lastname"]?>" class="form-control validate">
                                     <label style="color:white;" for="form82" data-error="Incorrect" data-success="Incroyable" class="">Nom</label>
                                 </div>
                                 </div>
@@ -133,14 +149,14 @@ if (isset($_GET['lang']))
                                 <!-- First column -->
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input style="color:white;" type="email" id="form76" class="form-control validate">
+                                    <input style="color:white;" type="email" id="profilEmail" class="form-control validate">
                                     <label style="color:white;" data-error="Incorrect" data-success="Excellent" for="form76">E-mail</label>
                                 </div>
                                 </div>
                                 <!-- Second column -->
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input style="color:white;" pattern="[0-9]{10}" type="tel" id="form77" class="form-control validate">
+                                    <input style="color:white;" pattern="[0-9]{10}" type="tel" id="profilePhoneNumber" class="form-control validate">
                                     <label style="color:white;" data-error="Incorrect" data-success="Brillant" for="form77">Numéro de téléphone</label>
                                 </div>
                                 </div>
@@ -151,7 +167,7 @@ if (isset($_GET['lang']))
                                 <!-- First column -->
                                 <div class="col-md-12">
                                 <div class="md-form mb-0">
-                                    <textarea style="color:white;" type="text" id="form78" class="md-textarea form-control" rows="3"></textarea>
+                                    <textarea style="color:white;" type="text" id="profilAbout" class="md-textarea form-control" rows="3"></textarea>
                                     <label style="color:white;" for="form78">A propos de vous</label>
                                 </div>
                                 </div>
@@ -160,7 +176,7 @@ if (isset($_GET['lang']))
                             <!-- Fourth row -->
                             <div class="row">
                                 <div class="col-md-12 text-center my-4">
-                                <span class="waves-input-wrapper waves-effect waves-light"><input type="submit" value="Update Account" class="btn Mango btn-rounded"></span>
+                                <span class="waves-input-wrapper waves-effect waves-light"><input id="UpdateProfil" type="button" value="Update Account" class="btn Mango btn-rounded"></span>
                                 </div>
                             </div>
                             <!-- End of Fourth row -->
