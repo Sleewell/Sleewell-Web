@@ -52,20 +52,6 @@ if (isset($_GET['lang']))
 
 <body class="GlobalBackground">
     <table style="width:100%;">
-    <?php
-    if(!isset($_COOKIE["login"])) {
-        echo "Cookie named '" . "login" . "' is not set!";
-      } else {
-        echo "Cookie '" . "login" . "' is set!<br>";
-        echo "Value is: " . $_COOKIE["login"];
-    }
-    if(!isset($_COOKIE["token"])) {
-        echo "Cookie named '" . "token" . "' is not set!";
-      } else {
-        echo "Cookie '" . "token" . "' is set!<br>";
-        echo "Value is: " . $_COOKIE["token"];
-    }
-    ?>
         <tr>
             <br><br><br>
         </tr>
