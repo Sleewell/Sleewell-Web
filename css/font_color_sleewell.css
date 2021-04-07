@@ -68,7 +68,12 @@ Background color (Dark Blue: #00111F)
     background-color: #CCCCCC;
 }
 
-.AmeberText {
+.AmberText {
     color: #FF8F00 !important;
-    text-align:center;
+    text-align: center;
 }
+/*
+.BoldAmberText {
+    color: #FF8F00 !important;
+    font-weight: bold;
+}*/

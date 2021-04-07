@@ -6,7 +6,7 @@ $lang['header'] = 'French';
 
 
 //index
-$lang['selected-lang'] = 'FR';
+$lang['selected-lang'] = 'French';
 
 $lang['img_path'] = 'img/fra.png';
 

@@ -33,24 +33,46 @@ if (isset($_GET['lang']))
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/profile.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 </head>
 
-<header>
-    <div id="langSelect">
-        <a id="mainpage_btn" href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
-        <form>
-            <label for="change_lang" style="display:none">Langage</label>
-            <select id="change_lang" class="select-css" name="choose-lang" onchange="location = this.value;">
-                <option value=""><?php echo $lang['selected-lang'];?></option>
-                <option class="fr" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre" style="background-image:url('img/eng.png');" >French</option>
-                <option class="en" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng" style="background-image:url('img/fra.png');" >English</option>
-            </select>
-        </form>
-        <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
-    </div>
-</header>
-
 <body class="GlobalBackground">
+
+
+    <!--################################-->
+    <!--              HEADER            -->
+    <!--################################-->
+    <div class="topnav">
+        <nav>
+            <div>
+                <a id="mainpage_btn" href="index.php"><img class="navbar-logo" src="img/logo_sleewell.png"/></a>
+            </div>
+            <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+            </label>
+            <input type="checkbox" id="btn">
+            <ul>
+                <?php if(!isset($_COOKIE["login"])) : ?>
+                    <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
+                <?php else :?>
+                    <li><a id="Deconnexion" href="index.php"><?php echo "Deconnexion";?></a></li>
+                <?php endif; ?>
+                <li>
+                    <label for="btn-1" class="show dropdown-toggle"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></label>
+                    <a class="dropdown-toggle" href=""><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
+                    <input type="checkbox" id="btn-1">
+                    <ul>
+                        <li><a href="#"><span> <img src="img/fra.png"></span> French</a></li>
+                        <li><a href="#"><span> <img src="img/eng.png"></span> English</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    <div>
+
+    <!--################################-->
+    <!--               FORM             -->
+    <!--################################-->
     <table style="width:100%;">
         <tr>
             <br><br><br>
@@ -74,7 +96,7 @@ if (isset($_GET['lang']))
                         <!-- End of Card image -->
                         <!-- Card content -->
                         <div class="card-body card-body-cascade text-center">
-                            <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="User Photo" class="z-depth-1 mb-3 mx-auto">
+                            <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="User Photo" class="z-depth-1 mb-3 mx-auto img-fluid">
                             <p class="text-muted"><small>Votre superbe avatar</small></p>
                             <div class="row flex-center">
                             <button class="btn Mango btn-rounded btn-sm waves-effect waves-light">Nouvel avatar</button><br>

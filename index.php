@@ -14,11 +14,12 @@ if (isset($_GET['lang']))
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
     <head>
-        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
         <title> Sleewell </title>
         <link rel="icon" href="./css/icons/sleewell.ico">
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/cssanimation.css"> 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,76 +42,88 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--              HEADER            -->
         <!--################################-->
-        <header>
-            <div id="langSelect">
-                <a id="mainpage_btn" href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
-                <form>
-                    <label for="change_lang" style="display:none">Langage</label>
-                    <select id="change_lang" class="select-css" name="choose-lang" onchange="location = this.value;">
-                        <option value=""><?php echo $lang['selected-lang'];?></option>
-                        <option class="fr" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre" style="background-image:url('img/eng.png');" >French</option>
-                        <option class="en" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng" style="background-image:url('img/fra.png');" >English</option>
-                    </select>
-                </form>
-                <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
-                <?php if(!isset($_COOKIE["login"])) : ?>
-                    <a id="logInBtn" href="" class=" vertical-center btn btn-rounded my-3 Mango" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
-                <?php else :?>
-                    <a id="Deconnexion" href="#" class="vertical-center btn btn-rounded my-3 Mango"><?php echo "Deconnexion";?></a>
-                    <a id="ProfilButton" href="profile.php" class="vertical-center btn btn-rounded my-3 Mango"><?php echo "Profil";?></a>
-                <?php endif; ?>
-            </div>
-        </header>
+
+        <div class="topnav">
+            <nav>
+                <div>
+                    <a id="mainpage_btn" href="index.php"><img class="navbar-logo" src="img/logo_sleewell.png"/></a>
+                </div>
+                <label for="btn" class="icon">
+                <span class="fa fa-bars"></span>
+                </label>
+                <input type="checkbox" id="btn">
+                <ul>
+                    <?php if(!isset($_COOKIE["login"])) : ?>
+                        <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
+                    <?php else :?>
+                        <li><a id="Deconnexion" href="#"><?php echo "Deconnexion";?></a></li>
+                        <li><a id="ProfilButton" href="profile.php"><?php echo "Profil";?></a></li>
+                    <?php endif; ?>
+                    <li>
+                        <label for="btn-1" class="show dropdown-toggle"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></label>
+                        <a class="dropdown-toggle" href="#"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
+                        <input type="checkbox" id="btn-1">
+                        <ul>
+                            <li><a href="#"><span> <img src="img/fra.png"></span> French</a></li>
+                            <li><a href="#"><span> <img src="img/eng.png"></span> English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        <div>
 
         <!--################################-->
         <!-- ENTÊTE / LOGO SLEEWELL SECTION -->
         <!--################################-->
-        <table style="width:100%"><tr>
-            <td colspan="1" width="33%"></td>
-            <td colspan="1" width="34%">
-                <div class="container" data-scrolly-down="blurInBottom, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                    <img src="img/logo_sleewell.png" style="float:left;width:200px;height:250px;margin-top:50px;"/>
-                    <h1 class="title text-title">leewell</h1>
-                </div>
-            </td>
-            <td colspan="1" width="33%"></td>
-        </tr></table>
+        <div>
+            <table style="width:100%"><tr>
+                <td colspan="1" width="33%"></td>
+                <td colspan="1" width="34%">
+                    <div class="container" data-scrolly-down="blurInBottom, timing-function:cubic-bezier(.17,.67,.83,.67)">
+                        <img src="img/logo_sleewell.png" class="sleewell-logo-size img-fluid"/>
+                        <h1 class="title text-title">leewell</h1>
+                    </div>
+                </td>
+                <td colspan="1" width="33%"></td>
+            </tr></table>
+        </div>
 
 
 
         <!--################################-->
         <!-- PROJECT PRESENTATON SECTION -->
         <!--################################-->
-        <div>
+
+        <div class="container-xxl">
             <!-- FIRST PRESENTATON PART SECTION -->
             <div class="oldblue-rounded-top"></div>
             <div style="background-color: #001822;">
-                <table ><tr>
+                <table style="width:100%"><tr >
                     <td colspan="1" width="50%">
-                        <div class="text" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <h3 class="AmeberText"><?php echo $lang['project-pres1'];?></h3>
+                        <div class="text placed-right" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
+                            <h3 class="BoldAmberText"><?php echo $lang['project-pres1'];?></h3>
                             <h4 class="AmeberText"><?php echo $lang['project-pres1bis'];?></h4>
                         </div>
                     </td>
                     <td colspan="1" width="50%">
                         <div class="text" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <img src="img/img1stpres.svg" style="width:400px;height:312.5px;display: block;margin-left: auto;margin-right: auto;"/>
+                            <img src="img/img1stpres.svg" class="img_presentation_left"/>
                         </div>
                     </td>
                 </tr></table>
-                <div class="rounded-top"></div>
+                <div class="bckg-rounded-top"></div>
             </div>
             <!-- SECOND PRESENTATON PART SECTION -->
-            <div style="margin-bottom:100px">
-                <table ><tr>
+            <div style="margin-bottom:2vw">
+                <table><tr>
                     <td colspan="1" width="50%">
                         <div class="text" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <img src="img/img2ndpres.svg" style="width:400px;height:312.5px;display: block;margin-left: auto;margin-right: auto;"/>
+                            <img src="img/img2ndpres.svg" class="img_presentation_right"/>
                         </div>
                     </td>
                     <td colspan="1" width="50%">
-                        <div class="text" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <h3 class="AmeberText"><?php echo $lang['project-pres2'];?></h3>
+                        <div class="text placed-left" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
+                            <h3 class="BoldAmberText"><?php echo $lang['project-pres2'];?></h3>
                             <h4 class="AmeberText"><?php echo $lang['project-pres2bis'];?></h4>
                         </div>
                     </td>
@@ -121,30 +134,30 @@ if (isset($_GET['lang']))
             <div style="background-color: #001822;">
                 <table ><tr>
                     <td colspan="1" width="50%">
-                        <div class="text" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <h3 class="AmeberText"><?php echo $lang['project-pres3'];?></h3>
+                        <div class="text placed-right" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
+                            <h3 class="BoldAmberText"><?php echo $lang['project-pres3'];?></h3>
                             <h4 class="AmeberText"><?php echo $lang['project-pres3bis'];?></h4>
                         </div>
                     </td>
                     <td colspan="1" width="50%">
                         <div class="text" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <img src="img/img3rdpres.svg" style="width:400px;height:312.5px;display: block;margin-left: auto;margin-right: auto;"/>
+                            <img src="img/img3rdpres.svg" class="img_presentation_left"/>
                         </div>
                     </td>
                 </tr></table>
-                <div class="rounded-top"></div>
+                <div class="bckg-rounded-top"></div>
             </div>
             <!-- LAST PRESENTATON PART SECTION -->
-            <div style="margin-bottom:100px">
+            <div style="margin-bottom:2vw">
                 <table ><tr>
                     <td colspan="1" width="50%">
                         <div class="text" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <img src="img/img4thpres.svg" style="width:400px;height:312.5px;display: block;margin-left: auto;margin-right: auto;"/>
+                            <img src="img/img4thpres.svg" class="img_presentation_right"/>
                         </div>
                     </td>
                     <td colspan="1" width="50%">
-                        <div class="text" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                            <h3 class="AmeberText"><?php echo $lang['project-pres4'];?></h3>
+                        <div class="text placed-left" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
+                            <h3 class="BoldAmberText"><?php echo $lang['project-pres4'];?></h3>
                             <h4 class="AmeberText"><?php echo $lang['project-pres4bis'];?></h4>
                         </div>
                     </td>
@@ -155,25 +168,19 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--     PRÉSENTATION PRODUITS      -->
         <!--################################-->
-        <div id="products">
+        <div class="oldblue-rounded-top"></div>
+        <div class="products">
             <table style="width:100%"><tr>
-                </br><h1 class="AmeberText"><?php echo $lang['Products-pres'];?></h1>
-            </tr><tr>
-                <td colspan="1" width="50%">
-                    <h2 class="AmeberText">Base</h2>
+                <td colspan="1" width="50%" height="10vw">
+                <h2 class="AmeberText">Base</h2>
+                <div class="basepres"><img src="img/base.png" class="base_img img-fluid"/></div>
                 </td>
-                <td colspan="1" width="50%">
-                    <h2 class="AmeberText">Application</h2>
-                </td>
-            </tr><tr>
-                <td colspan="1" width="50%">
-                    <img src="img/base.png" style="width:500px;height:375px;display:block;margin-left:auto;margin-right:auto;text-align:center"/>
-                </td>
-                <td colspan="1" width="50%">
-                    <img src="img/app.png" style="width:300px;height:650px;display:block;margin-left:auto;margin-right:auto;text-align:center;margin-bottom:50px"/>
+                <td colspan="1" width="50%" height="10vw">
+                <h2 class="AmeberText">Application</h2>
+                <div class="apppres"><img src="img/imgpresapp.png" class="app_img img-fluid"/></div>
                 </td>
             </tr></table>
-                <a id="info_btn" href="" class="btn btn-rounded my-3 Mango" style="display:block;margin-left:auto;margin-right:auto;max-width:300px" data-toggle="modal" data-target="#modalproductPres"><?php echo $lang['Products-button'];?></a>
+            <a id="info_btn" href="" class="btn btn-rounded my-3 Mango" style="display:block;margin-left:auto;margin-right:auto;max-width:250px" data-toggle="modal" data-target="#modalproductPres"><?php echo $lang['Products-button'];?></a>
             <br><br><br>
         </div>
 
@@ -186,7 +193,7 @@ if (isset($_GET['lang']))
                     <img src="img/logo_sleewell.png" style="float:left;width:120px;height:150px;margin-left:100px"/>
                 </td>
                 <td colspan="1" width="40%">
-                    <h3 class="AmeberText">SUPPORT</h3>
+                    <h3 class="BoldAmberText">SUPPORT</h3>
                     <a id="contactus_btn" href="contact_us.php"><h4 class="AmeberText"><?php echo $lang['contact-redirection'];?></h4></a>
                 </td>
             </tr></table>
@@ -320,25 +327,25 @@ if (isset($_GET['lang']))
                                         <div class="mySlides fadebase">
                                             <div class="numbertext">1 / 4</div><br/><br/>
                                             <img src="img/base.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
-                                            <div class="AmeberText"><?php echo $lang['base-pres1'];?></div>
+                                            <div class="AmberText"><?php echo $lang['base-pres1'];?></div>
                                         </div>
 
                                         <div class="mySlides fadebase">
                                             <div class="numbertext">2 / 4</div><br/><br/>
                                             <img src="img/base1.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
-                                            <div class="AmeberText"><?php echo $lang['base-pres2'];?></div>
+                                            <div class="AmberText"><?php echo $lang['base-pres2'];?></div>
                                         </div>
 
                                         <div class="mySlides fadebase">
                                             <div class="numbertext">3 / 4</div><br/><br/>
                                             <img src="img/base2.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
-                                            <div class="AmeberText"><?php echo $lang['base-pres3'];?></div>
+                                            <div class="AmberText"><?php echo $lang['base-pres3'];?></div>
                                         </div>
 
                                         <div class="mySlides fadebase">
                                             <div class="numbertext">4 / 4</div><br/><br/>
                                             <img src="img/base3.png" style="width:80%;display:block;margin-left:auto;margin-right:auto"></br>
-                                            <div class="AmeberText"><?php echo $lang['base-pres4'];?></div>
+                                            <div class="AmberText"><?php echo $lang['base-pres4'];?></div>
                                         </div>
 
                                         <!-- Next and previous buttons -->
@@ -364,31 +371,31 @@ if (isset($_GET['lang']))
                                         <div class="mySlidesApp fadeApp">
                                             <div class="numbertextApp">1 / 5</div><br/>
                                             <img src="img/app.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
-                                            <div class="AmeberText"><?php echo $lang['app-pres1'];?></div>
+                                            <div class="AmberText"><?php echo $lang['app-pres1'];?></div>
                                         </div>
 
                                         <div class="mySlidesApp fadeApp">
                                             <div class="numbertextApp">2 / 5</div><br/>
                                             <img src="img/app1.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
-                                            <div class="AmeberText"><?php echo $lang['app-pres2'];?></div>
+                                            <div class="AmberText"><?php echo $lang['app-pres2'];?></div>
                                         </div>
 
                                         <div class="mySlidesApp fadeApp">
                                             <div class="numbertextApp">3 / 5</div><br/>
                                             <img src="img/app2.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
-                                            <div class="AmeberText"><?php echo $lang['app-pres3'];?></div>
+                                            <div class="AmberText"><?php echo $lang['app-pres3'];?></div>
                                         </div>
 
                                         <div class="mySlidesApp fadeApp">
                                             <div class="numbertextApp">4 / 5</div><br/>
                                             <img src="img/app3.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
-                                            <div class="AmeberText"><?php echo $lang['app-pres4'];?></div>
+                                            <div class="AmberText"><?php echo $lang['app-pres4'];?></div>
                                         </div>
 
                                         <div class="mySlidesApp fadeApp">
                                             <div class="numbertextApp">5 / 5</div><br/>
                                             <img src="img/app4.png" style="width:45%;display:block;margin-left:auto;margin-right:auto"></br>
-                                            <div class="AmeberText"><?php echo $lang['app-pres5'];?></div>
+                                            <div class="AmberText"><?php echo $lang['app-pres5'];?></div>
                                         </div>
 
                                         <!-- Next and previous buttons -->
