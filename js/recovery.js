@@ -32,9 +32,10 @@ $(document).ready(function() {
     });
     $('#forgotEmail').keypress(function(e){
         if(e.which == 13){
-            var val1 = $("#forgotEmail").val();
-            if (val1.length)
-                $('#sendForgotPassword').click();
+            var val1 = $("#forgotPassword1").val();
+            var val2 = $("#forgotPassword2").val();
+            if (val1.length && val2.length)
+                $('#ChangePassword').click();
         }
     });
 
@@ -69,10 +70,9 @@ $(document).ready(function() {
     });
     $('#forgotEmail').keypress(function(e){
         if(e.which == 13){
-            var val1 = $("#forgotPassword1").val();
-            var val2 = $("#forgotPassword2").val();
-            if (val1.length && val2.length)
-                $('#ChangePassword').click();
+            var val1 = $("#forgotEmail").val();
+            if (val1.length)
+                $('#sendForgotPassword').click();
         }
     });
 });
