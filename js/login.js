@@ -1,5 +1,15 @@
 $(document).ready(function() {
     console.log( "ready!" );
+    $('#loginPassword').keypress(function(e){
+        if(e.which == 13){
+            $('#LoginButton').click();
+        }
+    });
+    $('#registerPasswordCheck').keypress(function(e){
+        if(e.which == 13){
+            $('#RegisterButton').click();
+        }
+    });
     $("#LoginButton").click(function(){
         var form = new FormData();
         var login = $("#loginUsername").val();
