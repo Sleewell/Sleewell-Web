@@ -209,7 +209,7 @@ if (isset($_GET['lang']))
                         <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
                         <!-- Card image -->
                         <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                            <h3 class="mb-0 font-weight-bold">Votre Statistiques</h5>
+                            <h3 class="mb-0 font-weight-bold">Vos statistiques de sommeil</h5>
                         </div>
                         <!-- End of Card image -->
                         <!-- Card content -->
