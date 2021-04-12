@@ -61,7 +61,9 @@ $(document).ready(function() {
         };
         
         $.ajax(settings).done(function (response) {
+            console.log("Hello ?");
             $('#SecondStepRecoveryAccount').submit();
+            console.log("Heyhey");
         });
     });
     // $(function() {
