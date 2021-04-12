@@ -64,9 +64,9 @@ $(document).ready(function() {
             $('#SecondStepRecoveryAccount').submit();
         });
     });
-    $(function() {
-        $("form").submit(function() { return false; });
-    });
+    // $(function() {
+    //     $("form").submit(function() { return false; });
+    // });
     $('#forgotPassword1').keypress(function(e){
         if(e.which == 13){
             if (checkForgotPassword() === true)
