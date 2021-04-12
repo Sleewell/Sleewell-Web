@@ -32,7 +32,8 @@ $(document).ready(function() {
     });
     $('#forgotEmail').keypress(function(e){
         if(e.which == 13){
-            if (checkForgotPassword() === true)
+            const email = $("#forgotEmail").val();
+            if (validateEmail(email))
                 $('#sendForgotPassword').click();
         }
     });
