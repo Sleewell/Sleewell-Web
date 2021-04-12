@@ -98,7 +98,7 @@ function sendLoginForm()
     });
 }
 
-funtion sendRegisterForm()
+function sendRegisterForm()
 {
     var form = new FormData();
     var username = $("#registerUsername").val();
