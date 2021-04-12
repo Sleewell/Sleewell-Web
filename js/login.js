@@ -3,10 +3,12 @@ $(document).ready(function() {
     $('#loginPassword').keypress(function(e){
         if(e.which == 13){
             $('#LoginButton').click();
+            console.log("hey ?");
         }
     });
     $('#registerPasswordCheck').keypress(function(e){
         if(e.which == 13){
+            console.log("Hello ?");
             $('#RegisterButton').click();
         }
     });
