@@ -2,136 +2,34 @@ $(document).ready(function() {
     console.log( "ready!" );
     $('#loginPassword').keypress(function(e){
         if(e.which == 13){
+            $('#loginUsername').click();
+        }
+    });
+    $('#loginPassword').keypress(function(e){
+        if(e.which == 13){
             $('#LoginButton').click();
-            console.log("hey ?");
+        }
+    });
+    $('#registerPassword').keypress(function(e){
+        if(e.which == 13){
+            $('#RegisterButton').click();
+        }
+    });
+    $('#registerEmail').keypress(function(e){
+        if(e.which == 13){
+            $('#RegisterButton').click();
         }
     });
     $('#registerPasswordCheck').keypress(function(e){
         if(e.which == 13){
-            console.log("Hello ?");
             $('#RegisterButton').click();
         }
     });
     $("#LoginButton").click(function(){
-        var form = new FormData();
-        var login = $("#loginUsername").val();
-        var password = $("#loginPassword").val();
-        console.log(login);
-        console.log(password);
-        form.append("login", login);
-        form.append("password", password);
-    
-        var settings = {
-            "url": "https://api.sleewell.fr/user/login",
-            "method": "POST",
-            "timeout": 0,
-            "processData": false,
-            "mimeType": "multipart/form-data",
-            "contentType": false,
-            "data": form
-        };
-        $.ajax(settings).done(function(response) {
-            var obj = jQuery.parseJSON(response);
-            token = obj.AccessToken;
-            document.cookie ="token=" + token;
-
-            form.append("token", token);
-            var settings = {
-            "url": "https://api.sleewell.fr/user/information",
-            "method": "POST",
-            "timeout": 0,
-            "processData": false,
-            "mimeType": "multipart/form-data",
-            "contentType": false,
-            "data": form
-            };
-            $.ajax(settings).done(function (response) {
-                var obj2 = jQuery.parseJSON(response);
-                document.cookie ="login=" + obj2.login;
-                document.cookie ="firstname=" + obj2.firstname;
-                document.cookie ="lastname=" + obj2.lastname;
-                // document.cookie ="email=" + obj2.lastname;
-                // document.cookie ="phonenumber=" + obj2.lastname;
-                // document.cookie ="about=" + obj2.lastname;
-                $('#loginForm').submit();
-            });
-            $.ajax(settings).fail(function(response) {
-                console.clear();
-                alert("Problem to get profile information");
-            });
-        });
-        $.ajax(settings).fail(function(response) {
-            console.clear();
-            alert("Your login or your password is incorrect !");
-        });
+        sendLoginForm();
     });
     $("#RegisterButton").click(function(){
-        var form = new FormData();
-        var username = $("#registerUsername").val();
-        var firstname = $("#registerFirstName").val();
-        var lastname = $("#registerLastName").val();
-        var email = $("#registerEmail").val();
-        var password = $("#registerPasswordCheck").val();
-
-        console.log(username);
-        console.log(firstname);
-        console.log(lastname);
-        console.log(email);
-        console.log(password);
-
-        form.append("login", username);
-        form.append("password", password);
-        form.append("email", email);
-        form.append("firstname", firstname);
-        form.append("lastname", lastname);
-
-        var settings = {
-            "url": "https://api.sleewell.fr/user/register",
-            "method": "POST",
-            "timeout": 0,
-            "processData": false,
-            "mimeType": "multipart/form-data",
-            "contentType": false,
-            "data": form
-        };
-    
-        $.ajax(settings).done(function(response) {
-            var obj = jQuery.parseJSON(response);
-            console.log(response);
-            token = obj.AccessToken;
-
-            console.log(token);
-            document.cookie ="token=" + token;
-            form.append("token", token);
-            var settings = {
-            "url": "https://api.sleewell.fr/user/information",
-            "method": "POST",
-            "timeout": 0,
-            "processData": false,
-            "mimeType": "multipart/form-data",
-            "contentType": false,
-            "data": form
-            };
-            $.ajax(settings).done(function (response) {
-                var obj2 = jQuery.parseJSON(response);
-                document.cookie ="login=" + obj2.login;
-                document.cookie ="firstname=" + obj2.firstname;
-                document.cookie ="lastname=" + obj2.lastname;
-                // document.cookie ="email=" + obj2.lastname;
-                // document.cookie ="phonenumber=" + obj2.lastname;
-                // document.cookie ="about=" + obj2.lastname;
-                $('#registerForm').submit();
-            });
-            $.ajax(settings).fail(function(response) {
-                // console.clear();
-                alert("Problem to get profile information");
-            });
-        });
-        $.ajax(settings).fail(function(response) {
-            // alert("L'email ou le noom d'utilisateur est déjà utilisé !");
-            console.clear();
-            alert("Something went wrong");
-        });
+        sendRegisterForm();
     });
     $("#Deconnexion").click(function(){
         document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
@@ -144,6 +42,131 @@ $(document).ready(function() {
         location.reload();
     });
 });
+
+function sendLoginForm()
+{
+    var form = new FormData();
+    var login = $("#loginUsername").val();
+    var password = $("#loginPassword").val();
+    console.log(login);
+    console.log(password);
+    form.append("login", login);
+    form.append("password", password);
+
+    var settings = {
+        "url": "https://api.sleewell.fr/user/login",
+        "method": "POST",
+        "timeout": 0,
+        "processData": false,
+        "mimeType": "multipart/form-data",
+        "contentType": false,
+        "data": form
+    };
+    $.ajax(settings).done(function(response) {
+        var obj = jQuery.parseJSON(response);
+        token = obj.AccessToken;
+        document.cookie ="token=" + token;
+
+        form.append("token", token);
+        var settings = {
+        "url": "https://api.sleewell.fr/user/information",
+        "method": "POST",
+        "timeout": 0,
+        "processData": false,
+        "mimeType": "multipart/form-data",
+        "contentType": false,
+        "data": form
+        };
+        $.ajax(settings).done(function (response) {
+            var obj2 = jQuery.parseJSON(response);
+            document.cookie ="login=" + obj2.login;
+            document.cookie ="firstname=" + obj2.firstname;
+            document.cookie ="lastname=" + obj2.lastname;
+            // document.cookie ="email=" + obj2.lastname;
+            // document.cookie ="phonenumber=" + obj2.lastname;
+            // document.cookie ="about=" + obj2.lastname;
+            $('#loginForm').submit();
+        });
+        $.ajax(settings).fail(function(response) {
+            console.clear();
+            alert("Problem to get profile information");
+        });
+    });
+    $.ajax(settings).fail(function(response) {
+        console.clear();
+        alert("Your login or your password is incorrect !");
+    });
+}
+
+funtion sendRegisterForm()
+{
+    var form = new FormData();
+    var username = $("#registerUsername").val();
+    var firstname = $("#registerFirstName").val();
+    var lastname = $("#registerLastName").val();
+    var email = $("#registerEmail").val();
+    var password = $("#registerPasswordCheck").val();
+
+    console.log(username);
+    console.log(firstname);
+    console.log(lastname);
+    console.log(email);
+    console.log(password);
+
+    form.append("login", username);
+    form.append("password", password);
+    form.append("email", email);
+    form.append("firstname", firstname);
+    form.append("lastname", lastname);
+
+    var settings = {
+        "url": "https://api.sleewell.fr/user/register",
+        "method": "POST",
+        "timeout": 0,
+        "processData": false,
+        "mimeType": "multipart/form-data",
+        "contentType": false,
+        "data": form
+    };
+
+    $.ajax(settings).done(function(response) {
+        var obj = jQuery.parseJSON(response);
+        console.log(response);
+        token = obj.AccessToken;
+
+        console.log(token);
+        document.cookie ="token=" + token;
+        form.append("token", token);
+        var settings = {
+        "url": "https://api.sleewell.fr/user/information",
+        "method": "POST",
+        "timeout": 0,
+        "processData": false,
+        "mimeType": "multipart/form-data",
+        "contentType": false,
+        "data": form
+        };
+        $.ajax(settings).done(function (response) {
+            var obj2 = jQuery.parseJSON(response);
+            document.cookie ="login=" + obj2.login;
+            document.cookie ="firstname=" + obj2.firstname;
+            document.cookie ="lastname=" + obj2.lastname;
+            // document.cookie ="email=" + obj2.lastname;
+            // document.cookie ="phonenumber=" + obj2.lastname;
+            // document.cookie ="about=" + obj2.lastname;
+            $('#registerForm').submit();
+        });
+        $.ajax(settings).fail(function(response) {
+            // console.clear();
+            alert("Problem to get profile information");
+        });
+    });
+    $.ajax(settings).fail(function(response) {
+        // alert("L'email ou le noom d'utilisateur est déjà utilisé !");
+        console.clear();
+        alert("Something went wrong");
+    });
+}
 
 function checkRegisterMail()
 {
