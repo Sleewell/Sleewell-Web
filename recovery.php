@@ -71,7 +71,7 @@
                             <label style="color:#FF8F00;" data-success="Super !" for="forgotEmail">Votre email</label>
                         </div>
                         <div class="text-center mt-2">
-                            <input onclick="hideFirstForm()" type="button" id="sendForgotPassword" class="btn Mango" disabled value="Envoyer"></input>
+                            <input type="button" id="sendForgotPassword" class="btn Mango" disabled value="Envoyer"></input>
                         </div>
                     </div>
                     </form>
@@ -83,74 +83,4 @@
         </tr>
     </table>
     </body>
-
-    <script>
-
-    function validateEmail(email) {
-        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    }
-
-    function hideFirstForm() {
-        document.getElementById("displayable").style.display = "none";
-        document.getElementById("waiting").style.display = "inline";
-    }
-    
-    function checkForgotEmail()
-    {
-        const email = $("#forgotEmail").val();
-
-        if (validateEmail(email))
-            document.getElementById("sendForgotPassword").disabled = false;
-        else
-            document.getElementById("sendForgotPassword").disabled = true;
-    }
-
-    function checkForgotPassword()
-    {
-        var number = document.getElementById("number");
-        var length = document.getElementById("length");
-        var same = document.getElementById("same");
-        var pwd1 = document.getElementById("forgotPassword1");
-        var pwd2 = document.getElementById("forgotPassword2");
-
-        var numbers = /[0-9]/g;
-        var checker = 0;
-        if(pwd1.value.match(numbers)) {  
-            number.classList.remove("invalid");
-            number.classList.add("valid");
-            checker+=1;
-        }else {
-            number.classList.remove("valid");
-            number.classList.add("invalid");
-            checker = 0; 
-        }
-        if (pwd1.value.localeCompare(pwd2.value) === 0 && pwd1.value.length > 0) {
-            same.classList.remove('invalid');
-            same.classList.add("valid");
-            checker+=1;
-        }else {
-            same.classList.remove("valid");
-            same.classList.add("invalid");
-            checker = 0;
-        }
-        if(pwd1.value.length >= 8) {
-            length.classList.remove("invalid");
-            length.classList.add("valid");
-            checker+=1;
-        } else {
-            length.classList.remove("valid");
-            length.classList.add("invalid");
-            checker = 0;
-        }
-        if (checker === 3) {
-            document.getElementById("message").style.display = "none";
-            document.getElementById("ChangePassword").disabled = false;
-        }
-        else {
-            document.getElementById("message").style.display = "block";
-            document.getElementById("ChangePassword").disabled = true;
-        }
-    }
-    </script>
 </html>

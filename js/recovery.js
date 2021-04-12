@@ -3,9 +3,7 @@ $(document).ready(function() {
     $("#sendForgotPassword").click(function(){
 
         var form = new FormData();
-        console.log("hello ?");
         var email = $("#forgotEmail").val();
-        console.log(email)
         form.append("mail", email);
 
         var settings = {
@@ -21,7 +19,8 @@ $(document).ready(function() {
         $.ajax(settings).done(function (response) {
             $('#SecondStepRecoveryAccount').submit();
             console.log(response);
-            console.log("hello");
+            document.getElementById("displayable").style.display = "none";
+            document.getElementById("waiting").style.display = "inline";
         });
         // $.ajax(settings).fail(function(response) {
         //     console.clear();
@@ -41,15 +40,9 @@ $(document).ready(function() {
 
     $("#ChangePassword").click(function(){
 
-        console.log("hello ?");
         var password = $("#forgotPassword1").val();
-        console.log(password)
-
         var url = window.location;
-        
         var token = new URLSearchParams(url.search).get('recovery_token');
-        console.log("token :");
-        console.log(token);
 
         var form = new FormData();
         form.append("password", password);
@@ -69,9 +62,75 @@ $(document).ready(function() {
           console.log(response);
         });
     });
+    $(function() {
+        $("form").submit(function() { return false; });
+    });
     $('#forgotEmail').keypress(function(e){
         if(e.which == 13){
-            $('#sendForgotPassword').click();
+            if ($("#forgotPassword1").val().length !== 0 || $("#forgotPassword2").val().length !== 0)
+                $('#sendForgotPassword').click();
         }
     });
 });
+
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function checkForgotEmail()
+{
+    const email = $("#forgotEmail").val();
+
+    if (validateEmail(email))
+        document.getElementById("sendForgotPassword").disabled = false;
+    else
+        document.getElementById("sendForgotPassword").disabled = true;
+}
+
+function checkForgotPassword()
+{
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+    var same = document.getElementById("same");
+    var pwd1 = document.getElementById("forgotPassword1");
+    var pwd2 = document.getElementById("forgotPassword2");
+
+    var numbers = /[0-9]/g;
+    var checker = 0;
+    if(pwd1.value.match(numbers)) {  
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+        checker+=1;
+    }else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+        checker = 0; 
+    }
+    if (pwd1.value.localeCompare(pwd2.value) === 0 && pwd1.value.length > 0) {
+        same.classList.remove('invalid');
+        same.classList.add("valid");
+        checker+=1;
+    }else {
+        same.classList.remove("valid");
+        same.classList.add("invalid");
+        checker = 0;
+    }
+    if(pwd1.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+        checker+=1;
+    } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+        checker = 0;
+    }
+    if (checker === 3) {
+        document.getElementById("message").style.display = "none";
+        document.getElementById("ChangePassword").disabled = false;
+    }
+    else {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("ChangePassword").disabled = true;
+    }
+}
