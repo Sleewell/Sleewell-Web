@@ -32,7 +32,8 @@ $(document).ready(function() {
     });
     $('#forgotEmail').keypress(function(e){
         if(e.which == 13){
-            $('#sendForgotPassword').click();
+            if ($("#forgotEmail").val().length() !== 0)
+                $('#sendForgotPassword').click();
         }
     });
 
@@ -67,7 +68,7 @@ $(document).ready(function() {
     });
     $('#forgotEmail').keypress(function(e){
         if(e.which == 13){
-            if ($("#forgotPassword1").val().length !== 0 || $("#forgotPassword2").val().length !== 0)
+            if ($("#forgotPassword1").val().length() !== 0 || $("#forgotPassword2").val().length() !== 0)
                 $('#sendForgotPassword').click();
         }
     });
