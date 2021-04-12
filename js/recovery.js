@@ -30,7 +30,13 @@ $(document).ready(function() {
     $(function() {
         $("form").submit(function() { return false; });
     });
-    $('#forgotEmail').keypress(function(e){
+    $('#forgotPassword1').keypress(function(e){
+        if(e.which == 13){
+            if (checkForgotPassword() === true)
+                $('#sendForgotPassword').click();
+        }
+    });
+    $('#forgotPassword2').keypress(function(e){
         if(e.which == 13){
             if (checkForgotPassword() === true)
                 $('#sendForgotPassword').click();
@@ -68,8 +74,7 @@ $(document).ready(function() {
     });
     $('#forgotEmail').keypress(function(e){
         if(e.which == 13){
-            const email = $("#forgotEmail").val();
-            if (validateEmail(email))
+            if (checkForgotPassword() === true)
                 $('#ChangePassword').click();
         }
     });
