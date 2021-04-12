@@ -28,12 +28,15 @@ if (isset($_GET['lang']))
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
     <link href="css/font_color_sleewell.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript" src="js/profile.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/profileGraph.js"></script>
 </head>
 
 <body class="GlobalBackground">
@@ -201,6 +204,29 @@ if (isset($_GET['lang']))
                     <!-- First row -->
                 </section>
                 <!-- End of Section: Edit Account -->
+                <div class="col-lg-12 mb-4">
+                        <!-- Card -->
+                        <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
+                        <!-- Card image -->
+                        <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
+                            <h3 class="mb-0 font-weight-bold">Votre Statistiques</h5>
+                        </div>
+                        <!-- End of Card image -->
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade text-center">
+                            <div>
+                                <canvas id="profileGraph"></canvas>
+                            </div>
+                            <div class="row flex-center">
+                                <span class="waves-input-wrapper waves-effect waves-light"><input id="days" type="button" value="3 Jours" class="btn Mango btn-rounded"></span>
+                                <span class="waves-input-wrapper waves-effect waves-light"><input id="week" type="button" value="1 semaine" class="btn Mango btn-rounded"></span>
+                                <span class="waves-input-wrapper waves-effect waves-light"><input id="month" type="button" value="1 mois" class="btn Mango btn-rounded"></span>
+                            </div>
+                        </div>
+                        <!-- End of  Card content -->
+                        </div>
+                        <!-- End of  Card -->
+                    </div>
                 </div>    
             <td>
             <td style="width:10%;"></td>
