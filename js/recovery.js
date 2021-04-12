@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    console.log( "ready!" );
     $("#sendForgotPassword").click(function(){
 
         var form = new FormData();
@@ -18,7 +17,6 @@ $(document).ready(function() {
 
         $.ajax(settings).done(function (response) {
             $('#SecondStepRecoveryAccount').submit();
-            console.log(response);
             document.getElementById("displayable").style.display = "none";
             document.getElementById("waiting").style.display = "inline";
         });
@@ -61,9 +59,7 @@ $(document).ready(function() {
         };
         
         $.ajax(settings).done(function (response) {
-            console.log("Hello ?");
             $('#SecondStepRecoveryAccount').submit();
-            console.log("Heyhey");
         });
     });
     // $(function() {

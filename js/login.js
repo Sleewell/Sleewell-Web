@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    console.log( "ready!" );
     $('#loginPassword').keypress(function(e){
         if(e.which == 13){
             $('#loginUsername').click();
@@ -48,8 +47,6 @@ function sendLoginForm()
     var form = new FormData();
     var login = $("#loginUsername").val();
     var password = $("#loginPassword").val();
-    console.log(login);
-    console.log(password);
     form.append("login", login);
     form.append("password", password);
 
@@ -107,12 +104,6 @@ function sendRegisterForm()
     var email = $("#registerEmail").val();
     var password = $("#registerPasswordCheck").val();
 
-    console.log(username);
-    console.log(firstname);
-    console.log(lastname);
-    console.log(email);
-    console.log(password);
-
     form.append("login", username);
     form.append("password", password);
     form.append("email", email);
@@ -131,10 +122,8 @@ function sendRegisterForm()
 
     $.ajax(settings).done(function(response) {
         var obj = jQuery.parseJSON(response);
-        console.log(response);
         token = obj.AccessToken;
 
-        console.log(token);
         document.cookie ="token=" + token;
         form.append("token", token);
         var settings = {
@@ -237,9 +226,4 @@ function checkRegisterPassword()
         document.getElementById("message").style.display = "block";
         document.getElementById("RegisterButton").disabled = true;
     }
-}
-
-function fillProfile()
-{
-
 }

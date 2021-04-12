@@ -1,13 +1,9 @@
 $(document).ready(function() {
-    console.log( "ready!" );
-    console.log(window.location.href);
-
     $("#UpdateProfil").click(function(){
         const token = document.cookie
         .split('; ')
         .find(row => row.startsWith('token='))
         .split('=')[1];
-        console.log("token is :" + token);
 
         var login = $("#profileId").val();
         var firstname = $("#profileFirstname").val();
@@ -35,7 +31,6 @@ $(document).ready(function() {
         $.ajax(settings).done(function (response) {
             document.cookie ="firstname=" + firstname;
             document.cookie ="lastname=" + lastname;
-            console.log(response);
             location.reload();
         });
         $.ajax(settings).fail(function(response) {
