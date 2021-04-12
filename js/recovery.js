@@ -27,9 +27,6 @@ $(document).ready(function() {
         //     alert("This email is not valid !");
         // });
     });
-    $(function() {
-        $("form").submit(function() { return false; });
-    });
     $('#forgotEmail').keypress(function(e){
         if(e.which == 13){
             const email = $("#forgotEmail").val();
