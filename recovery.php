@@ -27,7 +27,7 @@
                     if (isset($_GET['recovery_token'])) {
                 ?>
                 <div>
-                    <form action="profile.php" id="SecondStepRecoveryAccount" method="post">
+                    <form action="index.php" id="SecondStepRecoveryAccount" method="post">
                     <fieldset>
                     <legend class="" style="text-align: center;">Veuillez saisir votre nouveau mot de passe</legend>
                     <div class="modal-body mb-1 ">
