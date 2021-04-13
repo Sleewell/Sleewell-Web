@@ -19,7 +19,7 @@ if (isset($_GET['lang']))
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Votre profil</title>
+    <title><?php echo $lang["profile-header1"]?></title>
     <link rel="icon" href="./css/icons/sleewell.ico">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -94,16 +94,16 @@ if (isset($_GET['lang']))
                         <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
                         <!-- Card image -->
                         <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                            <h3 class="mb-0 font-weight-bold">Votre profile</h5>
+                            <h3 class="mb-0 font-weight-bold"><?php echo $lang["profile-header1"] ?></h5>
                         </div>
                         <!-- End of Card image -->
                         <!-- Card content -->
                         <div class="card-body card-body-cascade text-center">
                             <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="User Photo" class="z-depth-1 mb-3 mx-auto img-fluid">
-                            <p class="text-muted"><small>Votre superbe avatar</small></p>
+                            <p class="text-muted"><small><?php echo $lang["profile_card1-txt1"] ?></small></p>
                             <div class="row flex-center">
-                            <button class="btn Mango btn-rounded btn-sm waves-effect waves-light">Nouvel avatar</button><br>
-                            <button class="btn btn-danger btn-rounded btn-sm waves-effect waves-light">Supprimer</button>
+                            <button class="btn Mango btn-rounded btn-sm waves-effect waves-light"><?php echo $lang["profile_card1-btn1"] ?></button><br>
+                            <button class="btn btn-danger btn-rounded btn-sm waves-effect waves-light"><?php echo $lang["profile_card1-btn2"] ?></button>
                             </div>
                         </div>
                         <!-- End of  Card content -->
@@ -117,7 +117,7 @@ if (isset($_GET['lang']))
                         <div class="card card-cascade narrower SecondBackground " style="border:2px solid; border-color:#EF952C;">
                         <!-- Card image -->
                         <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                            <h3 class="mb-0 font-weight-bold">Votre compte</h5>
+                            <h3 class="mb-0 font-weight-bold"><?php echo $lang["profile-header2"] ?></h5>
                         </div>
                         <!-- End of  Card image -->
                         <!-- Card content -->
@@ -130,7 +130,7 @@ if (isset($_GET['lang']))
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <input style="color:white;"  type="text" id="profileId" class="form-control validate" value="<?php echo $_COOKIE["login"]?>" disabled="">
-                                    <label style="color:white;" for="form1" class="active">Votre identifiant</label>
+                                    <label style="color:white;" for="form1" class="active"><?php echo$lang["profile_card2-inp1"] ?></label>
                                 </div>
                                 </div>
                                 <!-- End of First column -->
@@ -142,14 +142,14 @@ if (isset($_GET['lang']))
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <input style="color:white;" type="text" id="profileFirstname" value="<?php echo $_COOKIE["firstname"]?>" class="form-control validate">
-                                    <label style="color:white;" for="form81" data-error="Incorrect" data-success="Super" class="">Prénom</label>
+                                    <label style="color:white;" for="form81" data-error="Incorrect" data-success="Super" class=""><?php echo$lang["profile_card2-inp2"] ?>/label>
                                 </div>
                                 </div>
                                 <!-- Second column -->
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <input style="color:white;" type="text" id="profileLastName" value="<?php echo $_COOKIE["lastname"]?>" class="form-control validate">
-                                    <label style="color:white;" for="form82" data-error="Incorrect" data-success="Incroyable" class="">Nom</label>
+                                    <label style="color:white;" for="form82" data-error="Incorrect" data-success="Incroyable" class=""><?php echo$lang["profile_card2-inp3"] ?>/label>
                                 </div>
                                 </div>
                             </div>
@@ -161,14 +161,14 @@ if (isset($_GET['lang']))
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <input style="color:white;" type="email" id="profilEmail" class="form-control validate">
-                                    <label style="color:white;" data-error="Incorrect" data-success="Excellent" for="form76">E-mail</label>
+                                    <label style="color:white;" data-error="Incorrect" data-success="Excellent" for="form76"><?php echo$lang["profile_card2-inp4"] ?></label>
                                 </div>
                                 </div>
                                 <!-- Second column -->
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <input style="color:white;" pattern="[0-9]{10}" type="tel" id="profilePhoneNumber" class="form-control validate">
-                                    <label style="color:white;" data-error="Incorrect" data-success="Brillant" for="form77">Numéro de téléphone</label>
+                                    <label style="color:white;" data-error="Incorrect" data-success="Brillant" for="form77"><?php echo$lang["profile_card2-inp5"] ?></label>
                                 </div>
                                 </div>
                             </div>
@@ -179,7 +179,7 @@ if (isset($_GET['lang']))
                                 <div class="col-md-12">
                                 <div class="md-form mb-0">
                                     <textarea style="color:white;" type="text" id="profilAbout" class="md-textarea form-control" rows="3"></textarea>
-                                    <label style="color:white;" for="form78">A propos de vous</label>
+                                    <label style="color:white;" for="form78"><?php echo$lang["profile_card2-inp6"] ?></label>
                                 </div>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@ if (isset($_GET['lang']))
                             <!-- Fourth row -->
                             <div class="row">
                                 <div class="col-md-12 text-center my-4">
-                                <span class="waves-input-wrapper waves-effect waves-light"><input id="UpdateProfil" type="button" value="Update Account" class="btn Mango btn-rounded"></span>
+                                <span class="waves-input-wrapper waves-effect waves-light"><input id="UpdateProfil" type="button" value="<?php echo $lang["profile_card2-btn1"]?>" class="btn Mango btn-rounded"></span>
                                 </div>
                             </div>
                             <!-- End of Fourth row -->
@@ -209,7 +209,7 @@ if (isset($_GET['lang']))
                         <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
                         <!-- Card image -->
                         <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                            <h3 class="mb-0 font-weight-bold">Vos statistiques de sommeil</h5>
+                            <h3 class="mb-0 font-weight-bold"><?php echo $lang["profile_card2-txt1"]?></h5>
                         </div>
                         <!-- End of Card image -->
                         <!-- Card content -->
@@ -218,9 +218,9 @@ if (isset($_GET['lang']))
                                 <canvas id="profileGraph"></canvas>
                             </div>
                             <div class="row flex-center">
-                                <span class="waves-input-wrapper waves-effect waves-light"><input id="days" type="button" value="3 Jours" class="btn Mango btn-rounded"></span>
-                                <span class="waves-input-wrapper waves-effect waves-light"><input id="week" type="button" value="1 semaine" class="btn Mango btn-rounded"></span>
-                                <span class="waves-input-wrapper waves-effect waves-light"><input id="month" type="button" value="1 mois" class="btn Mango btn-rounded"></span>
+                                <span class="waves-input-wrapper waves-effect waves-light"><input id="days" type="button" value="<?php echo $lang["profile_card2-btn1"]?>" class="btn Mango btn-rounded"></span>
+                                <span class="waves-input-wrapper waves-effect waves-light"><input id="week" type="button" value="<?php echo $lang["profile_card2-btn2"]?>" class="btn Mango btn-rounded"></span>
+                                <span class="waves-input-wrapper waves-effect waves-light"><input id="month" type="button" value="<?php echo $lang["profile_card2-btn3"]?>" class="btn Mango btn-rounded"></span>
                             </div>
                         </div>
                         <!-- End of  Card content -->

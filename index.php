@@ -56,7 +56,7 @@ if (isset($_GET['lang']))
                     <?php if(!isset($_COOKIE["login"])) : ?>
                         <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
                     <?php else :?>
-                        <li><a id="Deconnexion" href="#"><?php echo "Deconnexion";?></a></li>
+                        <li><a id="Deconnexion" href="#"><?php echo $lang['disconnect-button'];?></a></li>
                         <li><a id="ProfilButton" href="profile.php"><?php echo "Profil";?></a></li>
                     <?php endif; ?>
                     <li>

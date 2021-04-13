@@ -49,4 +49,28 @@ $lang['sujet'] = "Subject";
 $lang['message'] = "Message";
 $lang['envoi-mail'] = "Send";
 
+$lang['disconnect-button'] = "Sign out";
+$lang['profile-button'] = "Profile";
+
+//Profile
+$lang["profile-header1"] = "Your profile";
+$lang["profile-header2"] = "Your account";
+$lang["profile-header1"] = "Your sleep statistics";
+
+$lang["profile_card1-txt1"] = "Your awesome avatar";
+$lang["profile_card1-btn1"] = "New avatar";
+$lang["profile_card1-btn2"] = "Delete";
+
+$lang["profile_card2-inp1"] = "Your username";
+$lang["profile_card2-inp2"] = "Firstname";
+$lang["profile_card2-inp3"] = "Lastname";
+$lang["profile_card2-inp4"] = "E-mail";
+$lang["profile_card2-inp5"] = "Phone Number";
+$lang["profile_card2-inp6"] = "About you";
+$lang["profile_card2-btn1"] = "Update";
+
+$lang["profile_card2-txt1"] = "Duration of your sleep in hours";
+$lang["profile_card2-btn1"] = "3 days";
+$lang["profile_card2-btn2"] = "1 week";
+$lang["profile_card2-btn3"] = "1 month";
 ?>
