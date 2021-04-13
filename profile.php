@@ -142,14 +142,14 @@ if (isset($_GET['lang']))
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <input style="color:white;" type="text" id="profileFirstname" value="<?php echo $_COOKIE["firstname"]?>" class="form-control validate">
-                                    <label style="color:white;" for="form81" data-error="Incorrect" data-success="Super" class=""><?php echo$lang["profile_card2-inp2"] ?>/label>
+                                    <label style="color:white;" for="form81" data-error="Incorrect" data-success="Super" class=""><?php echo$lang["profile_card2-inp2"] ?></label>
                                 </div>
                                 </div>
                                 <!-- Second column -->
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <input style="color:white;" type="text" id="profileLastName" value="<?php echo $_COOKIE["lastname"]?>" class="form-control validate">
-                                    <label style="color:white;" for="form82" data-error="Incorrect" data-success="Incroyable" class=""><?php echo$lang["profile_card2-inp3"] ?>/label>
+                                    <label style="color:white;" for="form82" data-error="Incorrect" data-success="Incroyable" class=""><?php echo$lang["profile_card2-inp3"] ?></label>
                                 </div>
                                 </div>
                             </div>
