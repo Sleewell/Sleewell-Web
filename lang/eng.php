@@ -55,7 +55,7 @@ $lang['profile-button'] = "Profile";
 //Profile
 $lang["profile-header1"] = "Your profile";
 $lang["profile-header2"] = "Your account";
-$lang["profile-header1"] = "Your sleep statistics";
+$lang["profile-header3"] = "Your sleep statistics";
 
 $lang["profile_card1-txt1"] = "Your awesome avatar";
 $lang["profile_card1-btn1"] = "New avatar";
@@ -69,8 +69,8 @@ $lang["profile_card2-inp5"] = "Phone Number";
 $lang["profile_card2-inp6"] = "About you";
 $lang["profile_card2-btn1"] = "Update";
 
-$lang["profile_card2-txt1"] = "Duration of your sleep in hours";
-$lang["profile_card2-btn1"] = "3 days";
-$lang["profile_card2-btn2"] = "1 week";
-$lang["profile_card2-btn3"] = "1 month";
+$lang["profile_card3-txt1"] = "Duration of your sleep in hours";
+$lang["profile_card3-btn1"] = "3 days";
+$lang["profile_card3-btn2"] = "1 week";
+$lang["profile_card3-btn3"] = "1 month";
 ?>

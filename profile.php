@@ -58,7 +58,7 @@ if (isset($_GET['lang']))
                 <?php if(!isset($_COOKIE["login"])) : ?>
                     <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
                 <?php else :?>
-                    <li><a id="Deconnexion" href="index.php"><?php echo "Deconnexion";?></a></li>
+                    <li><a id="Deconnexion" href="index.php"><?php echo $lang['disconnect-button'];?></a></li>
                 <?php endif; ?>
                 <li>
                     <label for="btn-1" class="show dropdown-toggle"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></label>
@@ -209,7 +209,7 @@ if (isset($_GET['lang']))
                         <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
                         <!-- Card image -->
                         <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                            <h3 class="mb-0 font-weight-bold"><?php echo $lang["profile_card2-txt1"]?></h5>
+                            <h3 class="mb-0 font-weight-bold"><?php echo $lang["profile-header3"]?></h5>
                         </div>
                         <!-- End of Card image -->
                         <!-- Card content -->

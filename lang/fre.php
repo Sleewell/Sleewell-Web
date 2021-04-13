@@ -56,7 +56,7 @@ $lang['disconnect-button'] = "Profil";
 //Profile
 $lang["profile-header1"] = "Votre profil";
 $lang["profile-header2"] = "Votre compte";
-$lang["profile-header1"] = "Vos statistiques de sommeil";
+$lang["profile-header3"] = "Vos statistiques de sommeil";
 
 $lang["profile_card1-txt1"] = "Votre superbe avatar";
 $lang["profile_card1-btn1"] = "Nouvel avatar";
@@ -70,8 +70,8 @@ $lang["profile_card2-inp5"] = "Numéro de téléphone";
 $lang["profile_card2-inp6"] = "A propos de vous";
 $lang["profile_card2-btn1"] = "Mettre à jour";
 
-$lang["profile_card2-txt1"] = "Durée de votre sommeil en heure";
-$lang["profile_card2-btn1"] = "3 jours";
-$lang["profile_card2-btn2"] = "1 semaine";
-$lang["profile_card2-btn3"] = "1 mois";
+$lang["profile_card3-txt1"] = "Durée de votre sommeil en heure";
+$lang["profile_card3-btn1"] = "3 jours";
+$lang["profile_card3-btn2"] = "1 semaine";
+$lang["profile_card3-btn3"] = "1 mois";
 ?>
