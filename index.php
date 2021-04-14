@@ -211,12 +211,12 @@ if (isset($_GET['lang']))
                                 <form id="loginForm" action="profile.php" method="post">
                                 <div class="modal-body mb-1">
                                     <div class="md-form form-sm mb-5">
-                                        <i class="fas fa-user prefix"></i>
+                                        <i style="color:#ef952c;" class="fas fa-user prefix"></i>
                                         <input type="text" onkeyup="updateLoginInput()" name="id" id="loginUsername" class="form-control form-control-sm validate">
                                         <label data-success="Super !" for="loginUsername">Votre identifiant</label>
                                     </div>
                                     <div class="md-form form-sm mb-4">
-                                        <i class="fas fa-lock prefix"></i>
+                                        <i style="color:#ef952c;" class="fas fa-lock prefix"></i>
                                         <input type="password" onkeyup="updateLoginInput()" id="loginPassword" class="form-control form-control-sm">
                                         <label name="password" for="loginPassword">Votre superbe mot de passe</label>
                                     </div>
@@ -226,7 +226,7 @@ if (isset($_GET['lang']))
                                 </div>
                                 <div class="modal-footer">
                                     <div class="options text-center text-md-right mt-1">
-                                        <p>Forgot <a href="recovery.php" class="textMango">Password?</a></p>
+                                        <p class="textMango">Forgot <a href="recovery.php">Password?</a></p>
                                     </div>
                                     <button type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
                                 </div>

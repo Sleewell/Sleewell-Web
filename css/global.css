@@ -174,7 +174,7 @@ a:not([href]):hover {
 }
 
 label {
-    color: #EF952C;
+    /* color: #EF952C; */
     font-family:'Roboto', sans-serif;
     font-weight: bold;
     font-size: 1.3rem;
@@ -861,7 +861,7 @@ imgApp {vertical-align: middle;}
   }
   .topnav .show{
     display: block;
-    color: #FF8F00;
+    /* color: #FF8F00; */
     font-size: 18px;
     padding: 0 20px;
     cursor: pointer;

@@ -64,10 +64,6 @@ Background color (Dark Blue: #00111F)
     font-weight:500;
 }
 
-.notActive {
-    background-color: #CCCCCC;
-}
-
 .AmberText {
     color: #FF8F00 !important;
     text-align: center;
