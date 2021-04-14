@@ -77,7 +77,7 @@ if (isset($_GET['lang']))
         <table style="width:100%"><tr>
             <td colspan="1" width="33%"></td>
             <td colspan="1" width="34%">
-                <div class="container" data-scrolly-down="blurInBottom, timing-function:cubic-bezier(.17,.67,.83,.67)">
+                <div class="container-title" data-scrolly-down="blurInBottom, timing-function:cubic-bezier(.17,.67,.83,.67)">
                     <img src="img/logo_sleewell.png" class="sleewell-logo-size img-fluid"/>
                     <h1 class="title text-title">leewell</h1>
                 </div>
@@ -141,18 +141,6 @@ if (isset($_GET['lang']))
                     </div>
                     <!-- End of Fourth row -->
                 </form>
-            </div>
-
-            <!--################################-->
-            <!--     FOLLOW NETWORKS SECTION    -->
-            <!--################################-->
-            <div class="text" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                <h3 class="AmeberText" style="text-align:center"><?php echo $lang['reseaux'];?></h3>
-                <div id="reseaux" style="text-align:center;margin-bottom:50px">
-                    <a href="https://twitter.com/sleewell"><img type="image" class="contact" src="img/twitter.png"/></a>
-                    <a href="https://www.linkedin.com/company/sleewell"><img type="image" class="contact" src="img/linkedin.png"/></a>
-                    <a href="https://www.instagram.com/sleewell_/"><img type="image" class="contact" src="img/insta.png"/></a>
-                </div>
             </div>
         </div>
 
@@ -261,16 +249,6 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--          PIED DE PAGE          -->
         <!--################################-->
-        <footer>
-            <table style="width:100%"><tr>
-                <td colspan="1" width="60%">
-                    <img src="img/logo_sleewell.png" style="float:left;width:120px;height:150px;margin-left:100px"/>
-                </td>
-                <td colspan="1" width="40%">
-                    <h3 class="BoldAmberText">SUPPORT</h3>
-                    <a id="contactus_btn" href="contact_us.php"><h4 class="AmeberText"><?php echo $lang['contact-redirection'];?></h4></a>
-                </td>
-            </tr></table>
-        </footer>
+        <?php include 'footer.php';?>
     </body>
 </html>

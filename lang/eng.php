@@ -12,7 +12,9 @@ $lang['img_path'] = 'img/eng.png';
 $lang['connexion-redirection'] = "Log In";
 $lang['register-redirection'] = "Register";
 
-$lang['contact-redirection'] = "Contact us";
+$lang['contact-title'] = "How to contact us:";
+$lang['contact-redirection'] = "By email";
+$lang['copyright'] = "Copyright © 2020. All rights reserved Sleewell";
 
 $lang['project-pres1'] = "Find back a golden sleep and invigorating nights";
 $lang['project-pres1bis'] = "Find back more efficient nights thanks to total disconnection at bedtime";

@@ -233,3 +233,4 @@ if (isset($_GET['lang']))
         <tr>
     </table>
 </body>
+<?php include 'footer.php';?>

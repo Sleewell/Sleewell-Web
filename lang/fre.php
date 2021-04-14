@@ -13,7 +13,9 @@ $lang['img_path'] = 'img/fra.png';
 $lang['connexion-redirection'] = "Se connecter";
 $lang['register-redirection'] = "S'enregistrer";
 
-$lang['contact-redirection'] = "Nous contacter";
+$lang['contact-title'] = "Comment nous contacter";
+$lang['contact-redirection'] = "Par email";
+$lang['copyright'] = "Copyright © 2020. Tous droits réservés Sleewell";
 
 $lang['project-pres1'] = "Retrouver un sommeil d'or et des nuits revigorantes";
 $lang['project-pres1bis'] = "Retrouver des nuits plus efficaces à l'aide d'une déconnexion totale au moment du coucher.";

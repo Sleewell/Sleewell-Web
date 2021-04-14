@@ -18,6 +18,7 @@ header {
 }
 
 footer {
+    bottom: 0;
     width: 100%;
     background-color: #ffffff09;
 }
@@ -180,12 +181,12 @@ label {
 }
 
 
-.container {
+.container-title {
     display: inline-block;
     position: relative;
 }
 
-.container .text-title {
+.text-title {
     margin-top:45px;
     z-index: 1;
     position: absolute;
