@@ -14,7 +14,9 @@ if (isset($_GET['lang']))
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Sleewell - Contact</title>
         <link rel="icon" href="./css/icons/sleewell.ico">
         <link rel="stylesheet" href="css/global.css">
@@ -51,7 +53,7 @@ if (isset($_GET['lang']))
                 <span class="fa fa-bars"></span>
                 </label>
                 <input type="checkbox" id="btn">
-                <ul>
+                <ul style="width:fit-content">
                     <?php if(!isset($_COOKIE["login"])) : ?>
                         <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
                     <?php else :?>
@@ -60,11 +62,11 @@ if (isset($_GET['lang']))
                     <?php endif; ?>
                     <li>
                         <label for="btn-1" class="show dropdown-toggle"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></label>
-                        <a class="dropdown-toggle" href="#"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
+                        <a class="dropdown-toggle" href=""><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
                         <input type="checkbox" id="btn-1">
                         <ul>
-                            <li><a href="#"><span> <img src="img/fra.png"></span> French</a></li>
-                            <li><a href="#"><span> <img src="img/eng.png"></span> English</a></li>
+                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-fr" onclick="changeLanguage('fr');"><span> <img src="img/fra.png"></span> French</a></li>
+                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-en" onclick="changeLanguage('en');"><span> <img src="img/eng.png"></span> English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -88,25 +90,7 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--           FORM SECTION         -->
         <!--################################-->
-        <div>
-            <!--<h4 class="AmeberText" style="text-align:center"><?php echo $lang['contact'];?></h4>
-            <table width="100%">
-                <td width="30%"></td>
-                <td width="40%">
-                    <form action="feedback_form.php" method="post">
-                        <label class="BoldAmberText"><?php echo $lang['adresse'];?></label> <br/>
-                        <input type="text" name="email_address" size="40" style="float:left;margin-bottom:10px;background-color:#00555E;color:#fff"><br/><br/>
-                        <label><?php echo $lang['sujet'];?></label> </br>
-                        <input type="text" name="sujet" size="40" style="float:left;margin-bottom:10px;background-color:#00555E;color:#fff"><br/><br/>
-                        <label><?php echo $lang['message'];?></label> <br/>
-                        <textarea name="feedback" cols="100" rows="5" style="float:left;margin-bottom:10px;background-color:#00555E;color:#fff"></textarea><br/><br/>
-                        <input class="submit-button" type="submit" name="send" value=<?php echo $lang['envoi-mail'];?>><br/>
-                    </form>
-                </td>
-                <td width="30%"></td>
-            </table>-->
-
-
+        <div class="container-xxl">
             <h4 class="AmeberText" style="text-align:center"><?php echo $lang['contact'];?></h4>
             <div class="card-body card-body-cascade text-center">
                 <form action="feedback_form.php" method="post">
@@ -251,4 +235,14 @@ if (isset($_GET['lang']))
         <!--################################-->
         <?php include 'footer.php';?>
     </body>
+
+    <script>
+        function changeLanguage(lang) {
+            if(lang=='en') {
+                location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng";
+            } else if(lang=='fr') {
+                location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre";
+            }
+        }
+    </script>
 </html>

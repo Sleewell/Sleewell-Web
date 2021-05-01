@@ -54,7 +54,7 @@ if (isset($_GET['lang']))
             <span class="fa fa-bars"></span>
             </label>
             <input type="checkbox" id="btn">
-            <ul>
+            <ul style="width:fit-content">
                 <?php if(!isset($_COOKIE["login"])) : ?>
                     <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
                 <?php else :?>
@@ -65,8 +65,8 @@ if (isset($_GET['lang']))
                     <a class="dropdown-toggle" href=""><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
                     <input type="checkbox" id="btn-1">
                     <ul>
-                        <li><a href="#"><span> <img src="img/fra.png"></span> French</a></li>
-                        <li><a href="#"><span> <img src="img/eng.png"></span> English</a></li>
+                        <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-fr" onclick="changeLanguage('fr');"><span> <img src="img/fra.png"></span> French</a></li>
+                        <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-en" onclick="changeLanguage('en');"><span> <img src="img/eng.png"></span> English</a></li>
                     </ul>
                 </li>
             </ul>
@@ -109,6 +109,7 @@ if (isset($_GET['lang']))
                         <!-- End of  Card content -->
                         </div>
                         <!-- End of  Card -->
+                        <span class="waves-input-wrapper waves-effect waves-light" style="width:100%;margin-top:1vw"><a href="routine_manager.php" class="btn Mango btn-rounded" style="width:100%;text-decoration: none;">Routines manager</a><span>
                     </div>
                     <!-- End of  First column -->
                     <!-- Second column -->
@@ -232,5 +233,15 @@ if (isset($_GET['lang']))
             <td style="width:10%;"></td>
         <tr>
     </table>
+
+    <script>
+        function changeLanguage(lang) {
+            if(lang=='en') {
+                location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng";
+            } else if(lang=='fr') {
+                location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre";
+            }
+        }
+    </script>
 </body>
 <?php include 'footer.php';?>

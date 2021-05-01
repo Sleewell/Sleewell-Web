@@ -1,0 +1,308 @@
+/*
+Routine Manager
+*/
+
+.fit-table-routine {
+    text-align: center;
+    width:20%;
+    height:2%;
+}
+
+.fit-routine {
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.halo {
+    height: 10vw;
+    width: 10vw;
+    border-radius: 1vw;
+    background-color: blue;
+    margin: auto;
+    margin-bottom: 0.5vw;
+    position: relative;
+    border: none;
+}
+
+.music-cover {
+    height: 9vw;
+    width: 9vw;
+    border-radius: 1vw;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+    box-shadow: 1px 1px 2px 3px #00000069;
+}
+
+.spotify-logo {
+    height: 2vw;
+    width: 2vw;
+    bottom: 0.5vw;
+    left: 0.5vw;
+    z-index: 2;
+    position: absolute;
+}
+
+.create-routine {
+    height: 6vw;
+    width: 6vw;
+    margin: auto;
+    top: 1vw;
+    position: relative;
+    z-index: 1;
+}
+
+.crea-bg {
+    height: 8vw;
+    width: 8vw;
+    border-radius: 1vw;
+    background-color: #ffffff12;
+    margin: auto;
+    margin-bottom: 0.5vw;
+    position: relative;
+    border: none;
+}
+
+/*
+    MODAL CSS
+*/
+
+.modal-header {
+    min-height: 16.42857143px;
+    padding: 15px;
+    border: none;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #FF8F00;
+}
+
+.spotify-pos {
+    height: 10vw;
+    width: 10vw;
+    margin: auto;
+    margin-bottom: 0.5vw;
+    position: relative;
+}
+
+.halo-modal {
+    height: 10vw;
+    width: 10vw;
+    border-radius: 5vw;
+    background-color: blue;
+    margin: auto;
+    margin-bottom: 0.5vw;
+    position: relative;
+    border: none;
+}
+
+/*
+Routine Modification
+*/
+
+.modif-musique {
+    background: #00111F;
+    text-align: center;
+}
+
+.modif-halo {
+    background: #001822;
+    text-align: center;
+}
+
+.btn-spotify, .btn-spotify:hover {
+    background-color: #75923E;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8vw;
+    width: 20vw;
+    height: 3vw;
+    border: none;
+    border-radius: 0.6vw;
+    vertical-align: middle;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.text-spotify {
+    margin-top: 0.8vw;
+}
+
+.text-sleewell {
+    margin-top: 0.2vw;
+    color: white;
+}
+
+.spot-logo {
+    margin-top: 0.5vw;
+    margin-left: 0.5vw;
+    height: 2vw;
+    width: 2vw;
+    float: left;
+}
+
+.sleewell-logo {
+    height: auto;
+    width: 2vw;
+    margin-left: 0.5vw;
+    float: left;
+}
+
+.btn-sleewell, .btn-sleewell:hover {
+    background-color: #ff9100c4;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8vw;
+    width: 20vw;
+    height: 3vw;
+    border: none;
+    border-radius: 0.6vw;
+    vertical-align: middle;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.scrolltest
+{
+    height: 30vw;
+    overflow-y:auto;
+}
+
+.vl-list-left {
+    border-left: 0.05vw solid #FF8F00;
+    margin-top: 5vw;
+    height: 28vw;
+    float:left;
+    display: inline;
+}
+
+.vl-list-right {
+    border-left: 0.05vw solid #FF8F00;
+    margin-top: 5vw;
+    height: 28vw;
+    float:right;
+    display: inline;
+}
+
+.spotify-item {
+    text-align: justify;
+    height: 5vw;
+    margin-bottom: 1vw;
+}
+
+.playlist-img {
+    height: 5vw;
+    width: 5vw;
+    border-radius: 0.5vw;
+    position: relative;
+    float:left;
+    margin-left: 5vw;
+}
+
+.playlist-name {
+    color: #FF8F00;
+    text-align: justify;
+    padding-top: 2vw;
+    padding-left: 12vw;
+}
+
+.sleewell-item {
+    margin-left: 4.5vw;
+    width: 15vw;
+    height: 4.5vw;
+    margin-bottom: 1vw;
+    background-color: #ffffff1e;
+    border-radius: 2vw;
+}
+
+.music-img {
+    height: 4vw;
+    width: 4vw;
+    margin-top: 0.25vw;
+    border-radius: 0.3vw;
+    position: relative;
+    float:left;
+    margin-left: 2vw;
+}
+
+.music-name {
+    color: #ffffff44;
+    text-align: justify;
+    padding-top: 0.5vw;
+    padding-left: 8vw;
+    font-weight: bold;
+}
+
+.music-category {
+    color: #FF8F00;
+    text-align: justify;
+    padding-left: 8vw;
+}
+
+/*
+Routine Modify Footer
+*/
+
+.halo-footer {
+    height: 5vw;
+    width: 5vw;
+    border-radius: 2.5vw;
+    background-color: blue;
+    margin: auto;
+    margin-bottom: 0.5vw;
+    margin-top: 1vw;
+    position: relative;
+    border: none;
+}
+
+.vl {
+    border-left: 0.05vw solid #FF8F00;
+    height: 8vw;
+    float:left;
+}
+
+.music-cover-footer {
+    height: 5vw;
+    width: 5vw;
+    border-radius: 0.5vw;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+    box-shadow: 1px 1px 2px 3px #00000069;
+}
+
+.spotify-logo-footer {
+    height: 1vw;
+    width: 1vw;
+    bottom: 0.25vw;
+    left: 0.25vw;
+    z-index: 2;
+    position: absolute;
+}
+
+.spotify-pos-footer {
+    height: 5vw;
+    width: 5vw;
+    margin: auto;
+    margin-bottom: 0.25vw;
+    position: relative;
+}
+
+.active-div {
+    display: block;
+}
+
+.hidden-div {
+    display: none;
+}

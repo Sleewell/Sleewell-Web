@@ -14,7 +14,9 @@ if (isset($_GET['lang']))
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title> Sleewell </title>
         <link rel="icon" href="./css/icons/sleewell.ico">
         <link rel="stylesheet" href="css/global.css">
@@ -46,7 +48,7 @@ if (isset($_GET['lang']))
         <div class="topnav">
             <nav>
                 <div>
-                    <a id="mainpage_btn" href="index.php"><img class="navbar-logo" src="img/logo_sleewell.png"/></a>
+                    <a id="mainpage_btn" href=""><img class="navbar-logo" src="img/logo_sleewell.png"/></a>
                 </div>
                 <label for="btn" class="icon">
                 <span class="fa fa-bars"></span>
@@ -61,11 +63,11 @@ if (isset($_GET['lang']))
                     <?php endif; ?>
                     <li>
                         <label for="btn-1" class="show dropdown-toggle"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></label>
-                        <a class="dropdown-toggle" href="#"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
+                        <a class="dropdown-toggle" href=""><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
                         <input type="checkbox" id="btn-1">
                         <ul>
-                            <li><a href="#"><span> <img src="img/fra.png"></span> French</a></li>
-                            <li><a href="#"><span> <img src="img/eng.png"></span> English</a></li>
+                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-fr" onclick="changeLanguage('fr');"><span> <img src="img/fra.png"></span> French</a></li>
+                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-en" onclick="changeLanguage('en');"><span> <img src="img/eng.png"></span> English</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -76,6 +78,7 @@ if (isset($_GET['lang']))
         <!-- ENTÊTE / LOGO SLEEWELL SECTION -->
         <!--################################-->
         <div>
+            <div class="demo-page-title" id="demo-page-title"></div>
             <table style="width:100%"><tr>
                 <td colspan="1" width="33%"></td>
                 <td colspan="1" width="34%">
@@ -484,7 +487,15 @@ if (isset($_GET['lang']))
                 dots[i].className = dots[i].className.replace(" active", "");
             }
             slides[slideIndexApp-1].style.display = "block";
-            dots[slideIndexApp-1].className += " active";
+            dots[slideIndexApp-1].className += " active";	
+        }
+
+        function changeLanguage(lang) {
+            if(lang=='en') {
+                location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng";
+            } else if(lang=='fr') {
+                location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre";
+            }
         }
     </script>
 </html>

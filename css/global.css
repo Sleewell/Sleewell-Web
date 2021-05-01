@@ -525,7 +525,76 @@ label {
         width:50%;
         height:auto;
         display: block;
-        margin-right: 50px;
+        margin-left: auto;
+    }
+
+    .app_img {
+        float:left;
+        max-height:80%;
+        width:auto;
+        margin-top: 10%;
+        margin-left: 25%;
+        border-radius: 10px;
+    }
+    
+    .base_img {
+        float:left;
+        width:80%;
+        height:auto;
+        margin-left: 10%;
+        margin-top: 37%;
+        border-radius: 10px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1500px) {
+    .navbar-logo {
+        float:left;
+        width:60px;
+        height:75px;
+        margin-left:15px;
+        margin-top:5px;
+    }
+
+    .AmeberText {
+        color: #FF8F00 !important;
+        margin-left: 100px;
+        margin-right: 100px;
+        font-size: 1.4vw;
+    }
+
+    .BoldAmberText {
+        font-family:'Roboto', sans-serif;
+        color: #FF8F00;
+        font-weight: bold;
+        margin-left: 100px;
+        margin-right: 100px;
+        font-size: 1.7vw;
+    }
+
+    .placed-right {
+        width:70%;
+        margin-left: auto;
+    }
+
+    .img_presentation_left {
+        width:50%;
+        height:auto;
+        display: block;
+        margin-left: 50px;
+        margin-right: auto;
+    }
+
+    .placed-left {
+        width:70%;
+        margin-right: auto;
+    }
+
+    .img_presentation_right {
+        width:50%;
+        height:auto;
+        display: block;
         margin-left: auto;
     }
 
@@ -831,7 +900,7 @@ imgApp {vertical-align: middle;}
   top: -60px;
   left: 150px;
 }
-.topnav .show,.icon,input{
+.topnav .show,.icon{
   display: none;
 }
 .topnav .fa-plus{
@@ -854,7 +923,7 @@ imgApp {vertical-align: middle;}
   }
   .topnav nav ul li, .topnav nav ul ul li{
     display: block;
-    width: 100%;
+    width: 80%;
   }
   .topnav nav ul li a:hover{
     box-shadow: none;
@@ -906,4 +975,19 @@ imgApp {vertical-align: middle;}
   .topnav span.cancel:before{
     content: '\f00d';
   }
+}
+
+
+
+.language-link-item {
+    text-decoration: none;
+    color: #EF952C;
+    cursor: pointer;
+}
+
+.language-link {
+    text-align: right;
+    padding-top: 15px;
+    padding-right: 15px;
+    color: #EF952C;
 }
