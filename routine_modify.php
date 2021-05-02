@@ -86,10 +86,10 @@ if (isset($_GET['lang']))
                     <?php endif; ?>
                     <li>
                         <label for="btn-1" class="show dropdown-toggle"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></label>
-                        <a class="dropdown-toggle" href=""><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
+                        <a class="dropdown-toggle" href="" ><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
                         <input type="checkbox" id="btn-1">
-                        <ul>
-                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-fr" onclick="changeLanguage('fr');"><span> <img src="img/fra.png"></span> French</a></li>
+                        <ul style="z-index:1">
+                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-fr" onclick="changeLanguage('fr');"><span> <img src="img/fra.png"></span> Français</a></li>
                             <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-en" onclick="changeLanguage('en');"><span> <img src="img/eng.png"></span> English</a></li>
                         </ul>
                     </li>
@@ -100,15 +100,15 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!-- ENTÊTE / LOGO SLEEWELL SECTION -->
         <!--################################-->
-        <div>
+<!--        <div>
             <table style="width:100%;height:40vw"><tr>
                 <td colspan="4" width="50%" class="modif-musique">
-                    <a id="sleewellClick" class="btn-sleewell"><img type="image" class="sleewell-logo" src="img/logo_sleewell.png"/><p class="text-sleewell">Choisir un son d'ambiance selectioné par l'équipe</p></a>
-                    <a id="spotifyClick" class="btn-spotify"><img type="image" class="spot-logo" src="img/spotify_logo.png"/><p class="text-spotify">Choisir une playlist sur Spotify</p></a>
-                    <h3 class="textMango">Choisissez la musique du protocole d'endormissement</h3>
+                    <a href="javascript:void(0)" id="sleewellClick" class="btn-sleewell"><img type="image" class="sleewell-logo" src="img/logo_sleewell.png"/><p class="text-sleewell"><?php echo $lang['choose-sleewell-sound'];?></p></a>
+                    <a href="javascript:void(0)" id="spotifyClick" class="btn-spotify"><img type="image" class="spot-logo" src="img/spotify_logo.png"/><p class="text-spotify"><?php echo $lang['choose-spotify-sound'];?></p></a>
+                    <h3 class="textMango"><?php echo $lang['choose-music'];?></h3>
                 </td>
                 <td colspan="4" width="50%" class="modif-halo">
-                    <h3 class="textMango" style="margin-top:4vw">Configurer le halo lumineux</h3>
+                    <h3 class="textMango" style="margin-top:4vw"><?php echo $lang['config-halo'];?></h3>
                 </td>
             </tr><tr>
                 <td colspan="4">
@@ -119,7 +119,7 @@ if (isset($_GET['lang']))
                         <div class="col-sm-6">
                             <div class="md-form mb-0">
                                 <input style="color:white;margin-bottom:2vw" name="sujet" type="text" id="form82" class="form-control">
-                                <label style="color:#FF8F00;" for="form83">Rechercher une playlist</label>
+                                <label style="color:#FF8F00;" for="form83"><?php echo $lang['search-playlist'];?></label>
                             </div>
                             <div class="scrolltest">
                                 <div class="spotify-item">
@@ -147,7 +147,7 @@ if (isset($_GET['lang']))
                         </div>
                         <div class="col-sm-6">
                             <select style="text-align:center;background-color:#ffffff09;width:10vw;height:2vw;border-radius:0.5vw;margin-left:7vw;margin-bottom:2vw;color:white">
-                                <option value="0" style="background-color:#00111F">Select category:</option>
+                                <option value="0" style="background-color:#00111F"><?php echo $lang['select-category'];?></option>
                                 <option value="1" style="background-color:#00111F">Forest</option>
                                 <option value="2" style="background-color:#00111F">Wind</option>
                                 <option value="3" style="background-color:#00111F">Fire</option>
@@ -181,11 +181,11 @@ if (isset($_GET['lang']))
                             <div class="vl-list-left"></div>
                         </div>
                     </div>
-                </td>
+                </td>-->
 
                 <!--################################-->
                 <!--            HALO PART           -->
-                <!--################################-->
+                <!--################################-->    <!--
                 <td colspan="4" class="modif-halo" style="text-align:center">
 
                     <input type="text" id="background" data-wcp-autoresize="false" data-wcp-cssclass="custom-size1"/>
@@ -200,12 +200,110 @@ if (isset($_GET['lang']))
                         <input type="text" data-wheelcolorpicker="" id="color-input">
                     </div>
                     <div class="col-4 textMango" style="margin-left:15vw;padding-top:2vw">
-                        <h4>Selected color in RGB</h4>
+                        <h4><?php echo $lang['choose-with-RGB'];?></h4>
                         <input type="text" readonly="" id="event-color">
                     </div>
 
                 </td>
             </tr></table>
+        </div>-->
+        <div style="color:#FF8F00;" class="container-flex">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="modif-musique">
+                        <a href="javascript:void(0)" id="sleewellClick" class="btn-sleewell"><img type="image" class="sleewell-logo" src="img/logo_sleewell.png"/><p class="text-sleewell"><?php echo $lang['choose-sleewell-sound'];?></p></a>
+                        <a href="javascript:void(0)" id="spotifyClick" class="btn-spotify"><img type="image" class="spot-logo" src="img/spotify_logo.png"/><p class="text-spotify"><?php echo $lang['choose-spotify-sound'];?></p></a>
+                        <h3 class="textMango"><?php echo $lang['choose-music'];?></h3>
+                    </div>
+                    <div id="1" class="row" style="display:none;">
+                        <div class="col-sm-3">
+                            <div class="vl-list-right"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="md-form mb-0">
+                                <input style="color:white;margin-bottom:2vw" name="sujet" type="text" id="form82" class="form-control">
+                                <label style="color:#FF8F00;" for="form83"><?php echo $lang['search-playlist'];?></label>
+                            </div>
+                            <div class="scrolltest">
+                                <div class="spotify-item">
+                                    <img class="playlist-img" src="img/leprouscover.png"/> <h5 class="playlist-name">LEPROUS discography</h5>
+                                </div>
+                                <div class="spotify-item">
+                                    <img class="playlist-img" src="img/leprouscover.png"/> <h5 class="playlist-name">LEPROUS discography</h5>
+                                </div>
+                                <div class="spotify-item">
+                                    <img class="playlist-img" src="img/leprouscover.png"/> <h5 class="playlist-name">LEPROUS discography</h5>
+                                </div>
+                                <div class="spotify-item">
+                                    <img class="playlist-img" src="img/leprouscover.png"/> <h5 class="playlist-name">LEPROUS discography</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="vl-list-left"></div>
+                        </div>
+                    </div>
+
+                    <div id="2" class="row">
+                        <div class="col-sm-3">
+                            <div class="vl-list-right"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <select style="text-align:center;background-color:#ffffff09;width:10vw;height:2vw;border-radius:0.5vw;margin-left:7vw;margin-bottom:2vw;margin-top:2vw;color:white">
+                                <option value="0" style="background-color:#00111F"><?php echo $lang['select-category'];?></option>
+                                <option value="1" style="background-color:#00111F">Forest</option>
+                                <option value="2" style="background-color:#00111F">Wind</option>
+                                <option value="3" style="background-color:#00111F">Fire</option>
+                                <option value="4" style="background-color:#00111F">Rain</option>
+                                <option value="5" style="background-color:#00111F">Water</option>
+                            </select>
+                            <div class="scrolltest">
+                                <div class="sleewell-item">
+                                    <img class="music-img" src="img/leprouscover.png"/>
+                                    <h4 class="music-name">Birds</h4>
+                                    <h5 class="music-category">Birds sound</h5>
+                                </div>
+                                <div class="sleewell-item">
+                                    <img class="music-img" src="img/leprouscover.png"/> 
+                                    <h4 class="music-name">Cicadas</h4>
+                                    <h5 class="music-category">Cicadas sound</h5>
+                                </div>
+                                <div class="sleewell-item">
+                                    <img class="music-img" src="img/leprouscover.png"/>
+                                    <h4 class="music-name">Crickets</h4>
+                                    <h5 class="music-category">Crickets sound</h5>
+                                </div>
+                                <div class="sleewell-item">
+                                    <img class="music-img" src="img/leprouscover.png"/>
+                                    <h4 class="music-name">Crows</h4>
+                                    <h5 class="music-category">Crows sound</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="vl-list-left"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 modif-halo">
+                    <h3 class="textMango" style="margin-top:4vw"><?php echo $lang['config-halo'];?></h3>
+                    <input type="text" id="background" data-wcp-autoresize="false" data-wcp-cssclass="custom-size1"/>
+                    <style type="text/css">
+                    .custom-size1 {
+                        width: 20vw;
+                        height: 12vw;
+                    }
+                    </style>
+                    <div class="col-4 textMango" style="margin-left:15vw;padding-top:2vw">
+                        <h4>Hex</h4>
+                        <input type="text" data-wheelcolorpicker="" id="color-input">
+                    </div>
+                    <div class="col-4 textMango" style="margin-left:15vw;padding-top:2vw">
+                        <h4><?php echo $lang['choose-with-RGB'];?></h4>
+                        <input type="text" readonly="" id="event-color">
+                    </div>
+                </div>
+            </div>
         </div>
 
         
@@ -223,7 +321,7 @@ if (isset($_GET['lang']))
                 <td colspan="1" width="34%" style="text-align:center">
                     <div class="vl"></div>
                     <h4 class="textMango" style="margin-top:1vw">Protocole title</h4>
-                    <a href="" class="btn btn-rounded Mango" style="max-width:25vw"><h4 style="margin-bottom:0rem">Valider</h4></a>
+                    <a href="" class="btn btn-rounded Mango" style="max-width:25vw"><h4 style="margin-bottom:0rem"><?php echo $lang['validate-btn'];?></h4></a>
                 </td>
                 <td colspan="1" width="33%" style="text-align:center">
                     <div class="vl"></div>
@@ -249,7 +347,7 @@ if (isset($_GET['lang']))
 
         $('#sleewellClick').on('click',function(){
             if($('#1').css('display')!='none'){
-                $('#2').show().siblings('div').hide();
+                $('#2').show();$('#1').hide();
                 $('.text-sleewell').css("color", "white");
                 $('.text-spotify').css("color", "black");
             }
@@ -257,7 +355,7 @@ if (isset($_GET['lang']))
 
         $('#spotifyClick').on('click',function(){
             if($('#2').css('display')!='none'){
-                $('#1').show().siblings('div').hide();
+                $('#1').show();$('#2').hide();
                 $('.text-spotify').css("color", "white");
                 $('.text-sleewell').css("color", "black");
             }

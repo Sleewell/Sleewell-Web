@@ -117,6 +117,7 @@ Routine Modification
 .modif-halo {
     background: #001822;
     text-align: center;
+    height: 72vh;
 }
 
 .btn-spotify, .btn-spotify:hover {
@@ -175,22 +176,22 @@ Routine Modification
 
 .scrolltest
 {
-    height: 30vw;
+    height: 48vh;
     overflow-y:auto;
 }
 
 .vl-list-left {
     border-left: 0.05vw solid #FF8F00;
-    margin-top: 5vw;
-    height: 28vw;
+    margin-top: 10vh;
+    height: 48vh;
     float:left;
     display: inline;
 }
 
 .vl-list-right {
     border-left: 0.05vw solid #FF8F00;
-    margin-top: 5vw;
-    height: 28vw;
+    margin-top: 10vh;
+    height: 48vh;
     float:right;
     display: inline;
 }

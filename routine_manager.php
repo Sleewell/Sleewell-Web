@@ -69,7 +69,7 @@ if (isset($_GET['lang']))
                         <a class="dropdown-toggle" href=""><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
                         <input type="checkbox" id="btn-1">
                         <ul>
-                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-fr" onclick="changeLanguage('fr');"><span> <img src="img/fra.png"></span> French</a></li>
+                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-fr" onclick="changeLanguage('fr');"><span> <img src="img/fra.png"></span> Français</a></li>
                             <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-en" onclick="changeLanguage('en');"><span> <img src="img/eng.png"></span> English</a></li>
                         </ul>
                     </li>
@@ -180,11 +180,11 @@ if (isset($_GET['lang']))
                         <p class="modal-title">Protocole title</p></br>
                         <table style="width:100%"><tr>
                             <td width=50%>
-                                <h3>Halo lumineux</h3>
+                                <h3><?php echo $lang['halo-popup'];?></h3>
                                 <div class="halo-modal"></div>
                             </td>
                             <td width=50%>
-                                <h3>Son d'ambiance</h3>
+                                <h3><?php echo $lang['sound-popup'];?></h3>
                                 <div class="spotify-pos">
                                     <img type="image" class="music-cover" src="img/leprouscover.png"/>
                                     <img type="image" class="spotify-logo" src="img/spotify_logo.png"/>
@@ -196,10 +196,10 @@ if (isset($_GET['lang']))
                     <table style="width:100%"><tr>
                         <td width=20%></td>
                             <td width=20%>
-                            <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a href="routine_modify.php" class="btn Mango btn-rounded" style="text-decoration: none;">Modifer</a><span>
+                            <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a href="routine_modify.php" class="btn Mango btn-rounded" style="text-decoration: none;"><?php echo $lang['modify-popup'];?></a><span>
                             </td> <td width=20%></td>
                             <td width=20%>
-                            <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a href="" class="btn Mango btn-rounded" style="text-decoration: none;">Supprimer</a><span>
+                            <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a href="" class="btn Mango btn-rounded" style="text-decoration: none;"><?php echo $lang['delete-popup'];?></a><span>
                             </td><td width=20%></td>
                         </tr></table>
                     </div>
@@ -210,17 +210,7 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--          PIED DE PAGE          -->
         <!--################################-->
-        <footer>
-            <table style="width:100%"><tr>
-                <td colspan="1" width="60%">
-                    <img src="img/logo_sleewell.png" style="float:left;width:120px;height:150px;margin-left:100px"/>
-                </td>
-                <td colspan="1" width="40%">
-                    <h3 class="BoldAmberText">SUPPORT</h3>
-                    <a id="contactus_btn" href="contact_us.php"><h4 class="AmeberText"><?php echo $lang['contact-redirection'];?></h4></a>
-                </td>
-            </tr></table>
-        </footer>
+        <?php include 'footer.php';?>
     </body>
 
     <script>

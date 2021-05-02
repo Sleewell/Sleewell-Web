@@ -4,9 +4,8 @@
 //nav
 $lang['header'] = 'French';
 
-
 //index
-$lang['selected-lang'] = 'French';
+$lang['selected-lang'] = 'Français';
 
 $lang['img_path'] = 'img/fra.png';
 
@@ -44,6 +43,7 @@ $lang['app-pres3'] = "L'application mobile qui va permettre au client de pouvoir
 $lang['app-pres4'] = "Les notifications seront bloquées lorsque le protocole sera activé pour supprimer les distractions et améliorer se qualité de sommeil.";
 $lang['app-pres5'] = "Le protocole d'endormissement aide l'utilisateur à s'endormir à l'aide d'un halo lumineux et de sons/musiques relaxant(e)s.";
 
+//ContactUs
 $lang['equipe-pres'] = "L'équipe Sleewell vous remercie de votre visite sur le site";
 $lang['reseaux'] = "Suivez nous sur nos réseaux";
 $lang['contact'] = "Si vous souhaitez nous faire parvenir un retour sur l'un des produits ou obtenir plus d'informations, contactez-nous :";
@@ -53,7 +53,7 @@ $lang['message'] = "Message";
 $lang['envoi-mail'] = "Envoyer";
 
 $lang['disconnect-button'] = "Deconnexion";
-$lang['disconnect-button'] = "Profil";
+$lang['profile-button'] = "Profil";
 
 //Profile
 $lang["profile-header1"] = "Votre profil";
@@ -77,6 +77,21 @@ $lang["profile_card3-btn1"] = "3 jours";
 $lang["profile_card3-btn2"] = "1 semaine";
 $lang["profile_card3-btn3"] = "1 mois";
 
+//Routine Manager
 $lang['routine-manager'] = "Gérer vos routines favorites simplement et rapidement. Ici il vous est possible de créer, de modifier et de supprimer vos routines.
-Vous pouvez églament les partager avec vos proches."
+Vous pouvez églament les partager avec vos proches.";
+$lang['halo-popup'] = "Halo lumineux";
+$lang['sound-popup'] = "Son d'ambiance";
+$lang['modify-popup'] = "Modifier";
+$lang['delete-popup'] = "Supprimer";
+
+//Routine Modifier
+$lang['choose-sleewell-sound'] = "Choisir un son d'ambiance selectioné par l'équipe";
+$lang['choose-spotify-sound'] = "Choisir une playlist sur Spotify";
+$lang['choose-music'] = "Choisissez la musique du protocole d'endormissement";
+$lang['select-category'] = "Choisir une catégorie";
+$lang['search-playlist'] = "Rechercher une playlist";
+$lang['config-halo'] = "Configurer le halo lumineux";
+$lang['choose-with-RGB'] = "Couleur choisie (RGB)";
+$lang['validate-btn'] = "Valider";
 ?>

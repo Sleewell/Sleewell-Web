@@ -43,6 +43,7 @@ $lang['app-pres3'] = "The app will help the user to sleep well without being dis
 $lang['app-pres4'] = "Notifications will be blocked when the protocol would have been launched to avoid trouble during the night.";
 $lang['app-pres5'] = "The asleep protocol will help the user to fall asleep using a luminous halo and relaxing sounds/musics.";
 
+//ContactUs
 $lang['equipe-pres'] = "The team thanks tyou a lot for visiting the website.";
 $lang['reseaux'] = "Follow us on the networks";
 $lang['contact'] = "If you need more informations or wanted to send us a feedback about one of our products, contact us :";
@@ -76,6 +77,21 @@ $lang["profile_card3-btn1"] = "3 days";
 $lang["profile_card3-btn2"] = "1 week";
 $lang["profile_card3-btn3"] = "1 month";
 
+//Routine Manager
 $lang['routine-manager'] = "Manage your favorite routines easily and quickly. Here, it's possible to create, to modify and to delete your routines.
-It is also possible to share it with your relatives."
+It is also possible to share it with your relatives.";
+$lang['halo-popup'] = "Luminous halo";
+$lang['sound-popup'] = "Ambient sound";
+$lang['modify-popup'] = "Modify";
+$lang['delete-popup'] = "Delete";
+
+//Routine Modifier
+$lang['choose-sleewell-sound'] = "Choose ambient sound selected by Sleewell's team";
+$lang['choose-spotify-sound'] = "Choose a playlist on Spotify";
+$lang['choose-music'] = "Choose the music for the sleep protocol";
+$lang['select-category'] = "Choose category";
+$lang['search-playlist'] = "Research a playlist";
+$lang['config-halo'] = "Choose luminous halo's color";
+$lang['choose-with-RGB'] = "Selected color (RGB)";
+$lang['validate-btn'] = "Validate";
 ?>
