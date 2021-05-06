@@ -117,140 +117,10 @@ Routine Modification
 .modif-halo {
     background: #001822;
     text-align: center;
-    height: 72vh;
+    height: 82vh;
 }
 
-.btn-spotify, .btn-spotify:hover {
-    background-color: #75923E;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.8vw;
-    width: 20vw;
-    height: 3vw;
-    border: none;
-    border-radius: 0.6vw;
-    vertical-align: middle;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.text-spotify {
-    margin-top: 0.8vw;
-}
-
-.text-sleewell {
-    margin-top: 0.2vw;
-    color: white;
-}
-
-.spot-logo {
-    margin-top: 0.5vw;
-    margin-left: 0.5vw;
-    height: 2vw;
-    width: 2vw;
-    float: left;
-}
-
-.sleewell-logo {
-    height: auto;
-    width: 2vw;
-    margin-left: 0.5vw;
-    float: left;
-}
-
-.btn-sleewell, .btn-sleewell:hover {
-    background-color: #ff9100c4;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.8vw;
-    width: 20vw;
-    height: 3vw;
-    border: none;
-    border-radius: 0.6vw;
-    vertical-align: middle;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.scrolltest
-{
-    height: 48vh;
-    overflow-y:auto;
-}
-
-.vl-list-left {
-    border-left: 0.05vw solid #FF8F00;
-    margin-top: 10vh;
-    height: 48vh;
-    float:left;
-    display: inline;
-}
-
-.vl-list-right {
-    border-left: 0.05vw solid #FF8F00;
-    margin-top: 10vh;
-    height: 48vh;
-    float:right;
-    display: inline;
-}
-
-.spotify-item {
-    text-align: justify;
-    height: 5vw;
-    margin-bottom: 1vw;
-}
-
-.playlist-img {
-    height: 5vw;
-    width: 5vw;
-    border-radius: 0.5vw;
-    position: relative;
-    float:left;
-    margin-left: 5vw;
-}
-
-.playlist-name {
-    color: #FF8F00;
-    text-align: justify;
-    padding-top: 2vw;
-    padding-left: 12vw;
-}
-
-.sleewell-item {
-    margin-left: 4.5vw;
-    width: 15vw;
-    height: 4.5vw;
-    margin-bottom: 1vw;
-    background-color: #ffffff1e;
-    border-radius: 2vw;
-}
-
-.music-img {
-    height: 4vw;
-    width: 4vw;
-    margin-top: 0.25vw;
-    border-radius: 0.3vw;
-    position: relative;
-    float:left;
-    margin-left: 2vw;
-}
-
-.music-name {
-    color: #ffffff44;
-    text-align: justify;
-    padding-top: 0.5vw;
-    padding-left: 8vw;
-    font-weight: bold;
-}
-
-.music-category {
-    color: #FF8F00;
-    text-align: justify;
-    padding-left: 8vw;
-}
-
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*
 Routine Modify Footer
 */
@@ -262,15 +132,21 @@ Routine Modify Footer
     background-color: blue;
     margin: auto;
     margin-bottom: 0.5vw;
-    margin-top: 1vw;
+    margin-top: 1.5vw;
     position: relative;
     border: none;
 }
 
 .vl {
     border-left: 0.05vw solid #FF8F00;
-    height: 8vw;
+    height: 100%;
     float:left;
+}
+
+.vl1 {
+    border-right: 0.05vw solid #FF8F00;
+    height: 100%;
+    float:right;
 }
 
 .music-cover-footer {
@@ -293,6 +169,7 @@ Routine Modify Footer
 }
 
 .spotify-pos-footer {
+    padding-top: 2.5vh;
     height: 5vw;
     width: 5vw;
     margin: auto;
@@ -306,4 +183,1092 @@ Routine Modify Footer
 
 .hidden-div {
     display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 575px) {
+    .btn-spotify, .btn-spotify:hover {
+        background-color: #75923E;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 40vw;
+        height: 5vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-sleewell, .btn-sleewell:hover {
+        background-color: #ff9100c4;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 40vw;
+        height: 5vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .text-spotify {
+        margin-top: 1.2vw;
+        font-size: 1.7vw;
+    }
+    
+    .text-sleewell {
+        margin-top: 0vw;
+        font-size: 1.7vw;
+        color: white;
+    }
+    
+    .spot-logo {
+        margin-top: 0.5vw;
+        margin-left: 0.5vw;
+        height: 3.8vw;
+        width: 3.8vw;
+        float: left;
+    }
+    
+    .sleewell-logo {
+        height: auto;
+        width: 3.5vw;
+        margin-left: 0.5vw;
+        float: left;
+    }
+    
+    .category-selector {
+        text-align:center;
+        background-color:#ffffff09;
+        width:40vw;
+        height:5vw;
+        border-radius:0.5vw;
+        margin-bottom:5vw;
+        margin-top:2vw;
+        color:white;
+    }
+
+    .scrolltest
+    {
+        height: 70vh;
+        overflow-y:auto;
+        margin-bottom: 5vh;
+    }
+
+    .col-presence
+    {
+        display: none;
+    }
+
+    .vl-list-left {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:left;
+        display: inline;
+    }
+
+    .vl-list-right {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:right;
+        display: inline;
+    }
+
+    .sleewell-item {
+        margin-left: 20vw;
+        width: 45vw;
+        height: 12vw;
+        margin-bottom: 2vw;
+        background-color: #ffffff1e;
+        border-radius: 5vw;
+    }
+    
+    .music-img {
+        height: 10vw;
+        width: 10vw;
+        margin-top: 1vw;
+        border-radius: 1vw;
+        position: relative;
+        float:left;
+        margin-left: 5vw;
+    }
+    
+    .music-name {
+        color: #ffffff44;
+        text-align: justify;
+        padding-top: 2vw;
+        padding-left: 20vw;
+        font-weight: bold;
+        font-size: 2.4vw;
+    }
+    
+    .music-category {
+        color: #FF8F00;
+        text-align: justify;
+        padding-left: 20vw;
+    }
+
+    .spotify-item {
+        text-align: justify;
+        height: 15vw;
+        margin-bottom: 1vw;
+    }
+    
+    .playlist-img {
+        height: 10vw;
+        width: 10vw;
+        border-radius: 0.5vw;
+        position: relative;
+        float:left;
+        margin-left: 5vw;
+    }
+    
+    .playlist-name {
+        color: #FF8F00;
+        text-align: justify;
+        padding-top: 3vw;
+        padding-left: 20vw;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .btn-spotify, .btn-spotify:hover {
+        background-color: #75923E;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 40vw;
+        height: 5vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-sleewell, .btn-sleewell:hover {
+        background-color: #ff9100c4;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 40vw;
+        height: 5vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .text-spotify {
+        margin-top: 1.2vw;
+        font-size: 1.7vw;
+    }
+    
+    .text-sleewell {
+        margin-top: 0vw;
+        font-size: 1.7vw;
+        color: white;
+    }
+    
+    .spot-logo {
+        margin-top: 0.5vw;
+        margin-left: 0.5vw;
+        height: 3.8vw;
+        width: 3.8vw;
+        float: left;
+    }
+    
+    .sleewell-logo {
+        height: auto;
+        width: 3.5vw;
+        margin-left: 0.5vw;
+        float: left;
+    }
+
+    .category-selector {
+        text-align:center;
+        background-color:#ffffff09;
+        width:40vw;
+        height:5vw;
+        border-radius:0.5vw;
+        margin-bottom:5vw;
+        margin-top:2vw;
+        color:white;
+    }
+
+    .scrolltest
+    {
+        height: 50vh;
+        overflow-y:auto;
+        margin-bottom: 5vh;
+    }
+
+    .col-presence
+    {
+        display: none;
+    }
+
+    .vl-list-left {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:left;
+        display: inline;
+    }
+
+    .vl-list-right {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:right;
+        display: inline;
+    }
+
+    .sleewell-item {
+        margin-left: 20vw;
+        width: 46vw;
+        height: 12vw;
+        margin-bottom: 2vw;
+        background-color: #ffffff1e;
+        border-radius: 5vw;
+    }
+    
+    .music-img {
+        height: 10vw;
+        width: 10vw;
+        margin-top: 1vw;
+        border-radius: 1vw;
+        position: relative;
+        float:left;
+        margin-left: 5vw;
+    }
+    
+    .music-name {
+        color: #ffffff44;
+        text-align: justify;
+        padding-top: 2vw;
+        padding-left: 20vw;
+        font-weight: bold;
+        font-size: 2.4vw;
+    }
+
+    .music-category {
+        color: #FF8F00;
+        text-align: justify;
+        padding-left: 20vw;
+    }
+
+    .spotify-item {
+        text-align: justify;
+        height: 15vw;
+        margin-bottom: 1vw;
+    }
+    
+    .playlist-img {
+        height: 10vw;
+        width: 10vw;
+        border-radius: 0.5vw;
+        position: relative;
+        float:left;
+        margin-left: 5vw;
+    }
+    
+    .playlist-name {
+        color: #FF8F00;
+        text-align: justify;
+        padding-top: 3vw;
+        padding-left: 20vw;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+    .btn-spotify, .btn-spotify:hover {
+        background-color: #75923E;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 40vw;
+        height: 5vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-sleewell, .btn-sleewell:hover {
+        background-color: #ff9100c4;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 40vw;
+        height: 5vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .text-spotify {
+        margin-top: 1.2vw;
+        font-size: 1.7vw;
+    }
+    
+    .text-sleewell {
+        margin-top: 0vw;
+        font-size: 1.7vw;
+        color: white;
+    }
+    
+    .spot-logo {
+        margin-top: 0.5vw;
+        margin-left: 0.5vw;
+        height: 3.8vw;
+        width: 3.8vw;
+        float: left;
+    }
+    
+    .sleewell-logo {
+        height: auto;
+        width: 3.5vw;
+        margin-left: 0.5vw;
+        float: left;
+    }
+
+    .category-selector {
+        text-align:center;
+        background-color:#ffffff09;
+        width:30vw;
+        height:4vw;
+        border-radius:0.5vw;
+        margin-bottom:5vw;
+        margin-top:2vw;
+        color:white;
+    }
+
+    .scrolltest
+    {
+        height: 70vh;
+        overflow-y:auto;
+        margin-bottom: 5vh;
+    }
+
+    .col-presence
+    {
+        display: none;
+    }
+
+    .vl-list-left {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:left;
+        display: inline;
+    }
+
+    .vl-list-right {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:right;
+        display: inline;
+    }
+
+    .sleewell-item {
+        margin-left: 20vw;
+        width: 46vw;
+        height: 12vw;
+        margin-bottom: 2vw;
+        background-color: #ffffff1e;
+        border-radius: 5vw;
+    }
+    
+    .music-img {
+        height: 10vw;
+        width: 10vw;
+        margin-top: 1vw;
+        border-radius: 1vw;
+        position: relative;
+        float:left;
+        margin-left: 5vw;
+    }
+    
+    .music-name {
+        color: #ffffff44;
+        text-align: justify;
+        padding-top: 2vw;
+        padding-left: 20vw;
+        font-weight: bold;
+        font-size: 2.4vw;
+    }
+
+    .music-category {
+        color: #FF8F00;
+        text-align: justify;
+        padding-left: 20vw;
+    }
+
+    .spotify-item {
+        text-align: justify;
+        height: 15vw;
+        margin-bottom: 1vw;
+    }
+    
+    .playlist-img {
+        height: 10vw;
+        width: 10vw;
+        border-radius: 0.5vw;
+        position: relative;
+        float:left;
+        margin-left: 5vw;
+    }
+    
+    .playlist-name {
+        color: #FF8F00;
+        text-align: justify;
+        padding-top: 3vw;
+        padding-left: 20vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .btn-spotify, .btn-spotify:hover {
+        background-color: #75923E;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 40vw;
+        height: 5vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-sleewell, .btn-sleewell:hover {
+        background-color: #ff9100c4;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 40vw;
+        height: 5vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .text-spotify {
+        margin-top: 1.2vw;
+        font-size: 1.7vw;
+    }
+    
+    .text-sleewell {
+        margin-top: 0vw;
+        font-size: 1.7vw;
+        color: white;
+    }
+    
+    .spot-logo {
+        margin-top: 0.5vw;
+        margin-left: 0.5vw;
+        height: 3.8vw;
+        width: 3.8vw;
+        float: left;
+    }
+    
+    .sleewell-logo {
+        height: auto;
+        width: 3.5vw;
+        margin-left: 0.5vw;
+        float: left;
+    }
+
+    .category-selector {
+        text-align:center;
+        background-color:#ffffff09;
+        width:25vw;
+        height:4vw;
+        border-radius:0.5vw;
+        margin-bottom:5vw;
+        margin-top:2vw;
+        color:white;
+    }
+
+    .scrolltest
+    {
+        height: 69vh;
+        overflow-y:auto;
+        margin-bottom: 5vh;
+    }
+
+    .col-presence
+    {
+        display: none;
+    }
+
+    .vl-list-left {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:left;
+        display: inline;
+    }
+
+    .vl-list-right {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:right;
+        display: inline;
+    }
+
+    .sleewell-item {
+        margin-left: 28vw;
+        width: 35vw;
+        height: 10vw;
+        margin-bottom: 2vw;
+        background-color: #ffffff1e;
+        border-radius: 5vw;
+    }
+    
+    .music-img {
+        height: 8vw;
+        width: 8vw;
+        margin-top: 1vw;
+        border-radius: 1vw;
+        position: relative;
+        float:left;
+        margin-left: 5vw;
+    }
+    
+    .music-name {
+        color: #ffffff44;
+        text-align: justify;
+        padding-top: 2vw;
+        padding-left: 17vw;
+        font-weight: bold;
+        font-size: 2.4vw;
+    }
+
+    .music-category {
+        color: #FF8F00;
+        text-align: justify;
+        padding-left: 17vw;
+    }
+
+    .spotify-item {
+        text-align: justify;
+        height: 15vw;
+        margin-bottom: 1vw;
+    }
+    
+    .playlist-img {
+        height: 10vw;
+        width: 10vw;
+        border-radius: 0.5vw;
+        position: relative;
+        float:left;
+        margin-left: 5vw;
+    }
+    
+    .playlist-name {
+        color: #FF8F00;
+        text-align: justify;
+        padding-top: 3.5vw;
+        padding-left: 20vw;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .btn-spotify, .btn-spotify:hover {
+        background-color: #75923E;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 20vw;
+        height: 3vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-sleewell, .btn-sleewell:hover {
+        background-color: #ff9100c4;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 20vw;
+        height: 3vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .text-spotify {
+        margin-top: 0.8vw;
+        font-size: 1vw;
+    }
+    
+    .text-sleewell {
+        margin-top: 0.2vw;
+        font-size: 1vw;
+        color: white;
+    }
+    
+    .spot-logo {
+        margin-top: 0.5vw;
+        margin-left: 0.5vw;
+        height: 2vw;
+        width: 2vw;
+        float: left;
+    }
+    
+    .sleewell-logo {
+        height: auto;
+        width: 2vw;
+        margin-left: 0.5vw;
+        float: left;
+    }
+
+    .category-selector {
+        text-align:center;
+        background-color:#ffffff09;
+        width:20vw;
+        height:3vw;
+        border-radius:0.5vw;
+        margin-bottom:2vw;
+        margin-top:2vw;
+        color:white;
+    }
+    
+    .scrolltest
+    {
+        height: 50vh;
+        overflow-y:auto;
+    }
+
+    .col-presence
+    {
+        display: block;
+    }
+
+    .vl-list-left {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:left;
+        display: inline;
+    }
+
+    .vl-list-right {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:right;
+        display: inline;
+    }
+
+    .sleewell-item {
+        margin-left: 0vw;
+        width: 20vw;
+        height: 6vw;
+        margin-bottom: 1vw;
+        background-color: #ffffff1e;
+        border-radius: 2vw;
+    }
+    
+    .music-img {
+        height: 5vw;
+        width: 5vw;
+        margin-top: 0.5vw;
+        border-radius: 0.3vw;
+        position: relative;
+        float:left;
+        margin-left: 2vw;
+    }
+    
+    .music-name {
+        color: #ffffff44;
+        text-align: justify;
+        padding-top: 1vw;
+        padding-left: 8vw;
+        font-weight: bold;
+        font-size: 1vw;
+    }
+    
+    .music-category {
+        color: #FF8F00;
+        text-align: justify;
+        padding-left: 8vw;
+    }
+
+    .spotify-item {
+        text-align: justify;
+        height: 5vw;
+        margin-bottom: 1vw;
+    }
+    
+    .playlist-img {
+        height: 5vw;
+        width: 5vw;
+        border-radius: 0.5vw;
+        position: relative;
+        float:left;
+        margin-left: 2vw;
+    }
+    
+    .playlist-name {
+        color: #FF8F00;
+        text-align: justify;
+        padding-top: 1.5vw;
+        padding-left: 9vw;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .btn-spotify, .btn-spotify:hover {
+        background-color: #75923E;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 20vw;
+        height: 3vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-sleewell, .btn-sleewell:hover {
+        background-color: #ff9100c4;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 20vw;
+        height: 3vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .text-spotify {
+        margin-top: 0.8vw;
+        font-size: 1vw;
+    }
+    
+    .text-sleewell {
+        margin-top: 0.2vw;
+        font-size: 1vw;
+        color: white;
+    }
+    
+    .spot-logo {
+        margin-top: 0.5vw;
+        margin-left: 0.5vw;
+        height: 2vw;
+        width: 2vw;
+        float: left;
+    }
+    
+    .sleewell-logo {
+        height: auto;
+        width: 2vw;
+        margin-left: 0.5vw;
+        float: left;
+    }
+
+    .category-selector {
+        text-align:center;
+        background-color:#ffffff09;
+        width:15vw;
+        height:2vw;
+        border-radius:0.5vw;
+        margin-bottom:2vw;
+        margin-top:2vw;
+        color:white;
+    }
+
+    .scrolltest
+    {
+        height: 50vh;
+        overflow-y:auto;
+    }
+
+    .col-presence
+    {
+        display: block;
+    }
+
+    .vl-list-left {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:left;
+        display: inline;
+    }
+
+    .vl-list-right {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:right;
+        display: inline;
+    }
+
+    .sleewell-item {
+        margin-left: 1vw;
+        width: 20vw;
+        height: 4.5vw;
+        margin-bottom: 1vw;
+        background-color: #ffffff1e;
+        border-radius: 2vw;
+    }
+    
+    .music-img {
+        height: 4vw;
+        width: 4vw;
+        margin-top: 0.25vw;
+        border-radius: 0.3vw;
+        position: relative;
+        float:left;
+        margin-left: 2.5vw;
+    }
+    
+    .music-name {
+        color: #ffffff44;
+        text-align: justify;
+        padding-top: 0.5vw;
+        padding-left: 9vw;
+        font-weight: bold;
+    }
+    
+    .music-category {
+        color: #FF8F00;
+        text-align: justify;
+        padding-left: 9vw;
+    }
+
+    .spotify-item {
+        text-align: justify;
+        height: 5vw;
+        margin-bottom: 1vw;
+    }
+    
+    .playlist-img {
+        height: 5vw;
+        width: 5vw;
+        border-radius: 0.5vw;
+        position: relative;
+        float:left;
+        margin-left: 2vw;
+    }
+    
+    .playlist-name {
+        color: #FF8F00;
+        text-align: justify;
+        padding-top: 2vw;
+        padding-left: 9vw;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1500px) {
+    .btn-spotify, .btn-spotify:hover {
+        background-color: #75923E;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 20vw;
+        height: 3vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-sleewell, .btn-sleewell:hover {
+        background-color: #ff9100c4;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8vw;
+        width: 20vw;
+        height: 3vw;
+        border: none;
+        border-radius: 0.6vw;
+        vertical-align: middle;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .text-spotify {
+        margin-top: 0.8vw;
+        font-size: 1vw;
+    }
+    
+    .text-sleewell {
+        margin-top: 0.2vw;
+        font-size: 1vw;
+        color: white;
+    }
+    
+    .spot-logo {
+        margin-top: 0.5vw;
+        margin-left: 0.5vw;
+        height: 2vw;
+        width: 2vw;
+        float: left;
+    }
+    
+    .sleewell-logo {
+        height: auto;
+        width: 2vw;
+        margin-left: 0.5vw;
+        float: left;
+    }
+
+    .category-selector {
+        text-align:center;
+        background-color:#ffffff09;
+        width:15vw;
+        height:2vw;
+        border-radius:0.5vw;
+        margin-bottom:2vw;
+        margin-top:2vw;
+        color:white;
+    }
+
+    .scrolltest
+    {
+        height: 48vh;
+        overflow-y:auto;
+    }
+
+    .col-presence
+    {
+        display: block;
+    }
+
+    .vl-list-left {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:left;
+        display: inline;
+    }
+
+    .vl-list-right {
+        border-left: 0.05vw solid #FF8F00;
+        margin-top: 10vh;
+        height: 48vh;
+        float:right;
+        display: inline;
+    }
+
+    .sleewell-item {
+        margin-left: 2.2vw;
+        width: 18vw;
+        height: 4.5vw;
+        margin-bottom: 1vw;
+        background-color: #ffffff1e;
+        border-radius: 2vw;
+    }
+    
+    .music-img {
+        height: 4vw;
+        width: 4vw;
+        margin-top: 0.25vw;
+        border-radius: 0.3vw;
+        position: relative;
+        float:left;
+        margin-left: 2vw;
+    }
+    
+    .music-name {
+        color: #ffffff44;
+        text-align: justify;
+        padding-top: 0.5vw;
+        padding-left: 8vw;
+        font-weight: bold;
+    }
+    
+    .music-category {
+        color: #FF8F00;
+        text-align: justify;
+        padding-left: 8vw;
+    }
+
+    .spotify-item {
+        text-align: justify;
+        height: 4vw;
+        margin-bottom: 1vw;
+    }
+    
+    .playlist-img {
+        height: 4vw;
+        width: 4vw;
+        border-radius: 0.5vw;
+        position: relative;
+        float:left;
+        margin-left: 2vw;
+    }
+    
+    .playlist-name {
+        color: #FF8F00;
+        text-align: justify;
+        padding-top: 1.5vw;
+        padding-left: 8vw;
+    }
 }

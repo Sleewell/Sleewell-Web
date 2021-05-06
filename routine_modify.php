@@ -213,13 +213,13 @@ if (isset($_GET['lang']))
                     <div class="modif-musique">
                         <a href="javascript:void(0)" id="sleewellClick" class="btn-sleewell"><img type="image" class="sleewell-logo" src="img/logo_sleewell.png"/><p class="text-sleewell"><?php echo $lang['choose-sleewell-sound'];?></p></a>
                         <a href="javascript:void(0)" id="spotifyClick" class="btn-spotify"><img type="image" class="spot-logo" src="img/spotify_logo.png"/><p class="text-spotify"><?php echo $lang['choose-spotify-sound'];?></p></a>
-                        <h3 class="textMango"><?php echo $lang['choose-music'];?></h3>
+                        <h4 class="textMango EmailText"><?php echo $lang['choose-music'];?></h4>
                     </div>
                     <div id="1" class="row" style="display:none;">
-                        <div class="col-sm-3">
+                        <div class="col-lg-2 col-presence">
                             <div class="vl-list-right"></div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-lg-8">
                             <div class="md-form mb-0">
                                 <input style="color:white;margin-bottom:2vw" name="sujet" type="text" id="form82" class="form-control">
                                 <label style="color:#FF8F00;" for="form83"><?php echo $lang['search-playlist'];?></label>
@@ -239,17 +239,17 @@ if (isset($_GET['lang']))
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-lg-2 col-presence">
                             <div class="vl-list-left"></div>
                         </div>
                     </div>
 
                     <div id="2" class="row">
-                        <div class="col-sm-3">
+                        <div class="col-lg-3 col-presence">
                             <div class="vl-list-right"></div>
                         </div>
-                        <div class="col-sm-6">
-                            <select style="text-align:center;background-color:#ffffff09;width:10vw;height:2vw;border-radius:0.5vw;margin-left:7vw;margin-bottom:2vw;margin-top:2vw;color:white">
+                        <div class="col-lg-6" style="text-align:center">
+                            <select class="category-selector">
                                 <option value="0" style="background-color:#00111F"><?php echo $lang['select-category'];?></option>
                                 <option value="1" style="background-color:#00111F">Forest</option>
                                 <option value="2" style="background-color:#00111F">Wind</option>
@@ -280,26 +280,43 @@ if (isset($_GET['lang']))
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-lg-3 col-presence">
                             <div class="vl-list-left"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 modif-halo">
-                    <h3 class="textMango" style="margin-top:4vw"><?php echo $lang['config-halo'];?></h3>
+                    <h3 class="textMango EmailText" style="margin-top:4vw"><?php echo $lang['config-halo'];?></h3>
                     <input type="text" id="background" data-wcp-autoresize="false" data-wcp-cssclass="custom-size1"/>
                     <style type="text/css">
-                    .custom-size1 {
+                    @media only screen and (max-width: 992px) {
+                        .custom-size1 {
+                        width: 80vw;
+                        height: 48vw;
+                        margin-bottom: 5vh;
+                        }
+                    }
+                    @media only screen and (min-width: 768px) {
+                        .custom-size1 {
+                        width: 60vw;
+                        height: 36vw;
+                        margin-bottom: 5vh;
+                        }
+                    }
+                    @media only screen and (min-width: 992px) {
+                        .custom-size1 {
                         width: 20vw;
                         height: 12vw;
+                        margin-bottom: 5vh;
+                        }
                     }
                     </style>
-                    <div class="col-4 textMango" style="margin-left:15vw;padding-top:2vw">
-                        <h4>Hex</h4>
+                    <div class="col-xxl-4 textMango">
+                        <h4 class="EmailText">Hex</h4>
                         <input type="text" data-wheelcolorpicker="" id="color-input">
                     </div>
-                    <div class="col-4 textMango" style="margin-left:15vw;padding-top:2vw">
-                        <h4><?php echo $lang['choose-with-RGB'];?></h4>
+                    <div class="col-xxl-4 textMango">
+                        <h4 class="EmailText"><?php echo $lang['choose-with-RGB'];?></h4>
                         <input type="text" readonly="" id="event-color">
                     </div>
                 </div>
@@ -311,23 +328,27 @@ if (isset($_GET['lang']))
         <!--          PIED DE PAGE          -->
         <!--################################-->
         <footer>
-            <table style="width:100%"><tr>
-                <td colspan="1" width="33%" style="text-align:center">
+            <div class="row" style="text-align:center">
+                <div class="col-3">
                     <div class="spotify-pos-footer">
                         <img type="image" class="music-cover-footer" src="img/leprouscover.png"/>
                         <img type="image" class="spotify-logo-footer" src="img/spotify_logo.png"/>
                     </div>
-                </td>
-                <td colspan="1" width="34%" style="text-align:center">
+                </div>
+                <div class="col-1">
+                    <div class="vl1"></div>
+                </div>
+                <div class="col-4">
+                    <h4 class="textMango EmailText" style="margin-top:1vw">Protocole title</h4>
+                    <a href="" style="max-width:25vw"><h4 class="EmailText"><?php echo $lang['validate-btn'];?></h4></a>
+                </div>
+                <div class="col-1">
                     <div class="vl"></div>
-                    <h4 class="textMango" style="margin-top:1vw">Protocole title</h4>
-                    <a href="" class="btn btn-rounded Mango" style="max-width:25vw"><h4 style="margin-bottom:0rem"><?php echo $lang['validate-btn'];?></h4></a>
-                </td>
-                <td colspan="1" width="33%" style="text-align:center">
-                    <div class="vl"></div>
+                </div>
+                <div class="col-3">
                     <div class="halo-footer"></div>
-                </td>
-            </tr></table>
+                </div>
+            </div>
         </footer>
 
 
