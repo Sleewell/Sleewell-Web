@@ -88,9 +88,9 @@ $(document).ready(function () {
             }
           },
     });
-    showGraph(3, barGraph);
+    showGraph(1, barGraph);
     $("#days").click(function() {
-        showGraph(3, barGraph);
+        showGraph(1, barGraph);
         $("#days").prop("disabled",true);
         $("#week").prop("disabled",false);
         $("#month").prop("disabled",false);
@@ -115,8 +115,28 @@ function showGraph(nb, barGraph)
         $.post("index.php",
         function ()
         {
-            if (nb == 3) {
+            if (nb == 1) {
+                const today = moment();
+                const from_date = today.isoWeekday(1);
+                const to_date = today.isoWeekday(7);
+                console.log({
+                    from_date: from_date.toString(),
+                    today: moment().toString(),
+                    to_date: to_date.toString(),
+                });
                 barGraph.data.labels = [moment().subtract(2, 'days').format('DD MMMM'), moment().subtract(1, 'days').format('DD MMMM'), moment().format('DD MMMM')];
+                var settings = {
+                    "url": "https://api.sleewell.fr/stats/night/20210325",
+                    "method": "GET",
+                    "headers" : {
+                        "Authorization": "4e97ae31b5cebecf45ba0ce8c7f7984311540efd"
+                    },
+                    "timeout": 0,
+                  };
+                  
+                  $.ajax(settings).done(function (response) {
+                    console.log(response);
+                });
                 barGraph.data.datasets[0].data = ["7", "8", "6"];
                 barGraph.update();
             }else if (nb == 7) {

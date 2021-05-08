@@ -17,7 +17,6 @@ $(document).ready(function() {
         form.append("login", login);
         form.append("firstname", firstname);
         form.append("lastname", lastname);
-        
         var settings = {
           "url": "https://api.sleewell.fr/user/update",
           "method": "POST",

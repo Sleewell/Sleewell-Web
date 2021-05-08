@@ -73,9 +73,9 @@ $lang["profile_card2-inp6"] = "A propos de vous";
 $lang["profile_card2-btn1"] = "Mettre à jour";
 
 $lang["profile_card3-txt1"] = "Durée de votre sommeil en heure";
-$lang["profile_card3-btn1"] = "3 jours";
-$lang["profile_card3-btn2"] = "1 semaine";
-$lang["profile_card3-btn3"] = "1 mois";
+$lang["profile_card3-btn1"] = "Dernière nuit";
+$lang["profile_card3-btn2"] = "Semaine";
+$lang["profile_card3-btn3"] = "Mois";
 
 //Routine Manager
 $lang['routine-manager'] = "Gérer vos routines favorites simplement et rapidement. Ici il vous est possible de créer, de modifier et de supprimer vos routines.

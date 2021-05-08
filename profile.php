@@ -219,9 +219,9 @@ if (isset($_GET['lang']))
                                 <canvas id="profileGraph"></canvas>
                             </div>
                             <div class="row flex-center">
-                                <span class="waves-input-wrapper waves-effect waves-light"><input id="days" type="button" value="<?php echo $lang["profile_card3-btn1"]?>" class="btn Mango btn-rounded"></span>
+                                <span class="waves-input-wrapper waves-effect waves-light" style="margin-right:1%;"><input id="days" type="button" value="<?php echo $lang["profile_card3-btn1"]?>" class="btn Mango btn-rounded"></span>
                                 <span class="waves-input-wrapper waves-effect waves-light"><input id="week" type="button" value="<?php echo $lang["profile_card3-btn2"]?>" class="btn Mango btn-rounded"></span>
-                                <span class="waves-input-wrapper waves-effect waves-light"><input id="month" type="button" value="<?php echo $lang["profile_card3-btn3"]?>" class="btn Mango btn-rounded"></span>
+                                <span class="waves-input-wrapper waves-effect waves-light" style="margin-left:1%;"><input id="month" type="button" value="<?php echo $lang["profile_card3-btn3"]?>" class="btn Mango btn-rounded"></span>
                             </div>
                         </div>
                         <!-- End of  Card content -->
