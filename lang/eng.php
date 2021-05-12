@@ -94,4 +94,5 @@ $lang['search-playlist'] = "Research a playlist";
 $lang['config-halo'] = "Choose luminous halo's color";
 $lang['choose-with-RGB'] = "Selected color (RGB)";
 $lang['validate-btn'] = "Validate";
+$lang['protocole-title'] = "Title";
 ?>
