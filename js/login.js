@@ -147,7 +147,7 @@ function sendRegisterForm()
             document.cookie ="login=" + obj2.login;
             document.cookie ="firstname=" + obj2.firstname;
             document.cookie ="lastname=" + obj2.lastname;
-            document.cookie ="email=" + obj2.lastname;
+            document.cookie ="email=" + obj2.email;
             // document.cookie ="phonenumber=" + obj2.lastname;
             // document.cookie ="about=" + obj2.lastname;
             $('#registerForm').submit();
