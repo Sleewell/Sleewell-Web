@@ -103,13 +103,13 @@ if (isset($_GET['lang']))
                             <div class="vl-list-right"></div>
                         </div>
                         <div class="col-lg-8" id="connectionSection">
-                            <input class="btn Mango" type="button" onclick="requestAuthorization()" value="Request Authorization"></input>
+                            <input class="btn Mango" type="button" onclick="requestAuthorization()" value="<?php echo $lang['spotify authorization'];?>"></input>
                         </div>
                         <div class="col-lg-8" id="playlistsSection">
                             <div class="md-form mb-0" style="text-align:center;margin-bottom:2vh">
                                 <input id="searchPlaylistInput" style="color:white;margin-bottom:2vw" name="sujet" type="text" id="form82" class="form-control">
                                 <label style="color:#FF8F00" for="form83"><?php echo $lang['search-playlist'];?></label>
-                                <input id="searchButton" class="btn Mango" type="button" value="Search Playlists"></input>
+                                <input id="searchButton" class="btn Mango" type="button" value="<?php echo $lang['search-playlist'];?>"></input>
                             </div>
                             <div id="SpotifyItemsList" class="scrolltest">
                             </div>
@@ -134,7 +134,7 @@ if (isset($_GET['lang']))
                             </select>
                             <div id="selections">
                                 <div id="no_category">
-                                    <h4 class="textMango"> No category selected </h4>
+                                    <h4 class="textMango"><?php echo $lang["no-selection"] ?></h4>
                                 </div>
                                 <div id="forest" class="scrolltest" style="display:none;">
                                     <div id="forest_birds" class="sleewell-item" style="cursor: pointer;" onclick="updateFooterMusic(this.id)">

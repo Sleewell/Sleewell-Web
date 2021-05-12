@@ -109,7 +109,7 @@ if (isset($_GET['lang']))
                         <!-- End of  Card content -->
                         </div>
                         <!-- End of  Card -->
-                        <span class="waves-input-wrapper waves-effect waves-light" style="width:100%;margin-top:1vw"><a href="routine_manager.php" class="btn Mango btn-rounded" style="width:100%;text-decoration: none;">Routines manager</a><span>
+                        <span class="waves-input-wrapper waves-effect waves-light" style="width:100%;margin-top:1vw"><a href="routine_manager.php" class="btn Mango btn-rounded" style="width:100%;text-decoration: none;"><?php echo $lang["routine-managerbtn"] ?></a><span>
                     </div>
                     <!-- End of  First column -->
                     <!-- Second column -->

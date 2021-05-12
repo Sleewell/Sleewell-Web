@@ -78,6 +78,7 @@ $lang["profile_card3-btn2"] = "Weeks";
 $lang["profile_card3-btn3"] = "Months";
 
 //Routine Manager
+$lang['routine-managerbtn'] = "Routine Manager";
 $lang['routine-manager'] = "Manage your favorite routines easily and quickly. Here, it's possible to create, to modify and to delete your routines.
 It is also possible to share it with your relatives.";
 $lang['halo-popup'] = "Luminous halo";
@@ -86,6 +87,8 @@ $lang['modify-popup'] = "Modify";
 $lang['delete-popup'] = "Delete";
 
 //Routine Modifier
+$lang['no-selection'] = "No category selected";
+$lang['spotify authorization'] = "Spotify Authorization";
 $lang['choose-sleewell-sound'] = "Choose ambient sound selected by Sleewell's team";
 $lang['choose-spotify-sound'] = "Choose a playlist on Spotify";
 $lang['choose-music'] = "Choose the music for the sleep protocol";
