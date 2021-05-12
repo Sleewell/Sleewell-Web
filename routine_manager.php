@@ -39,6 +39,7 @@ if (isset($_GET['lang']))
         <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/jquery.wheelcolorpicker.js"></script>
 
+        <script src="js/routine_manager_get.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/anime.min.js"></script>
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
@@ -99,64 +100,9 @@ if (isset($_GET['lang']))
         <!--################################-->
         <div class="container-xxl">
             <h4 class="AmeberText" style="text-align:center"><?php echo $lang['routine-manager'];?></h4>
-            <table style="width:100%"><tr>
+            <table id="routineFullList" style="width:100%"><tr>
                 <td class="fit-table-routine">
-                    <div class="fit-routine">
-                        <button class="halo" href="" data-toggle="modal" data-target="#modalRoutine">
-                            <img type="image" class="music-cover" src="img/leprouscover.png"/>
-                            <img type="image" class="spotify-logo" src="img/spotify_logo.png"/>
-                        </button>
-                        <h4 class="AmberText">Protocol lundi</h4>
-                    </div>
-                </td>
-                <td class="fit-table-routine">
-                    <div class="fit-routine">
-                        <button class="halo" href="" data-toggle="modal" data-target="#modalRoutine">
-                            <img type="image" class="music-cover" src="img/leprouscover.png"/>
-                            <img type="image" class="spotify-logo" src="img/spotify_logo.png"/>
-                        </button>
-                        <h4 class="AmberText">Protocol lundi</h4>
-                    </div>
-                </td>
-                <td class="fit-table-routine">
-                    <div class="fit-routine">
-                        <button class="halo" href="" data-toggle="modal" data-target="#modalRoutine">
-                            <img type="image" class="music-cover" src="img/leprouscover.png"/>
-                            <img type="image" class="spotify-logo" src="img/spotify_logo.png"/>
-                        </button>
-                        <h4 class="AmberText">Protocol lundi</h4>
-                    </div>
-                </td>
-                <td class="fit-table-routine">
-                    <div class="fit-routine">
-                        <button class="halo" href="" data-toggle="modal" data-target="#modalRoutine">
-                            <img type="image" class="music-cover" src="img/leprouscover.png"/>
-                            <img type="image" class="spotify-logo" src="img/spotify_logo.png"/>
-                        </button>
-                        <h4 class="AmberText">Protocol lundi</h4>
-                    </div>
-                </td>
-                <td class="fit-table-routine">
-                    <div class="fit-routine">
-                        <button class="halo" href="" data-toggle="modal" data-target="#modalRoutine">
-                            <img type="image" class="music-cover" src="img/leprouscover.png"/>
-                            <img type="image" class="spotify-logo" src="img/spotify_logo.png"/>
-                        </button>
-                        <h4 class="AmberText">Protocol lundi</h4>
-                    </div>
-                </td>
-            </tr><tr>
-                <td class="fit-table-routine">
-                    <div class="fit-routine">
-                        <button class="halo" href="" data-toggle="modal" data-target="#modalRoutine">
-                            <img type="image" class="music-cover" src="img/leprouscover.png"/>
-                            <img type="image" class="spotify-logo" src="img/spotify_logo.png"/>
-                        </button>
-                        <h4 class="AmberText">Protocol lundi</h4>
-                    </div>
-                </td>
-                <td class="fit-table-routine">
-                    <a class="fit-routine" href="routine_modify.php">
+                    <a class="fit-routine" href="create_routine.php">
                         <div class="crea-bg">
                             <img type="image" class="create-routine" src="img/plus.png"/>
                         </div>
@@ -177,7 +123,7 @@ if (isset($_GET['lang']))
                         </button>
                     </div>
                     <div class="modal-body AmberText">
-                        <p class="modal-title">Protocole title</p></br>
+                        <p id="modal_protocoltitle" class="modal-title"></p></br>
                         <table style="width:100%"><tr>
                             <td width=50%>
                                 <h3><?php echo $lang['halo-popup'];?></h3>
@@ -186,8 +132,7 @@ if (isset($_GET['lang']))
                             <td width=50%>
                                 <h3><?php echo $lang['sound-popup'];?></h3>
                                 <div class="spotify-pos">
-                                    <img type="image" class="music-cover" src="img/leprouscover.png"/>
-                                    <img type="image" class="spotify-logo" src="img/spotify_logo.png"/>
+                                    <img id="modal_musiccover" type="image" class="music-cover" src="img/leprouscover.png"/>
                                 </div>
                             </td>
                         </tr></table>
@@ -199,7 +144,7 @@ if (isset($_GET['lang']))
                             <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a href="routine_modify.php" class="btn Mango btn-rounded" style="text-decoration: none;"><?php echo $lang['modify-popup'];?></a><span>
                             </td> <td width=20%></td>
                             <td width=20%>
-                            <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a href="" class="btn Mango btn-rounded" style="text-decoration: none;"><?php echo $lang['delete-popup'];?></a><span>
+                            <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a id="deletebtn" onclick="deleteRoutine()" href="" class="btn Mango btn-rounded" style="text-decoration: none;"><?php echo $lang['delete-popup'];?></a><span>
                             </td><td width=20%></td>
                         </tr></table>
                     </div>
@@ -220,6 +165,16 @@ if (isset($_GET['lang']))
             } else if(lang=='fr') {
                 location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre";
             }
+        }
+
+        function sendIdToModal(id) {
+            var parent = document.getElementById(id);
+            var modal_protocoltitle = document.getElementById("modal_protocoltitle");
+            var modal_musiccover = document.getElementById("modal_musiccover");
+            var deletebtn = document.getElementById("deletebtn");
+            deletebtn.setAttribute('val', id);
+            modal_protocoletitle = parent.childNodes[0].childNodes[0];
+            parent.nextSibling;
         }
     </script>
 </html>
