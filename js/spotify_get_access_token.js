@@ -1,4 +1,4 @@
-var redirect_uri = "http://dev.sleewell.fr/create_modify.php"; // change this your value
+var redirect_uri = "https://dev.sleewell.fr/create_modify.php"; // change this your value
 
 var client_id = "2250fa92c9794ecd8e0812806e516270"; 
 var client_secret = "f2b21b5d9cd140569f1af0665e5b7479"; // In a real app you should not expose your client_secret to the user
