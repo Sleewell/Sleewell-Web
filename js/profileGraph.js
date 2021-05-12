@@ -38,6 +38,7 @@ function showGraph(nb)
             console.log(token);
             if (nb == 1) {
                 const today = moment().add(-1, "days").format('YYYYMMDD');
+                console.log(today);
                 var settings = {
                     "url": "https://api.sleewell.fr/stats/night/" + today,
                     "method": "GET",
