@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     $('#loginPassword').keypress(function(e){
         if(e.which == 13){
             $('#loginUsername').click();
@@ -35,7 +36,7 @@ $(document).ready(function() {
         document.cookie = "login=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
         document.cookie = "firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
         document.cookie = "lastname=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-        // document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
         // document.cookie = "phonenumber=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
         // document.cookie = "about=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
         location.reload();
@@ -66,20 +67,24 @@ function sendLoginForm()
 
         form.append("token", token);
         var settings = {
-        "url": "https://api.sleewell.fr/user/information",
-        "method": "POST",
-        "timeout": 0,
-        "processData": false,
-        "mimeType": "multipart/form-data",
-        "contentType": false,
-        "data": form
+            "url": "https://api.sleewell.fr/user/information",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+              "Authorization": "Bearer " + token
+            },
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+            "data": form
         };
         $.ajax(settings).done(function (response) {
             var obj2 = jQuery.parseJSON(response);
+            console.log(obj2);
             document.cookie ="login=" + obj2.login;
             document.cookie ="firstname=" + obj2.firstname;
             document.cookie ="lastname=" + obj2.lastname;
-            // document.cookie ="email=" + obj2.lastname;
+            document.cookie ="email=" + obj2.email;
             // document.cookie ="phonenumber=" + obj2.lastname;
             // document.cookie ="about=" + obj2.lastname;
             $('#loginForm').submit();
@@ -127,13 +132,15 @@ function sendRegisterForm()
         document.cookie ="token=" + token;
         form.append("token", token);
         var settings = {
-        "url": "https://api.sleewell.fr/user/information",
-        "method": "POST",
-        "timeout": 0,
-        "processData": false,
-        "mimeType": "multipart/form-data",
-        "contentType": false,
-        "data": form
+            "url": "https://api.sleewell.fr/user/information",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+              "Authorization": "Bearer " + token
+            },
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
         };
         $.ajax(settings).done(function (response) {
             var obj2 = jQuery.parseJSON(response);

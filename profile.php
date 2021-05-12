@@ -161,7 +161,7 @@ if (isset($_GET['lang']))
                                 <!-- First column -->
                                 <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input style="color:white;" type="email" id="profilEmail" class="form-control validate">
+                                    <input style="color:white;" type="email" id="profilEmail" value="<?php echo $_COOKIE["email"]?>" class="form-control validate">
                                     <label style="color:white;" data-error="Incorrect" data-success="Excellent" for="form76"><?php echo$lang["profile_card2-inp4"] ?></label>
                                 </div>
                                 </div>

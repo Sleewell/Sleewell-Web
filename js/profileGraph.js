@@ -1,4 +1,199 @@
+let chart;
+let token;
 $(document).ready(function () {
+    callmoment();
+    token = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('token='))
+        .split('=')[1];
+
+    graphTarget = $("#profileGraph");
+    showGraph(1);
+    $("#days").click(function() {
+        showGraph(1);
+        $("#days").prop("disabled",true);
+        $("#week").prop("disabled",false);
+        $("#month").prop("disabled",false);
+    });
+    $( "#week" ).click(function() {
+        $("#days").prop("disabled",false);
+        $("#week").prop("disabled",true);
+        $("#month").prop("disabled",false);
+        showGraph(7);
+    });
+    $( "#month" ).click(function() {
+        $("#days").prop("disabled",false);
+        $("#week").prop("disabled",false);
+        $("#month").prop("disabled",true);
+        showGraph(31);
+    });
+});
+
+function showGraph(nb)
+{
+    {
+        $.post("index.php",
+        function ()
+        {
+            console.log(token);
+            if (nb == 1) {
+                const today = moment().format('YYYYMMDD');
+                var settings = {
+                    "url": "https://api.sleewell.fr/stats/night/" + today,
+                    "method": "GET",
+                    "headers" : {
+                        "Authorization": token
+                    },
+                    "timeout": 0,
+                };
+                $.ajax(settings).done(function (response) {
+                    var dbData = [];
+                    var timeData = [];
+                    for (var i = 0; i < response.data.length; i++) {
+                        dbData.push(response.data[i].db);
+                        timeData.push(" ");
+                    }
+                    var chartdata = {
+                        labels: timeData,   
+                        datasets: [
+                            {
+                                label: 'Decibels during your night',
+                                backgroundColor: '#EF952C',
+                                hoverBackgroundColor: '#ff8f00',
+                                hoverBorderColor: '#666666',
+                                data: dbData,
+                            }
+                        ]
+                    };
+                    mychart("line", chartdata);
+                });
+            }else if (nb == 7) {
+                var startOfWeek = moment().clone().startOf('week').format('YYYYMMDD');
+                console.log({
+                    week_from_date: startOfWeek,
+                });
+                var settings = {
+                    "url": "https://api.sleewell.fr/stats/week/" + startOfWeek,
+                    "method": "GET",
+                    "headers" : {
+                        "Authorization": token
+                    },
+                    "timeout": 0,
+                };
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
+                    fDay = parseInt(startOfWeek);
+                    let [dbData, timeLength]= fillDays(7);
+                    for (var i = 0; i < response.data.length; i++) {
+                        if (timeLength[response.data[i].id - fDay] === "0" && (response.data[i].end - response.data[i].start) >= 60) {
+                            timeLength[response.data[i].id - fDay] = getHour(response.data[i].end - response.data[i].start);
+                        }
+                    }
+                    dbData = getProperDays(7);
+                    var chartdata = {
+                        labels: dbData,   
+                        datasets: [
+                            {
+                                label: 'Time of sleep',
+                                backgroundColor: '#EF952C',
+                                hoverBackgroundColor: '#ff8f00',
+                                hoverBorderColor: '#666666',
+                                data: timeLength,
+                            }
+                        ]
+                    };
+                    mychart("bar", chartdata);
+                });
+            }else {
+                var startOfMonth = moment().clone().startOf('month').format('YYYYMMDD');
+                console.log({
+                    week_from_date: startOfMonth,
+                });
+                var settings = {
+                    "url": "https://api.sleewell.fr/stats/month/" + startOfMonth + "?format=week",
+                    "method": "GET",
+                    "headers" : {
+                        "Authorization": token
+                    },
+                    "timeout": 0,
+                };
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
+                    fDay = parseInt(startOfMonth);
+                    var dbData = fillDays(moment().daysInMonth());
+                    var timeLength = ["0", "0", "0", "0", "0", "0", "0"];
+                    for (var i = 0; i < response.data.length; i++) {
+                        if (timeLength[response.data[i].id - fDay] === "0" && (response.data[i].end - response.data[i].start) >= 60) {
+                            timeLength[response.data[i].id - fDay] = getHour(response.data[i].end - response.data[i].start);
+                        }
+                    }
+                    dbData = getProperDays(moment().daysInMonth());
+                    var chartdata = {
+                        labels: dbData,   
+                        datasets: [
+                            {
+                                label: 'Time of sleep',
+                                backgroundColor: '#EF952C',
+                                hoverBackgroundColor: '#ff8f00',
+                                hoverBorderColor: '#666666',
+                                data: timeLength,
+                            }
+                        ]
+                    };
+                    mychart("bar", chartdata);
+                });
+            }
+        });
+    }
+}
+
+function mychart(type, data) {
+    if (chart) {
+      chart.destroy();
+    }
+    if (type == "line") {
+        chart = new Chart(graphTarget, {
+            type: type,
+            data: data,
+            options: {
+                tooltips: {
+                    enabled: false
+                },
+                elements: {
+                    point:{
+                        radius: 0
+                    }
+                }
+            }
+        });
+    }
+    else {
+        chart = new Chart(graphTarget, {
+            type: type,
+            data: data,
+            options: {
+                tooltips: {
+                    enabled: false
+                },
+                scales: {
+                    yAxes: [{
+                        // type: 'time',
+                        // time: {
+                        //     unit: 'hour',
+                        // },
+                        // barPercentage: 0.6,
+                        // display: true,
+                    }],
+                    xAxes: [{ id: 'y-axis-1', }, ]
+                }
+              },
+        });
+    }
+}
+
+
+function callmoment()
+{
     moment.locale('fr', {
         months : 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split('_'),
         monthsShort : 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split('_'),
@@ -59,95 +254,36 @@ $(document).ready(function () {
             doy : 4  // Used to determine first week of the year.
         }
     });
-    var days = [];
-    var values = [];
-    var chartdata = {
-        labels: days,   
-        datasets: [
-            {
-                label: 'Durée de votre sommeil',
-                backgroundColor: '#EF952C',
-                borderColor: '#46d5f1',
-                hoverBackgroundColor: '#ff8f00',
-                hoverBorderColor: '#666666',
-                data: values
-            }
-        ]
-    };
-    var graphTarget = $("#profileGraph");
-    var barGraph = new Chart(graphTarget, {
-        type: 'bar',
-        data: chartdata,
-        options: {
-            scales: {
-                xAxes: [{
-                    barPercentage: 0.6,
-                    display: true,
-                }],
-                yAxes: [{ id: 'y-axis-1', ticks: { min: 0, max: 20 , } }, ]
-            }
-          },
-    });
-    showGraph(1, barGraph);
-    $("#days").click(function() {
-        showGraph(1, barGraph);
-        $("#days").prop("disabled",true);
-        $("#week").prop("disabled",false);
-        $("#month").prop("disabled",false);
-    });
-    $( "#week" ).click(function() {
-        $("#days").prop("disabled",false);
-        $("#week").prop("disabled",true);
-        $("#month").prop("disabled",false);
-        showGraph(7, barGraph);
-    });
-    $( "#month" ).click(function() {
-        $("#days").prop("disabled",false);
-        $("#week").prop("disabled",false);
-        $("#month").prop("disabled",true);
-        showGraph(31, barGraph);
-    });
-});
+}
 
-function showGraph(nb, barGraph)
+function getHour(time) {
+    var hours   = parseFloat(time / 3600);
+    console.log(hours);
+    return hours;
+}
+
+function getProperDays(duration)
 {
-    {
-        $.post("index.php",
-        function ()
-        {
-            if (nb == 1) {
-                const today = moment();
-                const from_date = today.isoWeekday(1);
-                const to_date = today.isoWeekday(7);
-                console.log({
-                    from_date: from_date.toString(),
-                    today: moment().toString(),
-                    to_date: to_date.toString(),
-                });
-                barGraph.data.labels = [moment().subtract(2, 'days').format('DD MMMM'), moment().subtract(1, 'days').format('DD MMMM'), moment().format('DD MMMM')];
-                var settings = {
-                    "url": "https://api.sleewell.fr/stats/night/20210325",
-                    "method": "GET",
-                    "headers" : {
-                        "Authorization": "4e97ae31b5cebecf45ba0ce8c7f7984311540efd"
-                    },
-                    "timeout": 0,
-                  };
-                  
-                  $.ajax(settings).done(function (response) {
-                    console.log(response);
-                });
-                barGraph.data.datasets[0].data = ["7", "8", "6"];
-                barGraph.update();
-            }else if (nb == 7) {
-                barGraph.data.labels = [moment().subtract(6, 'days').format('DD MMMM'), moment().subtract(5, 'days').format('DD MMMM'),moment().subtract(4, 'days').format('DD MMMM'), moment().subtract(3, 'days').format('DD MMMM'),moment().subtract(2, 'days').format('DD MMMM'), moment().subtract(1, 'days').format('DD MMMM'), moment().format('DD MMMM')];
-                barGraph.data.datasets[0].data = ["4", "6", "7", "8", "7", "8", "6"];
-                barGraph.update();
-            }else {
-                barGraph.data.labels = [moment().subtract(29, 'days').format('DD MMMM'), moment().subtract(28, 'days').format('DD MMMM'), moment().subtract(27, 'days').format('DD MMMM'), moment().subtract(26, 'days').format('DD MMMM'), moment().subtract(25, 'days').format('DD MMMM'), moment().subtract(24, 'days').format('DD MMMM'), moment().subtract(23, 'days').format('DD MMMM'), moment().subtract(22, 'days').format('DD MMMM'), moment().subtract(20, 'days').format('DD MMMM'), moment().subtract(19, 'days').format('DD MMMM'), moment().subtract(18, 'days').format('DD MMMM'), moment().subtract(17, 'days').format('DD MMMM'), moment().subtract(16, 'days').format('DD MMMM'), moment().subtract(15, 'days').format('DD MMMM'), moment().subtract(14, 'days').format('DD MMMM'), moment().subtract(13, 'days').format('DD MMMM'), moment().subtract(12, 'days').format('DD MMMM'), moment().subtract(11, 'days').format('DD MMMM'), moment().subtract(10, 'days').format('DD MMMM'), moment().subtract(9, 'days').format('DD MMMM'), moment().subtract(9, 'days').format('DD MMMM'), moment().subtract(8, 'days').format('DD MMMM'), moment().subtract(7, 'days').format('DD MMMM'), moment().subtract(6, 'days').format('DD MMMM'), moment().subtract(5, 'days').format('DD MMMM'),moment().subtract(4, 'days').format('DD MMMM'), moment().subtract(3, 'days').format('DD MMMM'),moment().subtract(2, 'days').format('DD MMMM'), moment().subtract(1, 'days').format('DD MMMM'), moment().format('DD MMMM')];
-                barGraph.data.datasets[0].data = ["6", "7", "6", "9", "7", "6.5", "8", "10", "8.4", "6", "7", "3", "10", "8", "5", "7", "9", "9", "8", "6", "5", "8", "8", "4", "6", "7", "8", "7", "8", "6"];
-                barGraph.update();
-            }
-        });
+    var array = [];
+    for (var i = 0; i < duration; i++) {
+        if (duration == 7)
+            array.push(moment().clone().startOf('week').add(i, 'days').format('DD-MM-YYYY'));
+        else
+            array.push(moment().clone().startOf('month').add(i, 'days').format('DD-MM-YYYY'));
+
     }
+    return (array);
+}
+
+function fillDays(nb){
+    var timeLength = ["0", "0", "0", "0", "0", "0", "0"];
+    var dbData = [];
+
+    for (var i = 0; i < nb;i ++) {
+        if (nb == 7)
+            dbData.push(moment().clone().startOf('week').add(i, "days").format('YYYYMMDD'));
+        else
+            dbData.push(moment().clone().startOf('month').add(i, "days").format('YYYYMMDD'));
+    }
+    return [dbData , timeLength];
 }
