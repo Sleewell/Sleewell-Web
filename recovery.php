@@ -15,25 +15,34 @@ if (isset($_GET['lang']))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title> Recover Account </title>
-        <link rel="icon" href="./css/icons/sleewell.ico">
-        <link rel="stylesheet" href="css/global.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/mdb.min.css" rel="stylesheet"> 
-        <link href="css/font_color_sleewell.css" rel="stylesheet">
-        <link href="css/registerform.css" rel="stylesheet">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>
+
+        <title>Recover Account</title>
+        
+        <!-- Icon -->
+        <link rel="icon" href="css/icons/sleewell.ico">
+
+        <link rel="stylesheet" href="css/global.css"> 
+        <link href="css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="css/mdb.min.css" rel="stylesheet">  
+        <link href="css/font_color_sleewell.css" rel="stylesheet"> 
+        <link href="css/registerform.css" rel="stylesheet"> 
+
+
+        <!-- TOOLKIT -->
+        <script type="text/javascript" src="js/toolkit/jquery.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/anime.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/mdb.min.js"></script>
+
+        <!-- OUR SCRIPTS -->
         <script type="text/javascript" src="js/recovery.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/anime.min.js"></script>
+        <!-- FROM WEB -->
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
     </head>
     <body>
 
 
-    <table style="width:100%"><tr>
+    <table style="width:100%; margin-top: 25px;"><tr>
             <td colspan="1" width="33%"></td>
             <td colspan="1" width="34%">
                 <?php 
@@ -95,26 +104,7 @@ if (isset($_GET['lang']))
             <td colspan="1" width="33%"></td>
         </tr>
     </table>
-    </body>
-    <footer style="position: absolute;bottom:0;">
-        <div style="color:#FF8F00;"; class=container>
-            <div class="row" style="text-align:center;">
-                <div class="col-xs-8 col-sm-8">
-                    <img src="img/logo_sleewell.png" style="float:left;width:110px;height:150px;margin-left:100px"/>
-                </div>
-                <div class="col-xs-4 col-sm-4">
-                    <h3><?php echo $lang['contact-title']; ?></h3>
-                    <a id="contactus_btn" href="contact_us.php"><h4 class="AmeberText"><?php echo $lang['contact-redirection']; ?></h4></a>
-                    <div id="reseaux" style="text-align:center;margin-bottom:50px">
-                        <a href="https://twitter.com/sleewell"><img type="image" class="contact" src="img/twitter.png" style="width:50px;height:50px;"/></a>
-                        <a href="https://www.linkedin.com/company/sleewell"><img type="image" class="contact" src="img/linkedin.png" style="width:50px;height:50px;"/></a>
-                        <a href="https://www.instagram.com/sleewell_/"><img type="image" class="contact" src="img/insta.png" style="width:50px;height:50px;"/></a>
-                    </div>
-                </div>
-                <div style="text-align:center;" class="col-xs-12 col-sm-12">
-                    <?php echo $lang['copyright']; ?>
-                </div>
-            </div>
-        </div>
-</footer>
+    <br><br><br><br><br><br><br><br>
+    <?php include 'footer.php';?>
+</body>
 </html>

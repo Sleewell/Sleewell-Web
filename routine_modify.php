@@ -17,8 +17,12 @@ if (isset($_GET['lang']))
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+
         <title>Sleewell - Routine Manager</title>
-        <link rel="icon" href="./css/icons/sleewell.ico">
+
+        <!-- Icon -->
+        <link rel="icon" href="css/icons/sleewell.ico">
+
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <link rel="stylesheet" href="css/cssanimation.css"> 
@@ -29,21 +33,24 @@ if (isset($_GET['lang']))
         <link href="css/routine_manager.css" rel="stylesheet">
         <link href="css/registerform.css" rel="stylesheet">
         
-        
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/popper.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>
-        <script type="text/javascript" src="js/login.js"></script>
+        <!-- TOOLKIT -->
+        <script type="text/javascript" src="js/toolkit/jquery.js"></script>
+        <script type="text/javascript" src="js/toolkit/jquery.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/popper.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/mdb.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/anime.min.js"></script>
+        <script type="text/javascript" src="js/jquery.wheelcolorpicker.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/anime.min.js"></script>
+
+        <!-- OUR SCRIPTS -->
+        <script type="text/javascript" src="js/login.js"></script>
         <script src="js/spotify_get_access_token.js"></script>
         <script src="js/create_management.js"></script>
+
+        <!-- FROM WEB -->
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
-        <script type="text/javascript" src="js/jquery.wheelcolorpicker.js"></script>
-        <link type="text/css" rel="stylesheet" href="css/wheelcolorpicker.dark.css" />
+
         <script type="text/javascript">
             $(function() {
                 $('#background').wheelColorPicker({

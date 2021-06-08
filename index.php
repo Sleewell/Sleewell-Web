@@ -17,8 +17,11 @@ if (isset($_GET['lang']))
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+
         <title> Sleewell </title>
+
         <link rel="icon" href="./css/icons/sleewell.ico">
+
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,15 +31,19 @@ if (isset($_GET['lang']))
         <link href="css/mdb.min.css" rel="stylesheet"> 
         <link href="css/font_color_sleewell.css" rel="stylesheet">
         <link href="css/registerform.css" rel="stylesheet">
+        <link href="css/carousel.css" rel="stylesheet">
 
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/popper.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/jquery.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/popper.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/mdb.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/anime.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/scrolly.js"></script>
+
         <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/register.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/anime.min.js"></script>
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
     </head>
     <body>
@@ -100,7 +107,8 @@ if (isset($_GET['lang']))
         <div class="container-xxl">
             <!-- FIRST PRESENTATON PART SECTION -->
             <div class="oldblue-rounded-top"></div>
-            <div style="background-color: #001822;">
+            <!-- <div style="background-color: #001822;"> -->
+                <div>
                 <table style="width:100%"><tr >
                     <td colspan="1" width="50%">
                         <div class="text placed-right" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
@@ -134,7 +142,8 @@ if (isset($_GET['lang']))
             </div>
             <!-- THIRD PRESENTATON PART SECTION -->
             <div class="oldblue-rounded-top"></div>
-            <div style="background-color: #001822;">
+            <div >
+            <!-- <div style="background-color: #001822;"> -->
                 <table ><tr>
                     <td colspan="1" width="50%">
                         <div class="text placed-right" data-scrolly-down="blurInRight, timing-function:cubic-bezier(.17,.67,.83,.67)">
@@ -171,7 +180,7 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--     PRÉSENTATION PRODUITS      -->
         <!--################################-->
-        <div class="oldblue-rounded-top"></div>
+        <!-- <div class="oldblue-rounded-top"></div>
         <div class="products">
             <table style="width:100%"><tr>
                 <td colspan="1" width="50%" height="10vw">
@@ -185,7 +194,39 @@ if (isset($_GET['lang']))
             </tr></table>
             <a id="info_btn" href="" class="btn btn-rounded my-3 Mango" style="display:block;margin-left:auto;margin-right:auto;max-width:250px" data-toggle="modal" data-target="#modalproductPres"><?php echo $lang['Products-button'];?></a>
             <br><br><br>
+        </div> -->
+        <div class="container">
+            <section>
+                <div class="slide">
+                    <div class="content">
+                            <h2><?php echo $lang['app-title1'];?></h2>
+                            <p><?php echo $lang['app-text1'];?></p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="content">
+                            <h2><?php echo $lang['app-title2'];?></h2>
+                            <p><?php echo $lang['app-text2'];?></p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="content">
+                            <h2><?php echo $lang['app-title3'];?></h2>
+                            <p><?php echo $lang['app-text3'];?></p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="content">
+                            <h2><?php echo $lang['app-title4'];?></h2>
+                            <p><?php echo $lang['app-text4'];?></p>
+                    </div>
+                </div>
+            </section>
         </div>
+        <div style="margin-top: 20px;"></div>
+        <hr style="border-top: 2px solid #ff8f00; border-radius: 5px; margin: auto; width: 80%;padding-bottom: 2em;">
+        
+        <div style="margin-top: 20px;"></div>
 
         <!--################################-->
         <!--          PIED DE PAGE          -->
@@ -215,12 +256,12 @@ if (isset($_GET['lang']))
                                 <div class="modal-body mb-1">
                                     <div class="md-form form-sm mb-5">
                                         <i style="color:#ef952c;" class="fas fa-user prefix"></i>
-                                        <input type="text" onkeyup="updateLoginInput()" name="id" id="loginUsername" class="form-control form-control-sm validate">
+                                        <input type="text" onkeyup="updateLoginInput()" name="id" id="loginUsername" class="form-control form-color form-control-sm validate">
                                         <label data-success="Super !" for="loginUsername">Votre identifiant</label>
                                     </div>
                                     <div class="md-form form-sm mb-4">
                                         <i style="color:#ef952c;" class="fas fa-lock prefix"></i>
-                                        <input type="password" onkeyup="updateLoginInput()" id="loginPassword" class="form-control form-control-sm">
+                                        <input type="password" onkeyup="updateLoginInput()" id="loginPassword" class="form-control form-color form-control-sm">
                                         <label name="password" for="loginPassword">Votre superbe mot de passe</label>
                                     </div>
                                     <div class="text-center mt-2">
@@ -235,46 +276,47 @@ if (isset($_GET['lang']))
                                 </div>
                                 </form>
                             </div>
+
                             <div class="tab-pane fade" id="panel2" role="tabpanel">
                                 <form id="registerForm" action="profile.php" method="post">
                                 <div class="modal-body">
                                     <div class="form-row">
                                         <div class="col">
                                             <div class="md-form">
-                                                <input type="text" id="registerLastName" class="form-control">
+                                                <input type="text" id="registerLastName" class="form-control form-color">
                                                 <label for="registerLastName">Votre nom</label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="md-form">
-                                                <input type="text" id="registerFirstName" class="form-control">
+                                                <input type="text" id="registerFirstName" class="form-control form-color">
                                                 <label for="registerFirstName">Votre prénom</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-form mt-0">
-                                        <input type="text" id="registerUsername" name="id" class="form-control">
+                                        <input type="text" id="registerUsername" name="id" class="form-control form-color">
                                         <label for="registerUsername">Votre identifiant</label>
                                     </div>
                                     <div class="md-form mt-0">
-                                        <input onchange="checkRegisterMail()" type="email" id="registerEmail" class="form-control validate">
+                                        <input onchange="checkRegisterMail()" type="email" id="registerEmail" class="form-control  form-color validate">
                                         <label data-error="Invalide" data-success="Super" for="registerEmail">Votre email</label>
                                         <!-- <small style="display: none;" id="registerPasswordHelpBlock" class="form-text text-muted mb-4">
                                             Votre email ne comporte pas @ ! -->
                                         </small>
                                     </div>
                                     <div class="md-form">
-                                        <input type="password" onkeyup="checkRegisterPassword()" id="registerPassword" class="form-control" aria-describedby="registerPasswordPasswordHelpBlock">
+                                        <input type="password" onkeyup="checkRegisterPassword()" id="registerPassword" class="form-control form-color" aria-describedby="registerPasswordPasswordHelpBlock">
                                         <label for="registerPassword">Votre mot de passe</label>
                                         <small id="registerPasswordHelpBlock" class="form-text text-muted mb-4">
                                             Votre superbe mot de passe doit au moins contenir 8 caractères et 1 chiffre
                                         </small>
                                     </div>
                                     <div class="md-form">
-                                        <input type="password" onkeyup="checkRegisterPassword()" id="registerPasswordCheck" class="form-control" aria-describedby="registerPasswordCheckPasswordHelpBlock">
+                                        <input type="password" onkeyup="checkRegisterPassword()" id="registerPasswordCheck" class="form-control form-color" aria-describedby="registerPasswordCheckPasswordHelpBlock">
                                         <label for="registerPasswordCheck">Votre mot de passe (le même)</label>
                                     </div>
-                                    <div id="message">
+                                    <div class="card card-cascade" id="message">
                                     <h5>Votre mot de passe ne contient pas les éléments suivants:</h5>
                                         <p id="number" class="invalid">Un <b>chiffre</b></p>
                                         <p id="length" class="invalid">Au moins <b>8 caractères</b></p>
@@ -418,8 +460,6 @@ if (isset($_GET['lang']))
     <!--################################-->
     <!--    SCRIPTS SCROLL SLIDESHOW    -->
     <!--################################-->
-
-    <script type="text/javascript" src="js/scrolly.js"></script>
     <script>
         window.onload = function() {
             scrolly();

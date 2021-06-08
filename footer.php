@@ -1,5 +1,6 @@
 <footer>
-    <div style="color:#FF8F00;"; class=container>
+    <hr style="border-top: 2px solid #ff8f00; border-radius: 5px; margin: auto; width: 80%;padding-bottom: 2em;">
+    <div class=container>
         <div class="row" style="text-align:center;">
             <div class="col-xs-8 col-sm-8">
                 <img src="img/logo_sleewell.png" class="footer-logo"/>

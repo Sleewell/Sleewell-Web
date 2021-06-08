@@ -17,7 +17,12 @@ if (isset($_GET['lang']))
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+
         <title>Sleewell - Contact</title>
+
+        <!-- Icon -->
+        <link rel="icon" href="css/icons/sleewell.ico">
+
         <link rel="icon" href="./css/icons/sleewell.ico">
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -28,14 +33,17 @@ if (isset($_GET['lang']))
         <link href="css/font_color_sleewell.css" rel="stylesheet">
         <link href="css/registerform.css" rel="stylesheet">
 
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/popper.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <!-- TOOLKIT -->
+        <script type="text/javascript" src="js/toolkit/jquery.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/popper.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/anime.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/mdb.min.js"></script>
+
+        <!-- OUR SCRIPTS -->
         <script type="text/javascript" src="js/login.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/anime.min.js"></script>
+        <!-- FROM WEB -->
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
 
     </head>

@@ -6,33 +6,47 @@ body {
     width: 100%;
     height: 100%;
 	color: #FF8F00;
-	background: #00111F !important;
-    font-family:'Roboto', sans-serif;
+    background-color: #310e68;
+    background-image: linear-gradient(10deg, #00112F 0%,#001125 42%, #00111F 74%);
+   font-family:'Roboto', sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+    -webkit-box-shadow: 0 0 0 30px #00111f inset !important;
+}
+
+input:-webkit-autofill
+{
+ -webkit-text-fill-color: white !important;
 }
 
 header {
     position: fixed;
     width: 100%;
-    background-color: #ffffff09;
+    /* background-color: #ffffff09; */
     box-shadow: 2px 1px 2px 1px #ffffff05;
 }
 
 footer {
     bottom: 0;
     width: 100%;
-    background-color: #ffffff09;
+    /* background-color: #ffffff09; */
 }
 
 
 /* A delete */
 .products {
     width: 100%;
-    background-color: #001822;
+    /* background-color: #001822; */
 }
 
 .apppres {
     border-radius: 25px;
-    background: #ffffff15;
+    /* background: #ffffff15; */
     margin-left: 20%;
     width: 60%;
     height: 60%;
@@ -41,7 +55,7 @@ footer {
 
 .basepres {
     border-radius: 25px;
-    background: #ffffff15;
+    /* background: #ffffff15; */
     margin-left: 20%;
     width: 60%;
     height: 60%;
@@ -67,24 +81,20 @@ footer {
 }
 
 .oldblue-rounded-top {
-	background-color: #001822;
-    height: 5vw;
-    border-top-left-radius: 50%;
-	border-top-right-radius: 50%;
+	/* background-color: #001822; */
+    height: 2vw;
 }
 
 .bckg-rounded-top {
-	background-color: #00111F;
-    height: 5vw;
-    border-top-left-radius: 50%;
-	border-top-right-radius: 50%;
+	/* background-color: #00111F; */
+    height: 2vw;
 }
 
 
 
 
 .contacts-header {
-	background-color: #002F3F;
+	/* background-color: #002F3F; */
     height: 100px;
     border-top-left-radius: 50%;
 	border-top-right-radius: 50%;
@@ -542,6 +552,9 @@ label {
         margin-top: 35%;
         border-radius: 10px;
     }
+}
+.form-color {
+    color: #ffffff !important;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

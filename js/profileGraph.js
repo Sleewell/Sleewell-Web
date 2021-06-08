@@ -1,5 +1,6 @@
 let chart;
 let token;
+
 $(document).ready(function () {
     callmoment();
     token = document.cookie
@@ -50,9 +51,15 @@ function showGraph(nb)
                 $.ajax(settings).done(function (response) {
                     var dbData = [];
                     var timeData = [];
-                    for (var i = 0; i < response.data.length; i++) {
-                        dbData.push(response.data[i].db);
-                        timeData.push(" ");
+                    if (response.data !== undefined) {
+                        for (var i = 0; i < response.data.length; i++) {
+                            dbData.push(response.data[i].db);
+                            timeData.push(" ");
+                        }
+                    }
+                    else {
+                        timeData.push("No data");
+                        dbData.push(0);
                     }
                     var chartdata = {
                         labels: timeData,   
@@ -84,10 +91,12 @@ function showGraph(nb)
                 $.ajax(settings).done(function (response) {
                     console.log(response);
                     fDay = parseInt(startOfWeek);
-                    let [dbData, timeLength]= fillDays(7);
-                    for (var i = 0; i < response.data.length; i++) {
-                        if (timeLength[response.data[i].id - fDay] === "0" && (response.data[i].end - response.data[i].start) >= 60) {
-                            timeLength[response.data[i].id - fDay] = getHour(response.data[i].end - response.data[i].start);
+                    let [dbData, timeLength] = fillDays(7);
+                    if (response.data !== null) {
+                        for (var i = 0; i < response.data.length; i++) {
+                            if (timeLength[response.data[i].id - fDay] === "0" && (response.data[i].end - response.data[i].start) >= 60) {
+                                timeLength[response.data[i].id - fDay] = getHour(response.data[i].end - response.data[i].start);
+                            }
                         }
                     }
                     dbData = getProperDays(7);
@@ -111,7 +120,7 @@ function showGraph(nb)
                     week_from_date: startOfMonth,
                 });
                 var settings = {
-                    "url": "https://api.sleewell.fr/stats/month/" + startOfMonth + "?format=week",
+                    "url": "https://api.sleewell.fr/stats/month/" + startOfMonth + "?format=days",
                     "method": "GET",
                     "headers" : {
                         "Authorization": token
@@ -121,11 +130,12 @@ function showGraph(nb)
                 $.ajax(settings).done(function (response) {
                     console.log(response);
                     fDay = parseInt(startOfMonth);
-                    var dbData = fillDays(moment().daysInMonth());
-                    var timeLength = ["0", "0", "0", "0", "0", "0", "0"];
-                    for (var i = 0; i < response.data.length; i++) {
-                        if (timeLength[response.data[i].id - fDay] === "0" && (response.data[i].end - response.data[i].start) >= 60) {
-                            timeLength[response.data[i].id - fDay] = getHour(response.data[i].end - response.data[i].start);
+                    let [dbData, timeLength] = fillDays(moment().daysInMonth());
+                    if (response.data !== null) {
+                        for (var i = 0; i < response.data.length; i++) {
+                            if (timeLength[response.data[i].id - fDay] === "0" && (response.data[i].end - response.data[i].start) >= 60) {
+                                timeLength[response.data[i].id - fDay] = getHour(response.data[i].end - response.data[i].start);
+                            }
                         }
                     }
                     dbData = getProperDays(moment().daysInMonth());
@@ -192,6 +202,22 @@ function mychart(type, data) {
     }
 }
 
+
+function createEmptyChartData(nb)
+{
+    var chartdata = {
+        labels: timeData,   
+        datasets: [
+            {
+                label: 'Decibels during your night',
+                backgroundColor: '#EF952C',
+                hoverBackgroundColor: '#ff8f00',
+                hoverBorderColor: '#666666',
+                data: dbData,
+            }
+        ]
+    };
+}
 
 function callmoment()
 {
