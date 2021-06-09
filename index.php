@@ -225,6 +225,19 @@ if (isset($_GET['lang']))
         </div>
         <div style="margin-top: 20px;"></div>
         <hr style="border-top: 2px solid #ff8f00; border-radius: 5px; margin: auto; width: 80%;padding-bottom: 2em;">
+        <div class=container>
+            <div class="row" style="text-align:center;">
+                <div class="col-xs-6 col-sm-6">
+                    <img src="img/android.png" style="width: 60%;"/>
+                </div>
+                <div class="col-xs-6 col-sm-6" style="margin-top: 5%;">
+                    <h1 style="text-align:left !important;">Get the app right now</h1>
+                    <form method="get" action="sleewell.apk">
+                        <button type="submit" style="margin-right:10%" class="btn  waves-effect ml-auto Mango">Download</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         
         <div style="margin-top: 20px;"></div>
 
