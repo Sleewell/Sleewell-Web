@@ -36,19 +36,22 @@ $(document).ready(function() {
             button.setAttribute('id', response.data[i].id);
             button.setAttribute('style', "background-color: " + response.data[i].color);
             button.setAttribute('onclick', "sendIdToModal(this.id)");
-            button.onclick = function() {sendIdToModal(this.id);};  
+            button.onclick = function() {sendIdToModal(this.id);};
             button.setAttribute('data-toggle', 'modal');
             button.setAttribute('data-target', '#modalRoutine');
 
             img_cover.classList.add('music-cover');
+            img_cover.setAttribute('id', response.data[i].musicName + ";" + response.data[i].musicUri);
             img_cover.setAttribute('src', 'img/leprouscover.png');
 
             if (response.data[i].player == "Spotify") {
                 logo_spot.classList.add('spotify-logo');
+                logo_spot.setAttribute('id', response.data[i].player);
                 logo_spot.setAttribute('src', 'img/spotify_logo.png');
             }
 
             title.classList.add('AmberText');
+            title.setAttribute('id', response.data[i].id + "Name");
             title.textContent = response.data[i].name;
   
             button.appendChild(img_cover);

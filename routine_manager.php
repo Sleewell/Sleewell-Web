@@ -46,6 +46,7 @@ if (isset($_GET['lang']))
         <!-- OUR SCRIPTS -->
         <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/routine_manager_get.js"></script>
+        <script src="js/delete_routine.js"></script>
 
         <!-- FROM WEB -->
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
@@ -123,7 +124,7 @@ if (isset($_GET['lang']))
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content GlobalBackground" style="border-radius: 10px;">
                     <div class="modal-header textMango">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#FF8F00">
+                        <button id="haloColor" type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#FF8F00">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -149,7 +150,7 @@ if (isset($_GET['lang']))
                             <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a href="routine_modify.php" class="btn Mango btn-rounded" style="text-decoration: none;"><?php echo $lang['modify-popup'];?></a><span>
                             </td> <td width=20%></td>
                             <td width=20%>
-                            <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a id="deletebtn" onclick="deleteRoutine()" href="" class="btn Mango btn-rounded" style="text-decoration: none;"><?php echo $lang['delete-popup'];?></a><span>
+                            <span class="waves-input-wrapper waves-effect waves-light" style="text-align:center"><a id="deletebtn" class="btn Mango btn-rounded" style="text-decoration: none;"><?php echo $lang['delete-popup'];?></a><span>
                             </td><td width=20%></td>
                         </tr></table>
                     </div>
@@ -173,12 +174,23 @@ if (isset($_GET['lang']))
         }
 
         function sendIdToModal(id) {
+            document.cookie = "routineId=" + id;
+            var style = getComputedStyle(document.getElementById(id));
+            document.cookie = "haloColor=" + style['background-color'];
             var parent = document.getElementById(id);
-            var modal_protocoltitle = document.getElementById("modal_protocoltitle");
-            var modal_musiccover = document.getElementById("modal_musiccover");
-            var deletebtn = document.getElementById("deletebtn");
+            var haloColor = document.getElementById("haloColor");
+            if (parent.childNodes[1].id == "Spotify") {
+                document.cookie = "musicName=" + parent.childNodes[0].id.split(';')[0];
+                document.cookie = "musicUri=" + parent.childNodes[0].id.split(';')[1];
+            } else {
+                document.cookie = "musicName=" + parent.childNodes[0].id.split(';')[0];
+                document.cookie = "musicUri=";
+            }
+            document.cookie = "routineName=" + document.getElementById(id + "Name").textContent;
+
+            $('.halo-modal').css("background-color", style['background-color']);
             deletebtn.setAttribute('val', id);
-            modal_protocoletitle = parent.childNodes[0].childNodes[0];
+            document.getElementById("modal_protocoltitle").innerHTML = document.getElementById(id + "Name").textContent;
             parent.nextSibling;
         }
     </script>

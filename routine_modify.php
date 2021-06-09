@@ -40,16 +40,18 @@ if (isset($_GET['lang']))
         <script type="text/javascript" src="js/toolkit/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/toolkit/mdb.min.js"></script>
         <script type="text/javascript" src="js/toolkit/anime.min.js"></script>
-        <script type="text/javascript" src="js/jquery.wheelcolorpicker.js"></script>
 
 
         <!-- OUR SCRIPTS -->
         <script type="text/javascript" src="js/login.js"></script>
         <script src="js/spotify_get_access_token.js"></script>
-        <script src="js/create_management.js"></script>
+        <script src="js/modify_management.js"></script>
+        <script src="js/load_routine.js"></script>
 
-        <!-- FROM WEB -->
+        <!-- FROM WEB + COLORPICKER -->
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
+        <script type="text/javascript" src="js/toolkit/jquery.wheelcolorpicker.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/wheelcolorpicker.dark.css" />
 
         <script type="text/javascript">
             $(function() {
@@ -330,7 +332,7 @@ if (isset($_GET['lang']))
                             <input style="color:white;" type="text" id="ProtocolTitle" value="" class="form-control validate" required>
                             <label style="color:white;" for="form82" data-error="Incorrect" class=""><?php echo $lang['protocole-title'];?></label>
                         </div>
-                        <a id="addRoutine" href="javascript:void(0)" class="btn-validate"><p class="text-validate"><?php echo $lang['validate-btn'];?></p></a>
+                        <a id="modifyRoutine" href="javascript:void(0)" class="btn-validate"><p class="text-validate"><?php echo $lang['validate-btn'];?></p></a>
                     </div>
                     <div class="col-1">
                         <div class="vl"></div>

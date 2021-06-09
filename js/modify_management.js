@@ -1,8 +1,13 @@
 $(document).ready(function() {
-    $("#addRoutine").click(function(){
+    $("#modifyRoutine").click(function(){
         const token = document.cookie
         .split('; ')
         .find(row => row.startsWith('token='))
+        .split('=')[1];
+
+        const id = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('routineId='))
         .split('=')[1];
 
         var musicFooter = document.getElementById("musicFooter");
@@ -16,18 +21,15 @@ $(document).ready(function() {
         if ($("#spotify_logo").is(":visible")) {
             musicuri = musicFooter.childNodes[1].id;
             musicname = musicFooter.childNodes[2].textContent;
-            console.log(musicuri + musicname);
             player = "Spotify"
         } else if ($("#spotify_logo").is(":hidden")) {
             musicuri = null;
             musicname = musicFooter.childNodes[1].id;
-            console.log(musicname);
             player = "Sleewell"
         }
         var name = $("#ProtocolTitle").val();
 
         var form = new FormData();
-        form.append("token", token);
         form.append("color", color);
         form.append("music", music);
         form.append("halo", halo);
@@ -36,19 +38,20 @@ $(document).ready(function() {
         form.append("name", name);
         form.append("musicname", musicname);
         form.append("musicuri", musicuri);
+        form.append("id", id);
 
         var settings = {
-        "url": "https://api.sleewell.fr/addRoutine",
-        "method": "POST",
-        "timeout": 0,
-        "headers": {
-            "Authorization": "Bearer " + token
-        },
-        "processData": false,
-        "mimeType": "multipart/form-data",
-        "contentType": false,
-        "data": form
-        };
+            "url": "https://api.sleewell.fr/updateRoutine",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+              "Authorization": "Bearer " + token
+            },
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+            "data": form
+          };
 
         $.ajax(settings).done(function (response) {
             console.log(response);

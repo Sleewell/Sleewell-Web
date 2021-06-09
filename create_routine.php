@@ -33,7 +33,6 @@ if (isset($_GET['lang']))
         <link rel="stylesheet" href="css/font_color_sleewell.css">
         <link rel="stylesheet" href="css/routine_manager.css">
         <link rel="stylesheet" href="css/registerform.css">
-        <link type="text/css" rel="stylesheet" href="css/wheelcolorpicker.dark.css" />
 
         <!-- TOOLKIT -->
         <script type="text/javascript" src="js/toolkit/jquery.js"></script>
@@ -51,6 +50,7 @@ if (isset($_GET['lang']))
         <!-- FROM WEB + COLORPICKER -->
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
         <script type="text/javascript" src="js/toolkit/jquery.wheelcolorpicker.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/wheelcolorpicker.dark.css" />
 
         <script type="text/javascript">
             $(function() {
