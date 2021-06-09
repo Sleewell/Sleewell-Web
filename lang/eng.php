@@ -108,4 +108,7 @@ $lang['app-text1'] = "With Sleewell, you will be able to start your sleep routin
 $lang['app-text2'] = "You can create your alarms in a few gestures. But also specify the days of repetitions, the sound of the alarm, activate the vibrations and define a label. You can create multiple alarms easily . ";
 $lang['app-text3'] = "The routine menu allows you to create your sleep routines. You can create routines with music directly from Spotify or our internal library and even define a light halo." ;
 $lang['app-text4'] = "In our sound library, we offer you the best sounds to help you fall asleep such as the sounds of forests, winds, fire or even rain. good sleep. "; 
+
+$lang['download-text'] = "Get the app right now";
+$lang['download-button'] = "Download";
 ?>

@@ -108,4 +108,7 @@ $lang['app-text1'] = "Avec Sleewell, vous pourrez lancer vos routines de sommeil
 $lang['app-text2'] = "Vous pourrez créer vos alarmes en quelques gestes. Mais aussi préciser les jours de répétitions, le son de l'alarme, activer les vibrations et définir un label. Vous pourrez créer de multiples alarmes facilement.";
 $lang['app-text3'] = "Le menu de routine vous permet de créer vos routines d'endormissement. Vouss pouvez y créer des routines avec des musiques directement issu de Spotify ou notre librairie interne et même définir un halo lumineux.";
 $lang['app-text4'] = "Dans notre librairie de sons, nous vous proposons les meilleurs sons pour vous aider à vouss endormir tel que des sons de fôrets, de vents, de feu ou encore de pluie. Ainsi vous retrouverez un bon sommeil.";
+
+$lang['download-text'] = "Télécharger l'application";
+$lang['download-button'] = "Télécharger";
 ?>

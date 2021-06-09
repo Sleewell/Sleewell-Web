@@ -231,9 +231,9 @@ if (isset($_GET['lang']))
                     <img src="img/android.png" style="width: 60%;"/>
                 </div>
                 <div class="col-xs-6 col-sm-6" style="margin-top: 5%;">
-                    <h1 style="text-align:left !important;">Get the app right now</h1>
+                    <h1 style="text-align:left !important;"><?php echo $lang['download-text'];?></h1>
                     <form method="get" action="sleewell.apk">
-                        <button type="submit" style="margin-right:10%" class="btn  waves-effect ml-auto Mango">Download</button>
+                        <button type="submit" style="margin-right:10%" class="btn  waves-effect ml-auto Mango"><?php echo $lang['download-button'];?></button>
                     </form>
                 </div>
             </div>
