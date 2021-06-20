@@ -1,8 +1,10 @@
 let chart;
 let token;
+let position;
 
 $(document).ready(function () {
     callmoment();
+    position = 0;
     token = document.cookie
         .split('; ')
         .find(row => row.startsWith('token='))
@@ -11,18 +13,21 @@ $(document).ready(function () {
     graphTarget = $("#profileGraph");
     showGraph(1);
     $("#days").click(function() {
-        showGraph(1);
+        changeDayPosition(0);
         $("#days").prop("disabled",true);
         $("#week").prop("disabled",false);
         $("#month").prop("disabled",false);
+        showGraph(1);
     });
     $( "#week" ).click(function() {
+        changeDayPosition(0);
         $("#days").prop("disabled",false);
         $("#week").prop("disabled",true);
         $("#month").prop("disabled",false);
         showGraph(7);
     });
     $( "#month" ).click(function() {
+        changeDayPosition(0);
         $("#days").prop("disabled",false);
         $("#week").prop("disabled",false);
         $("#month").prop("disabled",true);
@@ -36,10 +41,9 @@ function showGraph(nb)
         $.post("index.php",
         function ()
         {
-            console.log(token);
             if (nb == 1) {
-                const today = moment().add(-1, "days").format('YYYYMMDD');
-                console.log(today);
+                const today = moment().add(- 1 - position, "days").format('YYYYMMDD');
+                console.log("Used day :" + today);
                 var settings = {
                     "url": "https://api.sleewell.fr/stats/night/" + today,
                     "method": "GET",
@@ -76,10 +80,8 @@ function showGraph(nb)
                     mychart("line", chartdata);
                 });
             }else if (nb == 7) {
-                var startOfWeek = moment().clone().startOf('week').format('YYYYMMDD');
-                console.log({
-                    week_from_date: startOfWeek,
-                });
+                var startOfWeek = moment().clone().startOf('week').subtract(position, 'week').format('YYYYMMDD');
+                console.log("Used start of week :" + startOfWeek);
                 var settings = {
                     "url": "https://api.sleewell.fr/stats/week/" + startOfWeek,
                     "method": "GET",
@@ -115,10 +117,8 @@ function showGraph(nb)
                     mychart("bar", chartdata);
                 });
             }else {
-                var startOfMonth = moment().clone().startOf('month').format('YYYYMMDD');
-                console.log({
-                    week_from_date: startOfMonth,
-                });
+                var startOfMonth = moment().clone().startOf('month').subtract(position, 'month').format('YYYYMMDD');
+                console.log("Used start of month :" + startOfMonth);
                 var settings = {
                     "url": "https://api.sleewell.fr/stats/month/" + startOfMonth + "?format=days",
                     "method": "GET",
@@ -313,4 +313,37 @@ function fillDays(nb){
             dbData.push(moment().clone().startOf('month').add(i, "days").format('YYYYMMDD'));
     }
     return [dbData , timeLength];
+}
+
+function changeDayPosition(nb)
+{
+    if (nb == 1) {
+        position += 1;
+        $("#minusDays").prop("disabled",false);
+        if (position == 0)
+            $("#plusDays").prop("disabled",true);
+        else
+        $("#plusDays").prop("disabled",false);     
+    }
+    else if (nb == -1) {
+        position -= 1;
+        $("#plusDays").prop("disabled",false);
+        if (position == -10)
+            $("#minusDays").prop("disabled",true);
+        else 
+            $("#minusDays").prop("disabled",false);    
+    }
+    else {
+        position = 0;
+        $("#plusDays").prop("disabled",true);
+    }
+    if($('#days').is(':disabled') && nb != 0){
+        showGraph(1);
+    }
+    else if($('#week').is(':disabled') && nb != 0){
+        showGraph(7);
+    }
+    else if ($('#month').is(':disabled')&& nb != 0){
+        showGraph(31);
+    }
 }

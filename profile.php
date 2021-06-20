@@ -216,35 +216,47 @@ if (isset($_GET['lang']))
                         <!-- First row -->
                     </section>
                     <!-- End of Section: Edit Account -->
-                    <div class="col-lg-12 mb-4">
-                            <!-- Card -->
-                            <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
-                            <!-- Card image -->
-                            <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
-                                <h3 class="mb-0 font-weight-bold"><?php echo $lang["profile-header3"]?></h5>
-                            </div>
-                            <!-- End of Card image -->
-                            <!-- Card content -->
-                            <div class="card-body card-body-cascade text-center">
-                                <div>
-                                    <canvas id="profileGraph"></canvas>
+                                <!-- Card -->
+                    <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
+                        <div class=container>
+                            <div class="row" style="text-align:center;">
+                                <div class="col-xl-1 col-sm-1 vert-center">
+                                    <span class="waves-input-wrapper waves-effect waves-light" style="margin-right:1%;"><input id="minusDays" type="button" value="&#8249;" onClick="changeDayPosition(-1)" class="btn Mango btn-rounded"></span>
                                 </div>
-                                <div class="row flex-center">
-                                    <span class="waves-input-wrapper waves-effect waves-light" style="margin-right:1%;"><input id="days" type="button" value="<?php echo $lang["profile_card3-btn1"]?>" class="btn Mango btn-rounded"></span>
-                                    <span class="waves-input-wrapper waves-effect waves-light"><input id="week" type="button" value="<?php echo $lang["profile_card3-btn2"]?>" class="btn Mango btn-rounded"></span>
-                                    <span class="waves-input-wrapper waves-effect waves-light" style="margin-left:1%;"><input id="month" type="button" value="<?php echo $lang["profile_card3-btn3"]?>" class="btn Mango btn-rounded"></span>
+                                <div class="col-xl-10 col-sm-10">
+
+                                <!-- Card image -->
+                                    <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
+                                        <h3 class="mb-0 font-weight-bold"><?php echo $lang["profile-header3"]?></h5>
+                                    </div>
+                                <!-- End of Card image -->
+                                <!-- Card content -->
+                                    <div class="card-body card-body-cascade text-center">
+                                        <div>
+                                            <canvas id="profileGraph"></canvas>
+                                        </div>
+                                        <div class="row flex-center">
+                                            <span class="waves-input-wrapper waves-effect waves-light" style="margin-right:1%;"><input id="days" type="button" value="<?php echo $lang["profile_card3-btn1"]?>" class="btn Mango btn-rounded" disabled></span>
+                                            <span class="waves-input-wrapper waves-effect waves-light"><input id="week" type="button" value="<?php echo $lang["profile_card3-btn2"]?>" class="btn Mango btn-rounded"></span>
+                                            <span class="waves-input-wrapper waves-effect waves-light" style="margin-left:1%;"><input id="month" type="button" value="<?php echo $lang["profile_card3-btn3"]?>" class="btn Mango btn-rounded"></span>
+                                        </div>
+                                    </div>
+                                <!-- End of  Card content -->
+                                </div>
+                                <div class="col-xl-1 col-sm-1 vert-center">
+                                    <span class="waves-input-wrapper waves-effect waves-light" style="margin-right:1%;"><input id="plusDays" type="button" value="&#8250;" onClick="changeDayPosition(1)" class="btn Mango btn-rounded" disabled></span>
                                 </div>
                             </div>
-                            <!-- End of  Card content -->
-                            </div>
-                            <!-- End of  Card -->
+
                         </div>
-                    </div>    
+                            <!-- End of  Card -->
+                    </div>
+                </div>    
                 <td>
                 <td style="width:10%;"></td>
             <tr>
         </table>
-
+        <br>
         <script>
             function changeLanguage(lang) {
                 if(lang=='en') {
