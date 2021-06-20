@@ -1197,21 +1197,7 @@ imgApp {vertical-align: middle;}
     color: #EF952C;
 }
 
-
-  
-  .previous {
-    background-color: #f1f1f1;
-    color: black;
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 16px;
-
-  }
-  .round {
-    border-radius: 50%;
-  }
-
-  .vert-center {
+.vert-center {
     margin-top: auto;
     margin-bottom: auto;
 }

@@ -221,7 +221,7 @@ if (isset($_GET['lang']))
                         <div class=container>
                             <div class="row" style="text-align:center;">
                                 <div class="col-xl-1 col-sm-1 vert-center">
-                                    <span class="waves-input-wrapper waves-effect waves-light" style="margin-right:1%;"><input id="minusDays" type="button" value="&#8249;" onClick="changeDayPosition(-1)" class="btn Mango btn-rounded"></span>
+                                    <span class="waves-input-wrapper waves-effect waves-light"><input id="minusDays" type="button" value="&#8249;" onClick="changeDayPosition(-1)" class="btn Mango btn-rounded"></span>
                                 </div>
                                 <div class="col-xl-10 col-sm-10">
 
@@ -244,7 +244,7 @@ if (isset($_GET['lang']))
                                 <!-- End of  Card content -->
                                 </div>
                                 <div class="col-xl-1 col-sm-1 vert-center">
-                                    <span class="waves-input-wrapper waves-effect waves-light" style="margin-right:1%;"><input id="plusDays" type="button" value="&#8250;" onClick="changeDayPosition(1)" class="btn Mango btn-rounded" disabled></span>
+                                    <span class="waves-input-wrapper waves-effect waves-light"><input id="plusDays" type="button" value="&#8250;" onClick="changeDayPosition(1)" class="btn Mango btn-rounded" disabled></span>
                                 </div>
                             </div>
 
