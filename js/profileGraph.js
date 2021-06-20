@@ -91,7 +91,6 @@ function showGraph(nb)
                     "timeout": 0,
                 };
                 $.ajax(settings).done(function (response) {
-                    console.log(response);
                     fDay = parseInt(startOfWeek);
                     let [dbData, timeLength] = fillDays(7);
                     if (response.data !== null) {
@@ -128,7 +127,6 @@ function showGraph(nb)
                     "timeout": 0,
                 };
                 $.ajax(settings).done(function (response) {
-                    console.log(response);
                     fDay = parseInt(startOfMonth);
                     let [dbData, timeLength] = fillDays(moment().daysInMonth());
                     if (response.data !== null) {
@@ -318,7 +316,7 @@ function fillDays(nb){
 function changeDayPosition(nb)
 {
     if (nb == 1) {
-        position += 1;
+        position -= 1;
         $("#minusDays").prop("disabled",false);
         if (position == 0)
             $("#plusDays").prop("disabled",true);
@@ -326,9 +324,9 @@ function changeDayPosition(nb)
         $("#plusDays").prop("disabled",false);     
     }
     else if (nb == -1) {
-        position -= 1;
+        position += 1;
         $("#plusDays").prop("disabled",false);
-        if (position == -10)
+        if (position == 10)
             $("#minusDays").prop("disabled",true);
         else 
             $("#minusDays").prop("disabled",false);    
