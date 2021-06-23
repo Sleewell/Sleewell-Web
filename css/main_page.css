@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: table;
+    -webkit-animation: fadeinelement 3s;
+    animation: fadeinelement 3s;
+}
+h1, h2, h3 {
+    cursor: default;
+}
+
+h1 {
+    font-family:'white_smithregular', sans-serif;
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+img {
+    width: 20%;
+    border: 0;
+}
+#main {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.Degrade {
+    background-image:linear-gradient(200deg, #000922, #005860);
+}
+
+@keyframes fadeinelement {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeinelement {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes proanimate {
+    from {
+        width: 0%;
+    }
+}
+@-webkit-keyframes proanimate {
+    from {
+        width: 0%;
+    }
+}
+@media screen and (max-width: 600px) {
+    img {
+        width: 80%;
+        width: 60vw;
+    }
+    h1 {
+        font-size: 1.3em;
+    }
+    h2 {
+        margin: 1.1em;
+        font-size: 1.1em;
+    }
+    #progress {
+        width: 80%;
+    }
+}
