@@ -17,17 +17,19 @@ Background color (Dark Blue: #00111F)
 
 .GlobalBackground {
     background-color: #00111F;
-    color: #FFFFFF;
 }
 
 .SecondBackground {
     background-color: #001125;
-    color: #FFFFFF;
 }
 
 .Mango {
     background-color: #EF952C;
     color: #FFFFFF;
+}
+
+.SpotifyColor {
+    background-color: #75923E;
 }
 
 .Amber {
@@ -64,11 +66,12 @@ Background color (Dark Blue: #00111F)
     font-weight:500;
 }
 
-.notActive {
-    background-color: #CCCCCC;
-}
-
-.AmeberText {
+.AmberText {
     color: #FF8F00 !important;
-    text-align:center;
+    text-align: center;
 }
+/*
+.BoldAmberText {
+    color: #FF8F00 !important;
+    font-weight: bold;
+}*/

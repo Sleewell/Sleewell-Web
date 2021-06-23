@@ -14,8 +14,15 @@ if (isset($_GET['lang']))
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
         <title>Sleewell - Contact</title>
+
+        <!-- Icon -->
+        <link rel="icon" href="css/icons/sleewell.ico">
+
         <link rel="icon" href="./css/icons/sleewell.ico">
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -26,14 +33,17 @@ if (isset($_GET['lang']))
         <link href="css/font_color_sleewell.css" rel="stylesheet">
         <link href="css/registerform.css" rel="stylesheet">
 
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/popper.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <!-- TOOLKIT -->
+        <script type="text/javascript" src="js/toolkit/jquery.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/popper.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/anime.min.js"></script>
+        <script type="text/javascript" src="js/toolkit/mdb.min.js"></script>
+
+        <!-- OUR SCRIPTS -->
         <script type="text/javascript" src="js/login.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/anime.min.js"></script>
+        <!-- FROM WEB -->
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
 
     </head>
@@ -42,21 +52,34 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--              HEADER            -->
         <!--################################-->
-        <header>
-            <div id="langSelect">
-                <a id="mainpage_btn" href="index.php"><img src="img/logo_sleewell.png" style="float:left;width:40px;height:50px;margin-left:5px;"/></a>
-                <form>
-                    <label for="change_lang" style="display:none">Langage</label>
-                    <select id="change_lang" class="select-css" name="choose-lang" onchange="location = this.value;">
-                        <option value=""><?php echo $lang['selected-lang'];?></option>
-                        <option class="fr" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre" style="background-image:url('img/eng.png');" >French</option>
-                        <option class="en" value="<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng" style="background-image:url('img/fra.png');" >English</option>
-                    </select>
-                </form>
-                <img src=<?php echo $lang['img_path'];?> style="float:right;width:20px;height:15px;margin-left:5px;margin-top: 21px;"/>
-                <a href="" class=" vertical-center btn btn-rounded my-3 Mango" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a>
-            </div>
-        </header>
+        <div class="topnav">
+            <nav>
+                <div>
+                    <a id="mainpage_btn" href="index.php"><img class="navbar-logo" src="img/logo_sleewell.png"/></a>
+                </div>
+                <label for="btn" class="icon">
+                <span class="fa fa-bars"></span>
+                </label>
+                <input type="checkbox" id="btn">
+                <ul style="width:fit-content">
+                    <?php if(!isset($_COOKIE["login"])) : ?>
+                        <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
+                    <?php else :?>
+                        <li><a id="Deconnexion" href="#"><?php echo "Deconnexion";?></a></li>
+                        <li><a id="ProfilButton" href="profile.php"><?php echo "Profil";?></a></li>
+                    <?php endif; ?>
+                    <li>
+                        <label for="btn-1" class="show dropdown-toggle"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></label>
+                        <a class="dropdown-toggle" href=""><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></a>
+                        <input type="checkbox" id="btn-1">
+                        <ul>
+                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-fr" onclick="changeLanguage('fr');"><span> <img src="img/fra.png"></span> Français</a></li>
+                            <li><a href="javascript:void(0)" class="language-link-item textMango" id="lang-en" onclick="changeLanguage('en');"><span> <img src="img/eng.png"></span> English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        <div>
 
         <!--################################-->
         <!-- ENTÊTE / LOGO SLEEWELL SECTION -->
@@ -64,8 +87,8 @@ if (isset($_GET['lang']))
         <table style="width:100%"><tr>
             <td colspan="1" width="33%"></td>
             <td colspan="1" width="34%">
-                <div class="container" data-scrolly-down="blurInBottom, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                    <img src="img/logo_sleewell.png" style="float:left;width:200px;height:250px;margin-top:50px;"/>
+                <div class="container-title" data-scrolly-down="blurInBottom, timing-function:cubic-bezier(.17,.67,.83,.67)">
+                    <img src="img/logo_sleewell.png" class="sleewell-logo-size img-fluid"/>
                     <h1 class="title text-title">leewell</h1>
                 </div>
             </td>
@@ -75,50 +98,58 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--           FORM SECTION         -->
         <!--################################-->
-        <div>
+        <div class="container-xxl">
             <h4 class="AmeberText" style="text-align:center"><?php echo $lang['contact'];?></h4>
-            <table width="100%">
-                <td width="30%"></td>
-                <td width="40%">
-                    <form action="feedback_form.php" method="post">
-                        <label><?php echo $lang['adresse'];?></label> <br/>
-                        <input type="text" name="email_address" size="40" style="float:left;margin-bottom:10px;background-color:#00555E;color:#fff"><br/><br/>
-                        <label><?php echo $lang['sujet'];?></label> </br>
-                        <input type="text" name="sujet" size="40" style="float:left;margin-bottom:10px;background-color:#00555E;color:#fff"><br/><br/>
-                        <label><?php echo $lang['message'];?></label> <br/>
-                        <textarea name="feedback" cols="100" rows="5" style="float:left;margin-bottom:10px;background-color:#00555E;color:#fff"></textarea><br/><br/>
-                        <input class="submit-button" type="submit" name="send" value=<?php echo $lang['envoi-mail'];?>><br/>
-                    </form>
-                </td>
-                <td width="30%"></td>
-            </table>
-
-            <!--################################-->
-            <!--     FOLLOW NETWORKS SECTION    -->
-            <!--################################-->
-            <div class="text" data-scrolly-down="blurInLeft, timing-function:cubic-bezier(.17,.67,.83,.67)">
-                <h3 class="AmeberText" style="text-align:center"><?php echo $lang['reseaux'];?></h3>
-                <div id="reseaux" style="text-align:center;margin-bottom:50px">
-                    <a href="https://twitter.com/sleewell" class="button"><input type="image" class="contact" src="img/twitter.png"></a>
-                    <a href="https://www.linkedin.com/company/sleewell" class="button"><input type="image" class="contact" src="img/linkedin.png" style="margin-right:100px;margin-left:100px;"></a>
-                    <a href="https://www.instagram.com/sleewell_/" class="button"><input type="image" class="contact" src="img/insta.png"></a>
-                </div>
+            <div class="card-body card-body-cascade text-center">
+                <form action="feedback_form.php" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input style="color:white;" name="email_address" type="email" id="form80" class="form-control validate">
+                            <label style="color:#FF8F00;" data-error="Incorrect" data-success="Excellent" for="form81"><?php echo $lang['adresse'];?></label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input style="color:white;" name="sujet" type="text" id="form82" class="form-control">
+                            <label style="color:#FF8F00;" data-error="Incorrect" data-success="Brillant" for="form83"><?php echo $lang['sujet'];?></label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <textarea style="color:white;" name="feedback" type="text" id="form84" class="md-textarea form-control" rows="3"></textarea>
+                            <label style="color:#FF8F00;" for="form85"><?php echo $lang['message'];?></label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center my-4">
+                        <span class="waves-input-wrapper waves-effect waves-light"><input type="submit" name="send" value=<?php echo $lang['envoi-mail'];?> class="btn Mango btn-rounded"></span>
+                        </div>
+                    </div>
+                    <!-- End of Fourth row -->
+                </form>
             </div>
         </div>
 
         <!--################################-->
         <!--      MODAL LOGIN REGISTER      -->
         <!--################################-->
+
         <div class="modal fade " id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog GlobalBackground cascading-modal" role="document">
-                <div class="modal-content">
+                <div class="modal-content GlobalBackground">
                     <div class="modal-c-tabs">
-                        <ul class="nav nav-tabs md-tabs tabs-2 white darken-3" role="tablist">
+                        <ul class="nav nav-tabs md-tabs tabs-2 darken-3 SecondBackground" role="tablist">
                             <li class="nav-item">
-                                <a class="notActive nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i>Se connecter</a>
+                                <a id="connectionTab" class="notActive nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i>Se connecter</a>
                             </li>
                             <li class="nav-item">
-                                <a class="notActive nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i>S'enregistrer</a>
+                                <a id="registerTab" class="notActive nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i>S'enregistrer</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -141,9 +172,9 @@ if (isset($_GET['lang']))
                                 </div>
                                 <div class="modal-footer">
                                     <div class="options text-center text-md-right mt-1">
-                                        <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                                        <p>Forgot <a href="#" class="textMango">Password?</a></p>
                                     </div>
-                                    <button type="button" class="btn waves-effect ml-auto closeButtonMango" data-dismiss="modal">Fermer</button>
+                                    <button id="CloseButton" type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
                                 </div>
                                 </form>
                             </div>
@@ -197,7 +228,7 @@ if (isset($_GET['lang']))
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn  waves-effect ml-auto closeButtonMango" data-dismiss="modal">Fermer</button>
+                                    <button id="CloseButton" type="button" class="btn  waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
                                 </div>
                                 </form>
                             </div>
@@ -210,16 +241,16 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--          PIED DE PAGE          -->
         <!--################################-->
-        <footer>
-            <table style="width:100%"><tr>
-                <td colspan="1" width="60%">
-                    <img src="img/logo_sleewell.png" style="float:left;width:120px;height:150px;margin-left:100px"/>
-                </td>
-                <td colspan="1" width="40%">
-                    <h3 class="AmeberText">SUPPORT</h3>
-                    <a class="AmeberText" href="contact_us.php"><h4><?php echo $lang['contact-redirection'];?></h4></a>
-                </td>
-            </tr></table>
-        </footer>
+        <?php include 'footer.php';?>
     </body>
+
+    <script>
+        function changeLanguage(lang) {
+            if(lang=='en') {
+                location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng";
+            } else if(lang=='fr') {
+                location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre";
+            }
+        }
+    </script>
 </html>
