@@ -48,7 +48,8 @@ function sendRegisterForm()
             document.cookie ="email=" + obj2.email;
             // document.cookie ="phonenumber=" + obj2.lastname;
             // document.cookie ="about=" + obj2.lastname;
-            $('#registerForm').submit();
+            console.log("Creation de compte");
+//            $('#registerForm').submit();
         });
         $.ajax(settings).fail(function(response) {
             // console.clear();
