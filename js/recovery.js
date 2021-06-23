@@ -3,7 +3,7 @@ $(document).ready(function() {
 
         var form = new FormData();
         var email = $("#forgotEmail").val();
-        form.append("mail", email);
+        form.append("email", email);
 
         var settings = {
             "url": "https://api.sleewell.fr/user/account-recovery-mail",
