@@ -173,8 +173,7 @@ function searchSpotify() {
           parent.appendChild(playlist);
         });
     }
-  });
-  $.ajax(settings).fail(function(response) {
+  }).fail(function(response) {
     if (response.status == 401) {
       refreshAccessToken()
     }

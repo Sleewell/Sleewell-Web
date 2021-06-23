@@ -29,6 +29,7 @@ $(document).ready(function() {
         sendLoginForm();
     });
     $("#RegisterButton").click(function(){
+        console.log("HEHOOOOO");
         sendRegisterForm();
     });
     $("#Deconnexion").click(function(){
@@ -93,13 +94,11 @@ function sendLoginForm()
             // document.cookie ="phonenumber=" + obj2.lastname;
             // document.cookie ="about=" + obj2.lastname;
             $('#loginForm').submit();
-        });
-        $.ajax(settings).fail(function(response) {
+        }).fail(function(response) {
             console.clear();
             alert("Problem to get profile information");
         });
-    });
-    $.ajax(settings).fail(function(response) {
+    }).fail(function(response) {
         console.clear();
         alert("Your login or your password is incorrect !");
     });

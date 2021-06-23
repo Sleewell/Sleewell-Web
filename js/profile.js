@@ -34,8 +34,7 @@ $(document).ready(function() {
             document.cookie ="firstname=" + firstname;
             document.cookie ="lastname=" + lastname;
             location.reload();
-        });
-        $.ajax(settings).fail(function(response) {
+        }).fail(function(response) {
             console.clear();
             alert("One of your information is not correct !");
         });

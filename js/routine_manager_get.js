@@ -63,8 +63,7 @@ $(document).ready(function() {
             parent.appendChild(tr);
         }
       }
-    });
-    $.ajax(settings).fail(function(response) {
+    }).fail(function(response) {
       if (response.status == 401) {
         refreshAccessToken()
       }

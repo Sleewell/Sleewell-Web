@@ -22,8 +22,9 @@ function sendRegisterForm()
         "contentType": false,
         "data": form
     };
-
-    $.ajax(settings).done(function(response) {
+    $.ajax(settings)
+    .done(function(response) {
+        console.log(response);
         var obj = jQuery.parseJSON(response);
         token = obj.AccessToken;
 
@@ -48,19 +49,17 @@ function sendRegisterForm()
             document.cookie ="email=" + obj2.email;
             // document.cookie ="phonenumber=" + obj2.lastname;
             // document.cookie ="about=" + obj2.lastname;
-            console.log("Creation de compte");
-//            $('#registerForm').submit();
-        });
-        $.ajax(settings).fail(function(response) {
-            // console.clear();
+           $('#registerForm').submit();
+        }).fail(function(response) {
+            console.clear();
             alert("Problem to get profile information");
         });
-    });
-    $.ajax(settings).fail(function(response) {
+    }).fail(function(response) {
         // alert("L'email ou le noom d'utilisateur est déjà utilisé !");
         console.clear();
         alert("Something went wrong");
     });
+    
 }
 
 function checkRegisterMail()
