@@ -13,18 +13,21 @@ $(document).ready(function() {
         var about = $("#profilAbout").val();
 
         var form = new FormData();
-        form.append("token", token);
         form.append("login", login);
         form.append("firstname", firstname);
         form.append("lastname", lastname);
+        form.append("email", email);
         var settings = {
-          "url": "https://api.sleewell.fr/user/update",
-          "method": "POST",
-          "timeout": 0,
-          "processData": false,
-          "mimeType": "multipart/form-data",
-          "contentType": false,
-          "data": form
+            "url": "https://api.sleewell.fr/user/update",
+            "method": "POST",
+            "headers" : {
+                "Authorization": token
+            },
+            "timeout": 0,
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+            "data": form
         };
         
         $.ajax(settings).done(function (response) {

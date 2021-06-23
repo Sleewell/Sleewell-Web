@@ -6,13 +6,13 @@ $(document).ready(function() {
         form.append("mail", email);
 
         var settings = {
-        "url": "https://api.sleewell.fr/user/account-recovery-mail",
-        "method": "POST",
-        "timeout": 0,
-        "processData": false,
-        "mimeType": "multipart/form-data",
-        "contentType": false,
-        "data": form
+            "url": "https://api.sleewell.fr/user/account-recovery-mail",
+            "method": "POST",
+            "timeout": 0,
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+            "data": form
         };
 
         $.ajax(settings).done(function (response) {
@@ -46,16 +46,18 @@ $(document).ready(function() {
 
         var form = new FormData();
         form.append("password", password);
-        form.append("token", token);
         
         var settings = {
-          "url": "https://api.sleewell.fr/user/password-recovery",
-          "method": "POST",
-          "timeout": 0,
-          "processData": false,
-          "mimeType": "multipart/form-data",
-          "contentType": false,
-          "data": form
+            "url": "https://api.sleewell.fr/user/password-recovery",
+            "method": "POST",
+            "headers" : {
+                "Authorization": token
+            },
+            "timeout": 0,
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+            "data": form
         };
         
         $.ajax(settings).done(function (response) {
