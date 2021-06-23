@@ -33,6 +33,7 @@ $(document).ready(function() {
         $.ajax(settings).done(function (response) {
             document.cookie ="firstname=" + firstname;
             document.cookie ="lastname=" + lastname;
+            document.cookie ="email=" + email;
             location.reload();
         }).fail(function(response) {
             console.clear();
