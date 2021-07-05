@@ -301,9 +301,10 @@ if (isset($_GET['lang']))
                 $("#app_selector").hide();
                 $("#web_selector").show();
             }
-            else
+            else {
                 $("#app_selector").hide();
                 $("#web_selector").hide();
+            }
         });
 
         function changeLanguage(lang) {
