@@ -126,19 +126,19 @@ $lang['feedback-app'] = 'Application';
 $lang['feedback-web'] = 'Web';
 $lang['feedback-other'] = 'Other feedback';
 
-$lang['app_selection1'] = 'Alarm clock creation';
-$lang['app_selection2'] = 'Log in / Out';
-$lang['app_selection3'] = 'Spotify problem';
+$lang['app_selection1'] = 'Alarm_clock_creation';
+$lang['app_selection2'] = 'LogIn/Out';
+$lang['app_selection3'] = 'Spotify_problem';
 $lang['app_selection4'] = 'Settings';
 $lang['app_selection5'] = 'Statistics';
-$lang['app_selection6'] = 'Protocol functionnement';
-$lang['app_selection7'] = 'UI problems';
-$lang['app_selection8'] = 'Other problems';
+$lang['app_selection6'] = 'Protocol_functionnement';
+$lang['app_selection7'] = 'UI_problems';
+$lang['app_selection8'] = 'Other_problems';
 
-$lang['web_selection1'] = 'Log in / Out';
-$lang['web_selection2'] = 'Spotify Authentication';
-$lang['web_selection3'] = 'Routine Management';
+$lang['web_selection1'] = 'LogIn/Out';
+$lang['web_selection2'] = 'Spotify_Authentication';
+$lang['web_selection3'] = 'Routine_Management';
 $lang['web_selection4'] = 'Statistics';
-$lang['web_selection5'] = 'UI problems';
-$lang['web_selection6'] = 'Other problems';
+$lang['web_selection5'] = 'UI_problems';
+$lang['web_selection6'] = 'Other_problems';
 ?>

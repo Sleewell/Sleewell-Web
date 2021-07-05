@@ -126,19 +126,19 @@ $lang['feedback-app'] = 'Application';
 $lang['feedback-web'] = 'Site web';
 $lang['feedback-other'] = 'Autre Retour';
 
-$lang['app_selection1'] = 'Création de réveils';
-$lang['app_selection2'] = 'Connexion / Déconnexion';
-$lang['app_selection3'] = 'Problème avec Spotify';
+$lang['app_selection1'] = 'Création_de_réveils';
+$lang['app_selection2'] = 'Connexion/Déconnexion';
+$lang['app_selection3'] = 'Problème_avec_Spotify';
 $lang['app_selection4'] = 'Paramètre';
 $lang['app_selection5'] = 'Statistiques';
-$lang['app_selection6'] = 'Fonctionnement des protocoles';
-$lang['app_selection7'] = "Problème d'interface";
-$lang['app_selection8'] = 'Autre problème';
+$lang['app_selection6'] = 'Fonctionnement_des_protocoles';
+$lang['app_selection7'] = "Problème_d'interface";
+$lang['app_selection8'] = 'Autre_problème';
 
-$lang['web_selection1'] = 'Connexion / Déconnexion';
-$lang['web_selection2'] = 'Problème avec Spotify';
-$lang['web_selection3'] = 'Gestion de routines';
+$lang['web_selection1'] = 'Connexion/Déconnexion';
+$lang['web_selection2'] = 'Problème_avec_Spotify';
+$lang['web_selection3'] = 'Gestion_de_routines';
 $lang['web_selection4'] = 'Statistiques';
-$lang['web_selection5'] = "Problème d'interface";
-$lang['web_selection6'] = 'Autre problème';
+$lang['web_selection5'] = "Problème_d'interface";
+$lang['web_selection6'] = 'Autre_problème';
 ?>
