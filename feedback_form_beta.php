@@ -9,10 +9,10 @@ require './class/phpmailer/src/SMTP.php';
 
 $email_address = $_POST['email_address'];
 $subject = $_POST['feedback_type'];
-if ($subject == 1) {
+if ($subject == "App") {
     $subjectp2 = $_POST['app_select'];
 }
-else if ($subject == 2) {
+else if ($subject == "Web") {
     $subjectp2 = $_POST['web_select'];
 } else
     $subjectp2 = NULL;

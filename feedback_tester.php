@@ -106,10 +106,10 @@ if (isset($_GET['lang']))
                         <div class="col-md-6">
                         <div class="md-form mb-0">
                             <select id="fb_selector" name="feedback_type" class="feedback-selector">
-                                <option value="0" style="background-color:#00111F"><?php echo $lang['feedback-type'];?></option>
-                                <option value="1" style="background-color:#00111F"><?php echo $lang['feedback-app'];?></option>
-                                <option value="2" style="background-color:#00111F"><?php echo $lang['feedback-web'];?></option>
-                                <option value="3" style="background-color:#00111F"><?php echo $lang['feedback-other'];?></option>
+                                <option value="no_category" style="background-color:#00111F"><?php echo $lang['feedback-type'];?></option>
+                                <option value="App" style="background-color:#00111F"><?php echo $lang['feedback-app'];?></option>
+                                <option value="Web" style="background-color:#00111F"><?php echo $lang['feedback-web'];?></option>
+                                <option value="other" style="background-color:#00111F"><?php echo $lang['feedback-other'];?></option>
                             </select>
                         </div>
                         </div>
@@ -118,14 +118,14 @@ if (isset($_GET['lang']))
                         <div class="col-md-6">
                         <div class="md-form mb-0">
                             <select id="app_selector" name="app_select" class="app-selector" style="display:none;">
-                                <option value="0" style="background-color:#00111F"><?php echo $lang['app_selection1'];?></option>
-                                <option value="1" style="background-color:#00111F"><?php echo $lang['app_selection2'];?></option>
-                                <option value="2" style="background-color:#00111F"><?php echo $lang['app_selection3'];?></option>
-                                <option value="3" style="background-color:#00111F"><?php echo $lang['app_selection4'];?></option>
-                                <option value="4" style="background-color:#00111F"><?php echo $lang['app_selection5'];?></option>
-                                <option value="5" style="background-color:#00111F"><?php echo $lang['app_selection6'];?></option>
-                                <option value="6" style="background-color:#00111F"><?php echo $lang['app_selection7'];?></option>
-                                <option value="7" style="background-color:#00111F"><?php echo $lang['app_selection8'];?></option>
+                                <option value=<?php echo $lang['app_selection1'];?> style="background-color:#00111F"><?php echo $lang['app_selection1'];?></option>
+                                <option value=<?php echo $lang['app_selection2'];?> style="background-color:#00111F"><?php echo $lang['app_selection2'];?></option>
+                                <option value=<?php echo $lang['app_selection3'];?> style="background-color:#00111F"><?php echo $lang['app_selection3'];?></option>
+                                <option value=<?php echo $lang['app_selection4'];?> style="background-color:#00111F"><?php echo $lang['app_selection4'];?></option>
+                                <option value=<?php echo $lang['app_selection5'];?> style="background-color:#00111F"><?php echo $lang['app_selection5'];?></option>
+                                <option value=<?php echo $lang['app_selection6'];?> style="background-color:#00111F"><?php echo $lang['app_selection6'];?></option>
+                                <option value=<?php echo $lang['app_selection7'];?> style="background-color:#00111F"><?php echo $lang['app_selection7'];?></option>
+                                <option value=<?php echo $lang['app_selection8'];?> style="background-color:#00111F"><?php echo $lang['app_selection8'];?></option>
                             </select>
                         </div>
                         </div>
@@ -134,12 +134,12 @@ if (isset($_GET['lang']))
                         <div class="col-md-6">
                         <div class="md-form mb-0">
                             <select id="web_selector" name="web_select" class="web-selector" style="display:none;">
-                                <option value="0" style="background-color:#00111F"><?php echo $lang['web_selection1'];?></option>
-                                <option value="1" style="background-color:#00111F"><?php echo $lang['web_selection2'];?></option>
-                                <option value="2" style="background-color:#00111F"><?php echo $lang['web_selection3'];?></option>
-                                <option value="3" style="background-color:#00111F"><?php echo $lang['web_selection4'];?></option>
-                                <option value="4" style="background-color:#00111F"><?php echo $lang['web_selection5'];?></option>
-                                <option value="5" style="background-color:#00111F"><?php echo $lang['web_selection6'];?></option>
+                                <option value=<?php echo $lang['web_selection1'];?> style="background-color:#00111F"><?php echo $lang['web_selection1'];?></option>
+                                <option value=<?php echo $lang['web_selection2'];?> style="background-color:#00111F"><?php echo $lang['web_selection2'];?></option>
+                                <option value=<?php echo $lang['web_selection3'];?> style="background-color:#00111F"><?php echo $lang['web_selection3'];?></option>
+                                <option value=<?php echo $lang['web_selection4'];?> style="background-color:#00111F"><?php echo $lang['web_selection4'];?></option>
+                                <option value=<?php echo $lang['web_selection5'];?> style="background-color:#00111F"><?php echo $lang['web_selection5'];?></option>
+                                <option value=<?php echo $lang['web_selection6'];?> style="background-color:#00111F"><?php echo $lang['web_selection6'];?></option>
                             </select>
                         </div>
                         </div>
@@ -293,22 +293,17 @@ if (isset($_GET['lang']))
     <!--################################-->
     <script>
         $('#fb_selector').on('change',function(){
-            if (this.value == 0) {
-                $("#app_selector").hide();
-                $("#web_selector").hide();
-            }
-            if (this.value == 1) {
+            if (this.value == "App") {
                 $("#app_selector").show();
                 $("#web_selector").hide();
             }
-            else if (this.value == 2) {
+            else if (this.value == "Web") {
                 $("#app_selector").hide();
                 $("#web_selector").show();
             }
-            else if (this.value == 3) {
+            else
                 $("#app_selector").hide();
                 $("#web_selector").hide();
-            }
         });
 
         function changeLanguage(lang) {
