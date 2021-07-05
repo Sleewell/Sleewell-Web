@@ -106,10 +106,10 @@ if (isset($_GET['lang']))
                         <div class="col-md-6">
                         <div class="md-form mb-0">
                             <select id="fb_selector" name="feedback_type" class="feedback-selector">
-                                <option value="no_category" style="background-color:#00111F"><?php echo $lang['feedback-type'];?></option>
-                                <option value="App" style="background-color:#00111F"><?php echo $lang['feedback-app'];?></option>
-                                <option value="Web" style="background-color:#00111F"><?php echo $lang['feedback-web'];?></option>
-                                <option value="other" style="background-color:#00111F"><?php echo $lang['feedback-other'];?></option>
+                                <option value="0" style="background-color:#00111F"><?php echo $lang['feedback-type'];?></option>
+                                <option value="1" style="background-color:#00111F"><?php echo $lang['feedback-app'];?></option>
+                                <option value="2" style="background-color:#00111F"><?php echo $lang['feedback-web'];?></option>
+                                <option value="3" style="background-color:#00111F"><?php echo $lang['feedback-other'];?></option>
                             </select>
                         </div>
                         </div>
@@ -293,11 +293,11 @@ if (isset($_GET['lang']))
     <!--################################-->
     <script>
         $('#fb_selector').on('change',function(){
-            if (this.value == "App") {
+            if (this.value == 1) {
                 $("#app_selector").show();
                 $("#web_selector").hide();
             }
-            else if (this.value == "Web") {
+            else if (this.value == 2) {
                 $("#app_selector").hide();
                 $("#web_selector").show();
             }
