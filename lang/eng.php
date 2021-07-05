@@ -111,4 +111,34 @@ $lang['app-text4'] = "In our sound library, we offer you the best sounds to help
 
 $lang['download-text'] = "Get the app right now";
 $lang['download-button'] = "Download";
+
+//Feedback
+$lang['beta_tester_leg'] = "As beta tester, here you can send us feedback if you've met some problem and/or if you want to give us advice to improve the project.";
+
+$lang['beta_tester'] = 'Beta tester :';
+$lang['feedback-tester-redirection'] = 'Beta testing feedback';
+$lang['objet'] = 'Object';
+$lang['feedback'] = 'Feedback';
+$lang['envoi-retour'] = "Send feedback";
+
+$lang['feedback-type'] = 'Feedback type';
+$lang['feedback-app'] = 'Application';
+$lang['feedback-web'] = 'Web';
+$lang['feedback-other'] = 'Other feedback';
+
+$lang['app_selection1'] = 'Alarm clock creation';
+$lang['app_selection2'] = 'Log in / Out';
+$lang['app_selection3'] = 'Spotify problem';
+$lang['app_selection4'] = 'Settings';
+$lang['app_selection5'] = 'Statistics';
+$lang['app_selection6'] = 'Protocol functionnement';
+$lang['app_selection7'] = 'UI problems';
+$lang['app_selection8'] = 'Other problems';
+
+$lang['web_selection1'] = 'Log in / Out';
+$lang['web_selection2'] = 'Spotify Authentication';
+$lang['web_selection3'] = 'Routine Management';
+$lang['web_selection4'] = 'Statistics';
+$lang['web_selection5'] = 'UI problems';
+$lang['web_selection6'] = 'Other problems';
 ?>

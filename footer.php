@@ -8,6 +8,8 @@
             <div class="col-xs-4 col-sm-4">
                 <h3><?php echo $lang['contact-title']; ?></h3>
                 <a id="contactus_btn" href="contact_us.php"><h4 class="EmailText"><?php echo $lang['contact-redirection']; ?></h4></a>
+                <h3><?php echo $lang['beta_tester']; ?></h3>
+                <a id="contactus_btn" href="feedback_tester.php"><h4 class="EmailText"><?php echo $lang['feedback-tester-redirection']; ?></h4></a>
                 <div id="reseaux" style="text-align:center;margin-bottom:50px">
                     <a href="https://twitter.com/sleewell"><img type="image" class="contact" src="img/twitter.png"/></a>
                     <a href="https://www.linkedin.com/company/sleewell"><img type="image" class="contact" src="img/linkedin.png"/></a>
