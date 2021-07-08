@@ -41,8 +41,8 @@ try {
     $mail->Body = "User mail: ".$email_address."\n\nTitle:".$object."\n\n".$feedback;
     $mail->CharSet = 'UTF-8';
     $mail->send();
-    header("Location:index.php");
+    header("Location:message_send.php");
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    header("Location:error_mail.php");
 }
 ?>

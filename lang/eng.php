@@ -112,6 +112,9 @@ $lang['app-text4'] = "In our sound library, we offer you the best sounds to help
 $lang['download-text'] = "Get the app right now";
 $lang['download-button'] = "Download";
 
+$lang['message-sent'] = "The message was sent successfully.";
+$lang['message-failed'] = "Sending the message has encountered an error, please try again.";
+
 //Feedback
 $lang['beta_tester_leg'] = "As beta tester, here you can send us feedback if you've met some problem and/or if you want to give us advice to improve the project.";
 
