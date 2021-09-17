@@ -42,6 +42,7 @@ if (isset($_GET['lang']))
         <script type="text/javascript" src="js/toolkit/scrolly.js"></script>
 
         <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/download_counter.js"></script>
         <script type="text/javascript" src="js/register.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
