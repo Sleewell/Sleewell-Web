@@ -25,13 +25,14 @@ if (isset($_GET['lang']))
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="css/cssanimation.css"> 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/mdb.min.css" rel="stylesheet"> 
         <link href="css/font_color_sleewell.css" rel="stylesheet">
         <link href="css/registerform.css" rel="stylesheet">
-        <link href="css/carousel.css" rel="stylesheet">
+        <link href="css/carrousel.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/toolkit/jquery.min.js"></script>
         <script type="text/javascript" src="js/toolkit/popper.min.js"></script>
@@ -44,6 +45,7 @@ if (isset($_GET['lang']))
         <script type="text/javascript" src="js/register.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
     </head>
     <body>
@@ -195,35 +197,27 @@ if (isset($_GET['lang']))
             <a id="info_btn" href="" class="btn btn-rounded my-3 Mango" style="display:block;margin-left:auto;margin-right:auto;max-width:250px" data-toggle="modal" data-target="#modalproductPres"><?php echo $lang['Products-button'];?></a>
             <br><br><br>
         </div> -->
-        <div class="container">
-            <section>
-                <div class="slide">
-                    <div class="content">
-                            <h2><?php echo $lang['app-title1'];?></h2>
-                            <p><?php echo $lang['app-text1'];?></p>
-                    </div>
+        <div class="wrapper">
+            <div class="carousel owl-carousel">
+                <div class="card card-1">
+                    <img src="./img/app1.png"></img>
                 </div>
-                <div class="slide">
-                    <div class="content">
-                            <h2><?php echo $lang['app-title2'];?></h2>
-                            <p><?php echo $lang['app-text2'];?></p>
-                    </div>
+                <div class="card card-2">
+                    <img src="./img/app2.png"></img>
                 </div>
-                <div class="slide">
-                    <div class="content">
-                            <h2><?php echo $lang['app-title3'];?></h2>
-                            <p><?php echo $lang['app-text3'];?></p>
-                    </div>
+                <div class="card card-3">
+                    <img src="./img/app3.png"></img>
                 </div>
-                <div class="slide">
-                    <div class="content">
-                            <h2><?php echo $lang['app-title4'];?></h2>
-                            <p><?php echo $lang['app-text4'];?></p>
-                    </div>
+                <div class="card card-4">
+                    <img src="./img/app4.png"></img>
                 </div>
-            </section>
+                <div class="card card-5">
+                    <img src="./img/app5.png"></img>
+                </div>
+            </div>
         </div>
-        <div style="margin-top: 20px;"></div>
+
+      <div style="margin-top: 20px;"></div>
         <hr style="border-top: 2px solid #ff8f00; border-radius: 5px; margin: auto; width: 80%;padding-bottom: 2em;">
         <div class=container>
             <div class="row" style="text-align:center;">
@@ -358,72 +352,6 @@ if (isset($_GET['lang']))
         window.onload = function() {
             scrolly();
         };
-        //BASE INDEX//
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-        
-            if (n > slides.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-        }
-
-        //APP INDEX//
-        var slideIndexApp = 1;
-        showSlidesApp(slideIndexApp);
-
-        function plusSlidesApp(n) {
-            showSlidesApp(slideIndexApp += n);
-        }
-
-        function currentSlideApp(n) {
-            showSlidesApp(slideIndexApp = n);
-        }
-
-        function showSlidesApp(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlidesApp");
-            var dots = document.getElementsByClassName("dotApp");
-        
-            if (n > slides.length) {
-                slideIndexApp = 1
-            }
-            if (n < 1) {
-                slideIndexApp = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndexApp-1].style.display = "block";
-            dots[slideIndexApp-1].className += " active";	
-        }
-
         function changeLanguage(lang) {
             if(lang=='en') {
                 location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng";
@@ -431,5 +359,26 @@ if (isset($_GET['lang']))
                 location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre";
             }
         }
+        $(".carousel").owlCarousel({
+           margin: 20,
+           loop: true,
+           autoplay: true,
+           autoplayTimeout: 2000,
+           autoplayHoverPause: true,
+           responsive: {
+             0:{
+               items:1,
+               nav: false
+             },
+             600:{
+               items:2,
+               nav: false
+             },
+             1000:{
+               items:3,
+               nav: false
+             }
+           }
+         });
     </script>
 </html>
