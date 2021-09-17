@@ -143,6 +143,7 @@ function searchSpotify() {
       "timeout": 0,
   };
   $.ajax(settings).done(function (response) {
+    var valid = true;
     if (response.playlists.items.length == 0)
         console.log("no data")
     else {
@@ -150,27 +151,34 @@ function searchSpotify() {
           parent.removeChild(parent.firstChild);
         }
         response.playlists.items.forEach(function(element) {
-          var playlist = document.createElement('div');
-          var img = document.createElement('img'); 
-          var title = document.createElement('h5');
+            valid = true;
+            for (i = 0; i != element.name.length; i++) {
+                if (element.name[i] == '\'' || element.name[i] == '"')
+                    valid = false;
+            }
+            if (valid) {
+                var playlist = document.createElement('div');
+                var img = document.createElement('img'); 
+                var title = document.createElement('h5');
 
-          playlist.setAttribute('id', element.uri);
-          playlist.classList.add('spotify-item');
-          playlist.setAttribute('style', 'cursor: pointer');
-          playlist.setAttribute('onclick', 'updateFooterMusic(this.id)');
-          playlist.onclick = function() {updateFooterMusic(this.id);};
-          
-          img.setAttribute('id', element.images[0].url);
-          img.classList.add('playlist-img');
-          img.setAttribute('src', element.images[0].url)
+                playlist.setAttribute('id', element.uri);
+                playlist.classList.add('spotify-item');
+                playlist.setAttribute('style', 'cursor: pointer');
+                playlist.setAttribute('onclick', 'updateFooterMusic(this.id)');
+                playlist.onclick = function() {updateFooterMusic(this.id);};
+                
+                img.setAttribute('id', element.images[0].url);
+                img.classList.add('playlist-img');
+                img.setAttribute('src', element.images[0].url)
 
-          title.setAttribute('id', element.name);
-          title.classList.add('playlist-name');
-          title.textContent = element.name;
+                title.setAttribute('id', element.name);
+                title.classList.add('playlist-name');
+                title.textContent = element.name;
 
-          playlist.appendChild(img);
-          playlist.appendChild(title);
-          parent.appendChild(playlist);
+                playlist.appendChild(img);
+                playlist.appendChild(title);
+                parent.appendChild(playlist);
+            }
         });
     }
   }).fail(function(response) {

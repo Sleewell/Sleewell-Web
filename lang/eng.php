@@ -144,4 +144,8 @@ $lang['web_selection3'] = 'Routine_Management';
 $lang['web_selection4'] = 'Statistics';
 $lang['web_selection5'] = 'UI_problems';
 $lang['web_selection6'] = 'Other_problems';
+
+//404Error
+$lang['404error'] = 'Error 404 : Page not found.';
+$lang['404error-redirection'] = 'Return to main page.';
 ?>
