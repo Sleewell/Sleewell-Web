@@ -29,6 +29,17 @@ body{
   box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
 }
 
+.card {
+    width: auto;
+    height: auto;
+}
+
+/* Resize images */
+.card img {
+    width: 100%;
+    height: auto;
+}
+
 .owl-dots{
   text-align: center;
   margin-top: 40px;
