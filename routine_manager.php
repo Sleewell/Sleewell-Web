@@ -108,7 +108,7 @@ if (isset($_GET['lang']))
             <h4 class="AmeberText" style="text-align:center"><?php echo $lang['routine-manager'];?></h4>
             <table id="routineFullList" style="width:100%"><tr>
                 <td class="fit-table-routine">
-                    <a class="fit-routine" href="create_routine.php">
+                    <a id="CreateRoutine" class="fit-routine" href="create_routine.php">
                         <div class="crea-bg">
                             <img type="image" class="create-routine" src="img/plus.png"/>
                         </div>

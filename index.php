@@ -285,7 +285,7 @@ if (isset($_GET['lang']))
                                     <div class="options text-center text-md-right mt-1">
                                         <p class="textMango">Forgot <a href="recovery.php">Password?</a></p>
                                     </div>
-                                    <button type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
+                                    <button id="CloseButton" type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
                                 </div>
                                 </form>
                             </div>
