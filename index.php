@@ -227,7 +227,7 @@ if (isset($_GET['lang']))
                 <div class="col-xs-6 col-sm-6" style="margin-top: 5%;">
                     <h1 style="text-align:left !important;"><?php echo $lang['download-text'];?></h1>
                     <form method="get" action="sleewell.apk">
-                        <button type="submit" style="margin-right:10%" class="btn  waves-effect ml-auto Mango"><?php echo $lang['download-button'];?></button>
+                        <button id="DownloadApk" type="submit" style="margin-right:10%" class="btn  waves-effect ml-auto Mango"><?php echo $lang['download-button'];?></button>
                     </form>
                 </div>
             </div>

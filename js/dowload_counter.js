@@ -4,17 +4,10 @@ $(document).ready(function() {
         .split('; ')
         .find(row => row.startsWith('token='))
         .split('=')[1];
-//url a changer
         var settings = {
-            "url": "https://api.sleewell.fr/user/update",
-            "method": "SET",
-            "headers" : {
-                "Authorization": token
-            },
+            "url": "https://api.sleewell.fr/global/apk",
+            "method": "PUT",
             "timeout": 0,
-            "processData": false,
-            "mimeType": "multipart/form-data",
-            "contentType": false
         };
         $.ajax(settings).done(function (response) {
             console.log(response);
