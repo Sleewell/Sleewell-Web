@@ -3,7 +3,7 @@ $(document).ready(function() {
         console.log("Heho");
         var settings = {
             "url": "https://api.sleewell.fr/global/apk",
-            "method": "PUT",
+            "method": "POST",
             "timeout": 0,
         };
         $.ajax(settings).done(function (response) {
