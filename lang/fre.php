@@ -144,4 +144,8 @@ $lang['web_selection3'] = 'Gestion_de_routines';
 $lang['web_selection4'] = 'Statistiques';
 $lang['web_selection5'] = "Problème_d'interface";
 $lang['web_selection6'] = 'Autre_problème';
+
+//404Error
+$lang['404error'] = 'Erreur 404 : Page non trouvée.';
+$lang['404error-redirection'] = 'Retour à la page principale.';
 ?>

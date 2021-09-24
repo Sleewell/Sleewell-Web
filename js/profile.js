@@ -31,6 +31,7 @@ $(document).ready(function() {
         };
         
         $.ajax(settings).done(function (response) {
+            // console.log(response);
             document.cookie ="firstname=" + firstname;
             document.cookie ="lastname=" + lastname;
             document.cookie ="email=" + email;
