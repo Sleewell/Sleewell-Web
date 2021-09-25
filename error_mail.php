@@ -62,11 +62,12 @@ if (isset($_GET['lang']))
                 </label>
                 <input type="checkbox" id="btn">
                 <ul style="width:fit-content">
+                    <li><a id="TeamButton" href="team.php"><?php echo $lang['team-redirection'];?></a></li>
                     <?php if(!isset($_COOKIE["login"])) : ?>
                         <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
                     <?php else :?>
-                        <li><a id="Deconnexion" href="#"><?php echo "Deconnexion";?></a></li>
-                        <li><a id="ProfilButton" href="profile.php"><?php echo "Profil";?></a></li>
+                        <li><a id="Deconnexion" href="#"><?php echo $lang['disconnect-button'];?></a></li>
+                        <li><a id="ProfilButton" href="profile.php"><?php echo $lang['profile-button'];?></a></li>
                     <?php endif; ?>
                     <li>
                         <label for="btn-1" class="show dropdown-toggle"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></label>

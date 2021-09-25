@@ -9,6 +9,7 @@ $lang['selected-lang'] = 'Français';
 
 $lang['img_path'] = 'img/fra.png';
 
+$lang['team-redirection'] = "L'équipe";
 $lang['connexion-redirection'] = "Se connecter";
 $lang['register-redirection'] = "S'enregistrer";
 
@@ -26,7 +27,7 @@ $lang['project-pres3'] = "Détendez-vous et tombez dans les bras de Morphée rap
 $lang['project-pres3bis'] = "Grâce au sons d'ambiances et halos lumineux, choisissez un protocole d'endormissement qui vous siéra parfaitement.";
 
 $lang['project-pres4'] = "Prenez conscience de l'évolution de votre qualité de sommeil";
-$lang['project-pres4bis'] = "L'application vous offira une courbe évolutive de vos nuits à l'aide d'informations de sommeil récupérée durant la nuit";
+$lang['project-pres4bis'] = "L'application vous offrira une courbe évolutive de vos nuits à l'aide d'informations de sommeil récupérée durant la nuit.";
 
 $lang['Products-pres'] = "Les produits Sleewell";
 
@@ -144,6 +145,16 @@ $lang['web_selection3'] = 'Gestion_de_routines';
 $lang['web_selection4'] = 'Statistiques';
 $lang['web_selection5'] = "Problème_d'interface";
 $lang['web_selection6'] = 'Autre_problème';
+
+//Team
+$lang['greetings'] = "Nous sommes Sleewell, une équipe de 9 étudiants à Epitech.<br> Nous avons commencé Sleewell en septembre 2019 et aujourd'hui notre projet est sur le point d'être achevé.<br> Nous espérons vous aider tout au long de vos nuits avec Sleewell";
+
+//Timeline
+$lang['moonshot'] = "Première étape du Cycle de l’innovation.<br>Création de l'idée de projet Sleewell.";
+$lang['forward'] = "Seconde étape du Cycle de l'innnovation.<br>Naissance du premier prototype Sleewell sur 3 mois d'implémentation.";
+$lang['beta'] = "Début de Sleewell auprès d'utilisateurs plus ou moins proche de l'équipe afin d'avoir de premier retour sur le projet.";
+$lang['warm-up'] = "Pitch de Sleewell afin d'obtenir de la visibilité et de convaincre les intéressés de nous rejoindre dans notre aventure.";
+$lang['epitech-exp'] = "Étape finale du Cycle de l'innovation.<br>Présentation aboutie et terminée de Sleewell devant un jury, afin d'être élu meilleur EIP de la promo 2022.";
 
 //404Error
 $lang['404error'] = 'Erreur 404 : Page non trouvée.';

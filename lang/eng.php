@@ -9,6 +9,7 @@ $lang['selected-lang'] = 'English';
 
 $lang['img_path'] = 'img/eng.png';
 
+$lang['team-redirection'] = "Team";
 $lang['connexion-redirection'] = "Log In";
 $lang['register-redirection'] = "Register";
 
@@ -17,16 +18,16 @@ $lang['contact-redirection'] = "By email";
 $lang['copyright'] = "Copyright © 2020. All rights reserved Sleewell";
 
 $lang['project-pres1'] = "Find back a golden sleep and invigorating nights";
-$lang['project-pres1bis'] = "Find back more efficient nights thanks to total disconnection at bedtime";
+$lang['project-pres1bis'] = "Find back more efficient nights thanks to total disconnection at bedtime.";
 
 $lang['project-pres2'] = "Farewell regular nighttime distractions";
 $lang['project-pres2bis'] = "Your phone become your clock in one move, so your phone won't harm your sleep.";
 
 $lang['project-pres3'] = "Relax and quiclky fall into Morpheus's arms";
-$lang['project-pres3bis'] = "Thanks to ambient sounds and halo available on the application, choose an asleep protocole that will suit you perfectly";
+$lang['project-pres3bis'] = "Thanks to ambient sounds and halo available on the application, choose an asleep protocole that will suit you perfectly.";
 
 $lang['project-pres4'] = "Be aware of your sleep quality evolution";
-$lang['project-pres4bis'] = "It will take into account your sleep information to give you an evolutionnary curve of your night's beneficials effects";
+$lang['project-pres4bis'] = "It will take into account your sleep information to give you an evolutionnary curve of your night's beneficials effects.";
 
 $lang['Products-pres'] = "Sleewell products";
 
@@ -144,6 +145,16 @@ $lang['web_selection3'] = 'Routine_Management';
 $lang['web_selection4'] = 'Statistics';
 $lang['web_selection5'] = 'UI_problems';
 $lang['web_selection6'] = 'Other_problems';
+
+//Team
+$lang['greetings'] = "We are Sleewell, a team of 9 students at Epitech. <br> We started Sleewell in September 2019 and today our project is nearing completion. <br> We hope to help you through your nights with Sleewell";
+
+//Timeline
+$lang['moonshot'] = "First Step of the Innovation cycle.<br>Creation of Sleewell as an idea.";
+$lang['forward'] = "Second Step of the Innovation cycle.<br>Birth of our first prototype after 3 months of implementation.";
+$lang['beta'] = "Sleewell appears to the eyes of the public for the beta testing in search for first feedbacks and improvements.";
+$lang['warm-up'] = "Sleewell pitch in order to gain visibility and convince those interested to join us in our adventure.";
+$lang['epitech-exp'] = "Final Step of the Innovation cycle.<br>Successful and completed presentation of Sleewell in front of a jury, in order to be elected best EIP of the 2022 class.";
 
 //404Error
 $lang['404error'] = 'Error 404 : Page not found.';

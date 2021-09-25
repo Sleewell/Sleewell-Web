@@ -62,7 +62,6 @@ if (isset($_GET['lang']))
                 </label>
                 <input type="checkbox" id="btn">
                 <ul style="width:fit-content">
-                    <li><a id="TeamButton" href="team.php"><?php echo $lang['team-redirection'];?></a></li>
                     <?php if(!isset($_COOKIE["login"])) : ?>
                         <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
                     <?php else :?>
@@ -100,7 +99,35 @@ if (isset($_GET['lang']))
         <!--           FORM SECTION         -->
         <!--################################-->
         <div class="container-xxl">
-            <br><br><h4 class="AmeberText" style="text-align:center"><?php echo $lang['message-sent'];?></h4><br><br>
+            <h4 class="AmeberText" style="text-align:center"><?php echo $lang['greetings'];?></h4><br><br>
+            <table width="100%" style="text-align:center">
+                <tr>
+                    <td width="5%"></td>
+                    <td width="10%"><img src="img/Hugo.jpg" width="75%" height="75%"><h4 style="text-align:center">Hugo</h4></td>
+                    <td width="10%"></td>
+                    <td width="10%"><img src="img/Titouan.jfif" width="75%" height="75%"><h4 style="text-align:center">Titouan</h4></td>
+                    <td width="10%"></td>
+                    <td width="10%"><img src="img/Romane.png" width="75%" height="75%"><h4 style="text-align:center">Romane</h4></td>
+                    <td width="10%"></td>
+                    <td width="10%"><img src="img/Fabien.jpg" width="75%" height="75%"><h4 style="text-align:center">Fabien</h4></td>
+                    <td width="10%"></td>
+                    <td width="10%"><img src="img/Jules.jpg" width="75%" height="75%"><h4 style="text-align:center">Jules</h4></td>
+                    <td width="5%"></td>
+                </tr>
+                <tr>
+                    <td width="5%"></td>
+                    <td width="10%"></td>
+                    <td width="10%"><img src="img/Gabin.jpeg" width="75%" height="75%"><h4 style="text-align:center">Gabin</h4></td>
+                    <td width="10%"></td>
+                    <td width="10%"><img src="img/Florent.jfif" width="75%" height="75%"><h4 style="text-align:center">Florent</h4></td>
+                    <td width="10%"></td>
+                    <td width="10%"><img src="img/Clément.jfif" width="75%" height="75%"><h4 style="text-align:center">Clément</h4></td>
+                    <td width="10%"></td>
+                    <td width="10%"><img src="img/Jean.jpg" width="75%" height="75%"><h4 style="text-align:center">Jean</h4></td>
+                    <td width="10%"></td>
+                    <td width="5%"></td>
+                </tr>
+            </table></br></br>
         </div>
 
         <!--################################-->

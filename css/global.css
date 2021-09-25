@@ -1149,7 +1149,6 @@ imgApp {vertical-align: middle;}
     position: absolute;
     top: 0;
     right: 40px;
-    line-height: 50px;
     cursor: pointer;
     font-size: 25px;
   }

@@ -66,6 +66,7 @@ if (isset($_GET['lang']))
                 </label>
                 <input type="checkbox" id="btn">
                 <ul style="width:fit-content">
+                    <li><a id="TeamButton" href="team.php"><?php echo $lang['team-redirection'];?></a></li>
                     <?php if(!isset($_COOKIE["login"])) : ?>
                         <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
                     <?php else :?>

@@ -33,6 +33,7 @@ if (isset($_GET['lang']))
         <link href="css/font_color_sleewell.css" rel="stylesheet">
         <link href="css/registerform.css" rel="stylesheet">
         <link href="css/carrousel.css" rel="stylesheet">
+        <link href="css/timeline.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/toolkit/jquery.min.js"></script>
         <script type="text/javascript" src="js/toolkit/popper.min.js"></script>
@@ -44,6 +45,7 @@ if (isset($_GET['lang']))
         <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/download_counter.js"></script>
         <script type="text/javascript" src="js/register.js"></script>
+        <script type="text/javascript" src="js/timeline.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -61,15 +63,16 @@ if (isset($_GET['lang']))
                     <a id="mainpage_btn" href=""><img class="navbar-logo" src="img/logo_sleewell.png"/></a>
                 </div>
                 <label for="btn" class="icon">
-                <span class="fa fa-bars"></span>
+                <span class="fa fa-bars" style="line-height: 50px"></span>
                 </label>
                 <input type="checkbox" id="btn">
                 <ul>
+                    <li><a id="TeamButton" href="team.php"><?php echo $lang['team-redirection'];?></a></li>
                     <?php if(!isset($_COOKIE["login"])) : ?>
                         <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
                     <?php else :?>
                         <li><a id="Deconnexion" href="#"><?php echo $lang['disconnect-button'];?></a></li>
-                        <li><a id="ProfilButton" href="profile.php"><?php echo "Profil";?></a></li>
+                        <li><a id="ProfilButton" href="profile.php"><?php echo $lang['profile-button'];?></a></li>
                     <?php endif; ?>
                     <li>
                         <label for="btn-1" class="show dropdown-toggle"><span> <img src=<?php echo $lang['img_path'];?> style="width:20px;height:15px;"/></span> <?php echo $lang['selected-lang'];?></label>
@@ -214,6 +217,51 @@ if (isset($_GET['lang']))
                 </div>
                 <div class="card card-5">
                     <img src="./img/app5.png"></img>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+        <h4 class="AmeberText" style="text-align:center">Timeline Sleewell</h4><br><br>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="date">09/2019</div>
+                <i class="icon fa fa-moon"></i>
+                <div class="content">
+                    <h2>Moonshot</h2>
+                    <p><?php echo $lang['moonshot'];?></p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="date">12/2019</div>
+                <i class="icon fa fa-forward"></i>
+                <div class="content">
+                    <h2>Forward</h2>
+                    <p><?php echo $lang['forward'];?></p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="date">08/2021</div>
+                <i class="icon fa fa-vial"></i>
+                <div class="content">
+                    <h2>Beta</h2>
+                    <p><?php echo $lang['beta'];?></p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="date">10/2021</div>
+                <i class="icon fa fa-bullhorn"></i>
+                <div class="content">
+                    <h2>Warm-up days</h2>
+                    <p><?php echo $lang['warm-up'];?></p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="date">01/2021</div>
+                <i class="icon fa fa-calendar-check"></i>
+                <div class="content">
+                    <h2>Epitech Experience</h2>
+                    <p><?php echo $lang['epitech-exp'];?></p>
                 </div>
             </div>
         </div>
