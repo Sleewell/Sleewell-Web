@@ -45,7 +45,6 @@ if (isset($_GET['lang']))
         <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/download_counter.js"></script>
         <script type="text/javascript" src="js/register.js"></script>
-        <script type="text/javascript" src="js/timeline.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -221,15 +220,15 @@ if (isset($_GET['lang']))
             </div>
         </div>
 
-        <br><br><br>
-        <h4 class="AmeberText" style="text-align:center">Timeline Sleewell</h4><br><br>
+        <br><br><br><br><br><br>
+        <h4 class="BoldAmberText" style="text-align:center">Timeline Sleewell</h4><br><br>
         <div class="timeline">
             <div class="timeline-item left">
                 <div class="date">09/2019</div>
                 <i class="icon fa fa-moon"></i>
                 <div class="content">
                     <h2>Moonshot</h2>
-                    <p><?php echo $lang['moonshot'];?></p>
+                    <p class="AmeberText"><?php echo $lang['moonshot'];?></p>
                 </div>
             </div>
             <div class="timeline-item right">
@@ -237,7 +236,7 @@ if (isset($_GET['lang']))
                 <i class="icon fa fa-forward"></i>
                 <div class="content">
                     <h2>Forward</h2>
-                    <p><?php echo $lang['forward'];?></p>
+                    <p class="AmeberText"><?php echo $lang['forward'];?></p>
                 </div>
             </div>
             <div class="timeline-item left">
@@ -245,7 +244,7 @@ if (isset($_GET['lang']))
                 <i class="icon fa fa-vial"></i>
                 <div class="content">
                     <h2>Beta</h2>
-                    <p><?php echo $lang['beta'];?></p>
+                    <p class="AmeberText"><?php echo $lang['beta'];?></p>
                 </div>
             </div>
             <div class="timeline-item right">
@@ -253,7 +252,7 @@ if (isset($_GET['lang']))
                 <i class="icon fa fa-bullhorn"></i>
                 <div class="content">
                     <h2>Warm-up days</h2>
-                    <p><?php echo $lang['warm-up'];?></p>
+                    <p class="AmeberText"><?php echo $lang['warm-up'];?></p>
                 </div>
             </div>
             <div class="timeline-item left">
@@ -261,17 +260,18 @@ if (isset($_GET['lang']))
                 <i class="icon fa fa-calendar-check"></i>
                 <div class="content">
                     <h2>Epitech Experience</h2>
-                    <p><?php echo $lang['epitech-exp'];?></p>
+                    <p class="AmeberText"><?php echo $lang['epitech-exp'];?></p>
                 </div>
             </div>
         </div>
 
       <div style="margin-top: 20px;"></div>
-        <hr style="border-top: 2px solid #ff8f00; border-radius: 5px; margin: auto; width: 80%;padding-bottom: 2em;">
+        <br><br><br>
+        <!-- <hr style="border-top: 2px solid #ff8f00; border-radius: 5px; margin: auto; width: 80%;padding-bottom: 2em;"> -->
         <div class=container>
             <div class="row" style="text-align:center;">
                 <div class="col-xs-6 col-sm-6">
-                    <img src="img/android.png" style="width: 60%;"/>
+                    <img src="img/android_white.png" style="width: 60%;"/>
                 </div>
                 <div class="col-xs-6 col-sm-6" style="margin-top: 5%;">
                     <h1 style="text-align:left !important;"><?php echo $lang['download-text'];?></h1>
