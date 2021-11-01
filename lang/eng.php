@@ -159,4 +159,5 @@ $lang['epitech-exp'] = "Final Step of the Innovation cycle.<br>Successful and co
 //404Error
 $lang['404error'] = 'Error 404 : Page not found.';
 $lang['404error-redirection'] = 'Return to main page.';
+
 ?>
