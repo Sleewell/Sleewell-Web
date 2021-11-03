@@ -111,7 +111,7 @@ if (isset($_GET['lang']))
                             <!-- End of Card image -->
                             <!-- Card content -->
                             <div class="card-body card-body-cascade text-center">
-                                <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="User Photo" id="imgProfile" width="400"  class="z-depth-1 mb-3 mx-auto img-fluid">
+                                <img src="" alt="User Photo" id="imgProfile" width="400"  class="z-depth-1 mb-3 mx-auto img-fluid">
                                 <p class="text-muted"><small><?php echo $lang["profile_card1-txt1"] ?></small></p>
                                 <div class="row flex-center">
                                     <input accept="image/png, image/jpeg" type="file" id="uploadProfilePic" onchange="uploadImage(this)" hidden/>
