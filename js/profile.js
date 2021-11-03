@@ -13,9 +13,10 @@ $(document).ready(function() {
     };
     $.ajax(settings).done(function (response) {
         console.log(response.file_path);
-
-        // var  readerfile1 = new File([""], response);
-        document.getElementById("imgProfile").src = response.file_path;
+        if (response.file_path == "")
+            document.getElementById("imgProfile").src = "https://randomuser.me/api/portraits/lego/6.jpg";
+        else
+            document.getElementById("imgProfile").src = response.file_path;
     });
     
     $("#UpdateProfil").click(function(){
