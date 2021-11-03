@@ -91,6 +91,7 @@ function sendLoginForm()
             document.cookie ="firstname=" + obj2.firstname;
             document.cookie ="lastname=" + obj2.lastname;
             document.cookie ="email=" + obj2.email;
+            document.cookie ="checkEmail=" + obj2.updateMail;
             // document.cookie ="phonenumber=" + obj2.lastname;
             // document.cookie ="about=" + obj2.lastname;
             $('#loginForm').submit();
