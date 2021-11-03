@@ -111,11 +111,11 @@ if (isset($_GET['lang']))
                             <!-- End of Card image -->
                             <!-- Card content -->
                             <div class="card-body card-body-cascade text-center">
-                                <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="User Photo" class="z-depth-1 mb-3 mx-auto img-fluid">
+                                <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="User Photo" id="imgProfile" width="400"  class="z-depth-1 mb-3 mx-auto img-fluid">
                                 <p class="text-muted"><small><?php echo $lang["profile_card1-txt1"] ?></small></p>
                                 <div class="row flex-center">
-                                <button class="btn Mango btn-rounded btn-sm waves-effect waves-light"><?php echo $lang["profile_card1-btn1"] ?></button><br>
-                                <button class="btn btn-danger btn-rounded btn-sm waves-effect waves-light"><?php echo $lang["profile_card1-btn2"] ?></button>
+                                    <input accept="image/png, image/jpeg" type="file" id="uploadProfilePic" onchange="uploadImage(this)" hidden/>
+                                    <label class="btn Mango btn-rounded btn-sm waves-effect waves-light" for="uploadProfilePic"><?php echo $lang["profile_card1-btn1"] ?></label>
                                 </div>
                             </div>
                             <!-- End of  Card content -->
@@ -195,6 +195,33 @@ if (isset($_GET['lang']))
                                         <label style="color:white;" for="form78"><?php echo$lang["profile_card2-inp6"] ?></label>
                                     </div>
                                     </div>
+                                </div>
+                                <style>
+                                    .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+                                        background-color: #FF8F00;
+                                        box-shadow:0 0 3px #FF8F00;
+                                    }
+                                    .custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+                                        box-shadow:0 0 3px #FF8F00;
+                                    }
+                                    .custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
+                                        box-shadow:0 0 3px #FF8F00;
+                                        background:rgba(255,0,0,.3);
+                                    }
+                                    .custom-checkbox .custom-control-label::before {
+                                        border-radius: 0.25rem;
+                                    }
+                                    .custom-control-label::before {
+                                        background-color: ;
+                                    }
+                                </style>
+                                <div class="custom-control custom-checkbox ml-4 mt-3" style="padding-right:4%;">
+                                <?php if ($_COOKIE["checkEmail"] == 1): ?>
+                                    <input id="checkboxMail" type="checkbox" class="custom-control-input" checked>
+                                <?php else: ?>
+                                    <input id="checkboxMail" type="checkbox" class="custom-control-input">
+                                <?php endif; ?>
+                                    <label style="color:white;" class="custom-control-label" for="checkboxMail">Reception email mise à jour</label>
                                 </div>
                                 <!-- End of Third row -->
                                 <!-- Fourth row -->
