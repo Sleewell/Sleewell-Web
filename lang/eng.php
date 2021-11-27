@@ -160,4 +160,6 @@ $lang['epitech-exp'] = "Final Step of the Innovation cycle.<br>Successful and co
 $lang['404error'] = 'Error 404 : Page not found.';
 $lang['404error-redirection'] = 'Return to main page.';
 
+//Articles
+$lang['articles_welcome'] = "Welcome to our selection of articles about wellness and health<br> Below is a selection of articles that can give you tips on how to control your breathing or spend less time on your smartphone!"
 ?>
