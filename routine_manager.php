@@ -86,7 +86,7 @@ if (isset($_GET['lang']))
             </nav>
         <div>
 	    <br/>
-        <a id="guidetourlaunch" style="margin-left:3%" href="javascript:void(0)" onclick="launchTour2()"><i class="far fa-question-circle text-center"><br/>Commencer la visite</i></a>
+        <a id="guidetourlaunch" style="margin-left:3%" href="javascript:void(0)" onclick="launchTour2()"><i class="far fa-question-circle text-center"><br/><?php echo $lang['begin-tour'];?></i></a>
         <!--################################-->
         <!-- ENTÊTE / LOGO SLEEWELL SECTION -->
         <!--################################-->
@@ -168,9 +168,9 @@ if (isset($_GET['lang']))
     </body>
 
     <script>
-        var globalPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>Â« Prev</button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'>Next Â»</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'>End tour</button></div>";
-        var lastPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><button class='btn waves-effect ml-auto Mango' data-role='end'>End tour</button></div>";
-        var selectPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><div class='arrow'></div><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>Â« Prev</button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'>Next Â»</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'>End tour</button></div>";
+        var globalPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>« <?php echo $lang['previous-tour'];?></button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'><?php echo $lang['next-tour'];?> »</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'><?php echo $lang['end-tour'];?></button></div>";
+        var lastPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><button class='btn waves-effect ml-auto Mango' data-role='end'><?php echo $lang['end-tour'];?></button></div>";
+        var selectPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><div class='arrow'></div><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>« <?php echo $lang['previous-tour'];?></button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'><?php echo $lang['next-tour'];?> »</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'><?php echo $lang['end-tour'];?></button></div>";
 
         var tourpart2 = new Tour({
             steps: 

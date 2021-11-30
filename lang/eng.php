@@ -190,4 +190,28 @@ $lang['tour-content-10'] = "Then you can choose the color of the light halo usin
 $lang['tour-content-11'] = "Finally, the banner at the bottom of your screen displays your choices!</br>To finalize, enter a name for your routine and validate.";
 $lang['tour-content-12'] = "You've created your first routine on the site.</br>The guided tour is over, good luck with Sleewell.</br>We wish you a good night.";
 
+//Basics Guide Tour
+$lang['begin-tour'] = "Start visit tour";
+$lang['next-tour'] = "NEXT";
+$lang['previous-tour'] = "PREV";
+$lang['end-tour'] = "END TOUR";
+
+//Modal login/register
+$lang['modal-login'] = "Log In";
+$lang['modal-login-username'] = "Your username";
+$lang['modal-login-password'] = "Your password";
+$lang['modal-login-forgot'] = "Forgot ";
+$lang['modal-login-forgot-password'] = "Password ?";
+$lang['modal-login-btn'] = "Log In";
+$lang['modal-register'] = "Register";
+$lang['modal-register-lastname'] = "Your last Name";
+$lang['modal-register-firstname'] = "Your first Name";
+$lang['modal-register-username'] = "Your username";
+$lang['modal-register-email'] = "Your email";
+$lang['modal-register-password'] = "Your password";
+$lang['modal-register-confirm'] = "Your password (verification)";
+$lang['modal-register-placeholder'] = "Your great password must be at least 8 characters and 1 number";
+$lang['modal-register-btn'] = "Register";
+$lang['modal-close'] = "Close";
+
 ?>

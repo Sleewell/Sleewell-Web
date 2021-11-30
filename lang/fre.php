@@ -190,4 +190,28 @@ $lang['tour-content-10'] = "Ensuite vous pouvez choisir la couleur du halo lumin
 $lang['tour-content-11'] = "Pour finir, le bandeau en bas de votre écran affiche vos choix!</br>Afin de finaliser, entrez un nom pour votre routine et valider.";
 $lang['tour-content-12'] = "Vous avez créé votre première routine sur le site.</br>La visite guidée est terminée, bonne continuation chez Sleewell.</br>Nous vous souhaitons une bonne nuit.";
 
+//Basics Guide Tour
+$lang['begin-tour'] = "Commencer la visite";
+$lang['next-tour'] = "SUIV";
+$lang['previous-tour'] = "PREC";
+$lang['end-tour'] = "STOPPER";
+
+//Modal login/register
+$lang['modal-login'] = "Se connecter";
+$lang['modal-login-username'] = "Votre identifiant";
+$lang['modal-login-password'] = "Votre superbe mot de passe";
+$lang['modal-login-forgot'] = "Oublie de ";
+$lang['modal-login-forgot-password'] = "mot de passe ?";
+$lang['modal-login-btn'] = "SE CONNECTER";
+$lang['modal-register'] = "S'enregistrer";
+$lang['modal-register-lastname'] = "Votre nom";
+$lang['modal-register-firstname'] = "Votre prénom";
+$lang['modal-register-username'] = "Votre identifiant";
+$lang['modal-register-email'] = "Votre adresse mail";
+$lang['modal-register-password'] = "Votre mot de passe";
+$lang['modal-register-confirm'] = "Votre mot de passe (le même)";
+$lang['modal-register-placeholder'] = "Votre superbe mot de passe doit au moins contenir 8 caractères et 1 chiffre";
+$lang['modal-register-btn'] = "S'ENREGISTRER";
+$lang['modal-close'] = "Fermer";
+
 ?>

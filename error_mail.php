@@ -103,7 +103,7 @@ if (isset($_GET['lang']))
             <br><br><h4 class="AmeberText" style="text-align:center"><?php echo $lang['message-failed'];?></h4><br><br>
         </div>
 
-        <!--################################-->
+<!--################################-->
         <!--      MODAL LOGIN REGISTER      -->
         <!--################################-->
 
@@ -113,10 +113,10 @@ if (isset($_GET['lang']))
                     <div class="modal-c-tabs">
                         <ul class="nav nav-tabs md-tabs tabs-2 darken-3 SecondBackground" role="tablist">
                             <li class="nav-item">
-                                <a id="connectionTab" class="notActive nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i>Se connecter</a>
+                                <a id="connectionTab" class="notActive nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i><?php echo $lang['modal-login'];?></a>
                             </li>
                             <li class="nav-item">
-                                <a id="registerTab" class="notActive nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i>S'enregistrer</a>
+                                <a id="registerTab" class="notActive nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i><?php echo $lang['modal-register'];?></a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -124,78 +124,79 @@ if (isset($_GET['lang']))
                                 <form id="loginForm" action="profile.php" method="post">
                                 <div class="modal-body mb-1">
                                     <div class="md-form form-sm mb-5">
-                                        <i class="fas fa-user prefix"></i>
-                                        <input type="text" onkeyup="updateLoginInput()" name="id" id="loginUsername" class="form-control form-control-sm validate">
-                                        <label data-success="Super !" for="loginUsername">Votre identifiant</label>
+                                        <i style="color:#ef952c;" class="fas fa-user prefix"></i>
+                                        <input type="text" onkeyup="updateLoginInput()" name="id" id="loginUsername" class="form-control form-color form-control-sm validate">
+                                        <label data-success="Super !" for="loginUsername"><?php echo $lang['modal-login-username'];?></label>
                                     </div>
                                     <div class="md-form form-sm mb-4">
-                                        <i class="fas fa-lock prefix"></i>
-                                        <input type="password" onkeyup="updateLoginInput()" id="loginPassword" class="form-control form-control-sm">
-                                        <label name="password" for="loginPassword">Votre superbe mot de passe</label>
+                                        <i style="color:#ef952c;" class="fas fa-lock prefix"></i>
+                                        <input type="password" onkeyup="updateLoginInput()" id="loginPassword" class="form-control form-color form-control-sm">
+                                        <label name="password" for="loginPassword"><?php echo $lang['modal-login-password'];?></label>
                                     </div>
                                     <div class="text-center mt-2">
-                                        <input type="button" id="LoginButton" class="btn Mango" value="Se connecter" disabled></input>
+                                        <input type="button" id="LoginButton" class="btn Mango" value="<?php echo $lang['modal-login-btn'];?>" disabled></input>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <div class="options text-center text-md-right mt-1">
-                                        <p>Forgot <a href="#" class="textMango">Password?</a></p>
+                                        <p class="textMango"><?php echo $lang['modal-login-forgot'];?><a href="recovery.php"><?php echo $lang['modal-login-forgot-password'];?></a></p>
                                     </div>
-                                    <button id="CloseButton" type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal"><?php echo $lang['modal-close'];?></button>
                                 </div>
                                 </form>
                             </div>
+
                             <div class="tab-pane fade" id="panel2" role="tabpanel">
                                 <form id="registerForm" action="profile.php" method="post">
                                 <div class="modal-body">
                                     <div class="form-row">
                                         <div class="col">
                                             <div class="md-form">
-                                                <input type="text" id="registerLastName" class="form-control">
-                                                <label for="registerLastName">Votre nom</label>
+                                                <input type="text" id="registerLastName" class="form-control form-color">
+                                                <label for="registerLastName"><?php echo $lang['modal-register-lastname'];?></label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="md-form">
-                                                <input type="text" id="registerFirstName" class="form-control">
-                                                <label for="registerFirstName">Votre prénom</label>
+                                                <input type="text" id="registerFirstName" class="form-control form-color">
+                                                <label for="registerFirstName"><?php echo $lang['modal-register-firstname'];?></label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-form mt-0">
-                                        <input type="text" id="registerUsername" name="id" class="form-control">
-                                        <label for="registerUsername">Votre identifiant</label>
+                                        <input type="text" id="registerUsername" name="id" class="form-control form-color">
+                                        <label for="registerUsername"><?php echo $lang['modal-register-username'];?></label>
                                     </div>
                                     <div class="md-form mt-0">
-                                        <input onchange="checkRegisterMail()" type="email" id="registerEmail" class="form-control validate">
-                                        <label data-error="Invalide" data-success="Super" for="registerEmail">Votre email</label>
+                                        <input onchange="checkRegisterMail()" type="email" id="registerEmail" class="form-control  form-color validate">
+                                        <label data-error="Invalide" data-success="Super" for="registerEmail"><?php echo $lang['modal-register-email'];?></label>
                                         <!-- <small style="display: none;" id="registerPasswordHelpBlock" class="form-text text-muted mb-4">
                                             Votre email ne comporte pas @ ! -->
                                         </small>
                                     </div>
                                     <div class="md-form">
-                                        <input type="password" onkeyup="checkRegisterPassword()" id="registerPassword" class="form-control" aria-describedby="registerPasswordPasswordHelpBlock">
-                                        <label for="registerPassword">Votre mot de passe</label>
+                                        <input type="password" onkeyup="checkRegisterPassword()" id="registerPassword" class="form-control form-color" aria-describedby="registerPasswordPasswordHelpBlock">
+                                        <label for="registerPassword"><?php echo $lang['modal-register-password'];?></label>
                                         <small id="registerPasswordHelpBlock" class="form-text text-muted mb-4">
-                                            Votre superbe mot de passe doit au moins contenir 8 caractères et 1 chiffre
+                                        <?php echo $lang['modal-register-placeholder'];?>
                                         </small>
                                     </div>
                                     <div class="md-form">
-                                        <input type="password" onkeyup="checkRegisterPassword()" id="registerPasswordCheck" class="form-control" aria-describedby="registerPasswordCheckPasswordHelpBlock">
-                                        <label for="registerPasswordCheck">Votre mot de passe (le même)</label>
+                                        <input type="password" onkeyup="checkRegisterPassword()" id="registerPasswordCheck" class="form-control form-color" aria-describedby="registerPasswordCheckPasswordHelpBlock">
+                                        <label for="registerPasswordCheck"><?php echo $lang['modal-register-confirm'];?></label>
                                     </div>
-                                    <div id="message">
+                                    <div class="card card-cascade" id="message">
                                     <h5>Votre mot de passe ne contient pas les éléments suivants:</h5>
                                         <p id="number" class="invalid">Un <b>chiffre</b></p>
                                         <p id="length" class="invalid">Au moins <b>8 caractères</b></p>
                                         <p id="same" class="invalid">Ne sont pas <b>identiques</b></p>
                                     </div>
                                     <div class="text-center form-sm mt-2">
-                                        <input type="button" id="RegisterButton" class="btn Mango" value="S'enregistrer" disabled></input>
+                                        <input type="button" id="RegisterButton" class="btn Mango" value="<?php echo $lang['modal-register-btn'];?>" disabled></input>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button id="CloseButton" type="button" class="btn  waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn  waves-effect ml-auto Mango" data-dismiss="modal"><?php echo $lang['modal-close'];?></button>
                                 </div>
                                 </form>
                             </div>
@@ -204,7 +205,6 @@ if (isset($_GET['lang']))
                 </div>
             </div>
         </div>
-
         <!--################################-->
         <!--          PIED DE PAGE          -->
         <!--################################-->
