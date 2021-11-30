@@ -161,7 +161,8 @@ $lang['404error'] = 'Error 404 : Page not found.';
 $lang['404error-redirection'] = 'Return to main page.';
 
 //Articles
-$lang['articles_welcome'] = "Welcome to our selection of articles about wellness and health<br> Below is a selection of articles that can give you tips on how to control your breathing or spend less time on your smartphone!"
+$lang['articles_welcome'] = "Welcome to our selection of articles about wellness and health<br> Below is a selection of articles that can give you tips on how to control your breathing or spend less time on your smartphone!";
+
 //Guide Tour
 $lang['tour-title-1'] = "Is this the first time you log in ?";
 $lang['tour-title-2'] = "General Information";

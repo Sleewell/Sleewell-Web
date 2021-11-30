@@ -161,7 +161,7 @@ $lang['404error'] = 'Erreur 404 : Page non trouvée.';
 $lang['404error-redirection'] = 'Retour à la page principale.';
 
 //Articles
-$lang['articles_welcome'] = "Bienvenue sur notre sélection d'articles parlant de bien être et de santé<br> Ci-dessous un panel d'articles pouvant vous donner des conseils pour maitriser votre respiration ou bien passer moins de temps sur votre smartphone!<br>"
+$lang['articles_welcome'] = "Bienvenue sur notre sélection d'articles parlant de bien être et de santé<br> Ci-dessous un panel d'articles pouvant vous donner des conseils pour maitriser votre respiration ou bien passer moins de temps sur votre smartphone!<br>";
 
 //Guide Tour
 $lang['tour-title-1'] = "C'est la première que vous vous connectez ?";
