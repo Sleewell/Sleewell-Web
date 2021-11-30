@@ -48,9 +48,11 @@ if (isset($_GET['lang']))
         <!-- FROM WEB -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/css/bootstrap-tour-standalone.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour-standalone.min.js"></script>
     </head>
 
-    <body class="GlobalBackground">
+    <body id="profile-page" class="GlobalBackground">
 
 
         <!--################################-->
@@ -84,6 +86,8 @@ if (isset($_GET['lang']))
                 </ul>
             </nav>
         <div>
+	    <br/>
+        <a id="guidetourlaunch" style="margin-left:3%" href="javascript:void(0)" onclick="launchTour1()"><i class="far fa-question-circle text-center"><br/>Commencer la visite</i></a>
 
         <!--################################-->
         <!--               FORM             -->
@@ -103,7 +107,7 @@ if (isset($_GET['lang']))
                         <!-- First column -->
                         <div class="col-lg-4 mb-4">
                             <!-- Card -->
-                            <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
+                            <div id="form-picture" class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
                             <!-- Card image -->
                             <div style="display: flex;justify-content: center;align-items: center;" class="view view-cascade gradient-card-header Amber">
                                 <h3 class="mb-0 font-weight-bold"><?php echo $lang["profile-header1"] ?></h5>
@@ -121,11 +125,11 @@ if (isset($_GET['lang']))
                             <!-- End of  Card content -->
                             </div>
                             <!-- End of  Card -->
-                            <span class="waves-input-wrapper waves-effect waves-light" style="width:100%;margin-top:1vw"><a href="routine_manager.php" class="btn Mango btn-rounded" style="width:100%;text-decoration: none;"><?php echo $lang["routine-managerbtn"] ?></a><span>
+                            <span class="waves-input-wrapper waves-effect waves-light" style="width:100%;margin-top:1vw"><a id="toRoutine-btn" href="routine_manager.php" class="btn Mango btn-rounded"  style="width:100%;text-decoration: none;"><?php echo $lang["routine-managerbtn"] ?></a><span>
                         </div>
                         <!-- End of  First column -->
                         <!-- Second column -->
-                        <div class="col-lg-8 mb-4">
+                        <div id="form-info" class="col-lg-8 mb-4">
                             <!-- Card -->
                             <div class="card card-cascade narrower SecondBackground " style="border:2px solid; border-color:#EF952C;">
                             <!-- Card image -->
@@ -245,7 +249,7 @@ if (isset($_GET['lang']))
                     </section>
                     <!-- End of Section: Edit Account -->
                                 <!-- Card -->
-                    <div class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
+                    <div id="statistics" class="card card-cascade SecondBackground narrower" style="border:2px solid; border-color:#EF952C;">
                         <div class=container>
                             <div class="row" style="text-align:center;">
                                 <div class="col-xl-1 col-sm-1 vert-center">
@@ -286,6 +290,59 @@ if (isset($_GET['lang']))
         </table>
         <br>
         <script>
+            var globalPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>Â« Prev</button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'>Next Â»</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'>End tour</button></div>";
+            var selectPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><div class='arrow'></div><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>Â« Prev</button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'>Next Â»</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'>End tour</button></div>";
+
+            var tourpart1 = new Tour({
+                steps: 
+                [{
+                    element: "#profile-page",
+                    title: "<?php echo $lang['tour-title-1'];?>",
+                    content: "<?php echo $lang['tour-content-1'];?>",
+                    placement: "top",
+                    template: globalPopup,
+                },
+                {
+                    element: "#form-info",
+                    title: "<?php echo $lang['tour-title-2'];?>",
+                    content: "<?php echo $lang['tour-content-2'];?>",
+                    template: selectPopup,
+                    placement: "left",
+                    backdrop: true,
+                },
+                {
+                    element: "#form-picture",
+                    title: "<?php echo $lang['tour-title-3'];?>",
+                    content: "<?php echo $lang['tour-content-3'];?>",
+                    template: selectPopup,
+                    placement: "right",
+                    backdrop: true,
+                },
+                {
+                    element: "#statistics",
+                    title: "<?php echo $lang['tour-title-4'];?>",
+                    content: "<?php echo $lang['tour-content-4'];?>",
+                    template: selectPopup,
+                    placement: "top",
+                    backdrop: true,
+                },
+                {
+                    element: "#toRoutine-btn",
+                    title: "<?php echo $lang['tour-title-5'];?>",
+                    content: "<?php echo $lang['tour-content-5'];?>",
+                    template: selectPopup,
+                    placement: "right",
+                    backdrop: true,
+                }]
+            });
+            tourpart1.init();
+
+            function launchTour1()
+            {
+                localStorage.removeItem("tour_end");
+                tourpart1.restart();
+            };
+
             function changeLanguage(lang) {
                 if(lang=='en') {
                     location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng";

@@ -162,4 +162,31 @@ $lang['404error-redirection'] = 'Return to main page.';
 
 //Articles
 $lang['articles_welcome'] = "Welcome to our selection of articles about wellness and health<br> Below is a selection of articles that can give you tips on how to control your breathing or spend less time on your smartphone!"
+//Guide Tour
+$lang['tour-title-1'] = "Is this the first time you log in ?";
+$lang['tour-title-2'] = "General Information";
+$lang['tour-title-3'] = "Profile picture";
+$lang['tour-title-4'] = "Statistics";
+$lang['tour-title-5'] = "Routine management";
+$lang['tour-title-6'] = "Routine management";
+$lang['tour-title-7'] = "Routine creation";
+$lang['tour-title-8'] = "Routine creation";
+$lang['tour-title-9'] = "Select sound selection";
+$lang['tour-title-10'] = "Halo selection";
+$lang['tour-title-11'] = "Finalization of the creation";
+$lang['tour-title-12'] = "Congratulations !!";
+
+$lang['tour-content-1'] = "Welcome to Sleewell. You are here on your profile page";
+$lang['tour-content-2'] = "You can modify your information and add additional information in the 'About you' box.</br>This will allow us to get to know you better, no headaches, here we rest.";
+$lang['tour-content-3'] = "There is also a profile picture that you can edit or delete.</br>By default you sell faritas at the beach.";
+$lang['tour-content-4'] = "The lower part of the profile page are the statistics.</br>As you already know, you can get the data of your nights using Sleewell.</br>This is where your sleep information are available.";
+$lang['tour-content-5'] = "To finish with this page, you can redirect yourself to the management of your routines using this button</br>Click on the button to continue the visit.";
+$lang['tour-content-6'] = "On this page you can find all the routines that you have already created</br>All your routines are available both on the application but also on the website.</br>It is therefore also possible to create some, edit and delete one here.";
+$lang['tour-content-7'] = "What if we take the opportunity to create a routine together now ?</br>Click on the 'plus' button to proceed with the creation of a routine.";
+$lang['tour-content-8'] = "Welcome to routine creation. Note that this page is the same for modifying a routine.</br>This page is divided into 3 parts.";
+$lang['tour-content-9'] = "In the first part, you can choose the ambient sound.</br>Or a sound chosen by Sleewell. Or a playlist via Spotify.";
+$lang['tour-content-10'] = "Then you can choose the color of the light halo using the color palette.";
+$lang['tour-content-11'] = "Finally, the banner at the bottom of your screen displays your choices!</br>To finalize, enter a name for your routine and validate.";
+$lang['tour-content-12'] = "You've created your first routine on the site.</br>The guided tour is over, good luck with Sleewell.</br>We wish you a good night.";
+
 ?>

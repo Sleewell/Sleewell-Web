@@ -50,8 +50,10 @@ if (isset($_GET['lang']))
 
         <!-- FROM WEB -->
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/css/bootstrap-tour-standalone.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour-standalone.min.js"></script>
     </head>
-    <body>
+    <body id="routine-manager-page">
 
         <!--################################-->
         <!--              HEADER            -->
@@ -83,7 +85,8 @@ if (isset($_GET['lang']))
                 </ul>
             </nav>
         <div>
-        
+	    <br/>
+        <a id="guidetourlaunch" style="margin-left:3%" href="javascript:void(0)" onclick="launchTour2()"><i class="far fa-question-circle text-center"><br/>Commencer la visite</i></a>
         <!--################################-->
         <!-- ENTÊTE / LOGO SLEEWELL SECTION -->
         <!--################################-->
@@ -109,7 +112,7 @@ if (isset($_GET['lang']))
             <table id="routineFullList" style="width:100%"><tr>
                 <td class="fit-table-routine">
                     <a class="fit-routine" href="create_routine.php">
-                        <div class="crea-bg">
+                        <div id="to-create-routine" class="crea-bg">
                             <img type="image" class="create-routine" src="img/plus.png"/>
                         </div>
                     </a>
@@ -120,7 +123,7 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--      MODAL MODIF / DELETE      -->
         <!--################################-->
-        <div class="modal fade"  id="modalRoutine" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal"  id="modalRoutine" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content GlobalBackground" style="border-radius: 10px;">
                     <div class="modal-header textMango">
@@ -165,6 +168,62 @@ if (isset($_GET['lang']))
     </body>
 
     <script>
+        var globalPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>Â« Prev</button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'>Next Â»</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'>End tour</button></div>";
+        var lastPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><button class='btn waves-effect ml-auto Mango' data-role='end'>End tour</button></div>";
+        var selectPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><div class='arrow'></div><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>Â« Prev</button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'>Next Â»</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'>End tour</button></div>";
+
+        var tourpart2 = new Tour({
+            steps: 
+            [{
+                element: "#routine-manager-page",
+                title: "<?php echo $lang['tour-title-6'];?>",
+                content: "<?php echo $lang['tour-content-6'];?>",
+                placement: "top",
+                template: globalPopup,
+            },
+            {
+                element: "#to-create-routine",
+                title: "<?php echo $lang['tour-title-7'];?>",
+                content: "<?php echo $lang['tour-content-7'];?>",
+                template: selectPopup,
+                placement: "top",
+                backdrop: true,
+            }]
+        });
+
+        var tourpart4 = new Tour({
+            steps: 
+            [{
+                element: "#routine-manager-page",
+                title: "<?php echo $lang['tour-title-12'];?>",
+                content: "<?php echo $lang['tour-content-12'];?>",
+                placement: "top",
+                template: lastPopup,
+            }]
+        });
+
+        if (localStorage.getItem("last_step")) {
+            localStorage.removeItem("tour_end");
+            localStorage.removeItem("tour_current_step");
+            localStorage.removeItem("last_step");
+            document.cookie ="newUser=" + false;
+            // Initialize the tourpart2
+            tourpart4.init();
+            // Start the tourpart2
+            tourpart4.start();
+        } else {
+            localStorage.removeItem("tour_end");
+            localStorage.removeItem("tour_current_step");
+
+            // Initialize the tourpart2
+            tourpart2.init();
+        }
+
+        function launchTour2()
+        {
+            tourpart2.restart();
+        };
+
         function changeLanguage(lang) {
             if(lang=='en') {
                 location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng";
