@@ -60,9 +60,11 @@ if (isset($_GET['lang']))
                 });
             });
     	</script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/css/bootstrap-tour-standalone.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour-standalone.min.js"></script>
 
     </head>
-    <body onload="onPageLoad()">
+    <body id="creation-page" onload="onPageLoad()">
 
         <!--################################-->
         <!--              HEADER            -->
@@ -94,13 +96,15 @@ if (isset($_GET['lang']))
                 </ul>
             </nav>
         <div>
-        
+        <br/>
+	<a id="guidetourlaunch" style="margin-left:3%" href="javascript:void(0)" onclick="launchTour3()"><i class="far fa-question-circle text-center"><br/><?php echo $lang['begin-tour'];?></i></a>
+
         <!--################################-->
         <!-- ENTÊTE / LOGO SLEEWELL SECTION -->
         <!--################################-->
         <div style="color:#FF8F00;" class="container-flex">
             <div class="row">
-                <div class="col-lg-6">
+                <div id="sound-part" class="col-lg-6">
                     <div class="modif-musique">
                         <a href="javascript:void(0)" id="sleewellClick" class="btn-sleewell"><img type="image" class="sleewell-logo" src="img/logo_sleewell.png"/><p class="text-sleewell"><?php echo $lang['choose-sleewell-sound'];?></p></a>
                         <a href="javascript:void(0)" id="spotifyClick" class="btn-spotify"><img type="image" class="spot-logo" src="img/spotify_logo.png"/><p class="text-spotify"><?php echo $lang['choose-spotify-sound'];?></p></a>
@@ -271,7 +275,7 @@ if (isset($_GET['lang']))
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 modif-halo">
+                <div id="halo-part" class="col-lg-6 modif-halo">
                     <h3 class="textMango EmailText" style="margin-top:4vw"><?php echo $lang['config-halo'];?></h3>
                     <input type="text" id="background" data-wcp-autoresize="false" data-wcp-cssclass="custom-size1"/>
                     <style type="text/css">
@@ -313,7 +317,7 @@ if (isset($_GET['lang']))
         <!--################################-->
         <!--          PIED DE PAGE          -->
         <!--################################-->
-        <footer>
+        <footer id="selection-recap">
             <form action="">
                 <div class="row" style="text-align:center">
                     <div class="col-3">
@@ -383,6 +387,55 @@ if (isset($_GET['lang']))
     </script>
 
     <script>
+        var globalPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>« <?php echo $lang['previous-tour'];?></button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'><?php echo $lang['next-tour'];?> »</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'><?php echo $lang['end-tour'];?></button></div>";
+        var selectPopup = "<div class='popover tour' style='background-color:#00112F;text-align:center'><div class='arrow'></div><h3 class='popover-title' style='background-color:#00112F'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn waves-effect ml-auto Mango' data-role='prev'>« <?php echo $lang['previous-tour'];?></button><span data-role='separator'>  |  </span><button class='btn waves-effect ml-auto Mango' data-role='next'><?php echo $lang['next-tour'];?> »</button></div></br><button class='btn waves-effect ml-auto Mango' data-role='end'><?php echo $lang['end-tour'];?></button></div>";
+
+        var tourpart3 = new Tour({
+            steps: 
+            [{
+                element: "#creation-page",
+                title: "<?php echo $lang['tour-title-8'];?>",
+                content: "<?php echo $lang['tour-content-8'];?>",
+                placement: "top",
+                template: globalPopup,
+            },
+            {
+                element: "#sound-part",
+                title: "<?php echo $lang['tour-title-9'];?>",
+                content: "<?php echo $lang['tour-content-9'];?>",
+                template: selectPopup,
+                placement: "right",
+                backdrop: true,
+            },
+            {
+                element: "#halo-part",
+                title: "<?php echo $lang['tour-title-10'];?>",
+                content: "<?php echo $lang['tour-content-10'];?>",
+                template: selectPopup,
+                placement: "left",
+                backdrop: true,
+            },
+            {
+                element: "#selection-recap",
+                title: "<?php echo $lang['tour-title-11'];?>",
+                content: "<?php echo $lang['tour-content-11'];?>",
+                template: selectPopup,
+                placement: "top",
+                backdrop: true,
+            }]
+        });
+        localStorage.removeItem("tour_end");
+        localStorage.removeItem("tour_current_step");
+
+        // Initialize the tourpart2
+        tourpart3.init();
+
+        function launchTour3()
+        {
+	        localStorage.setItem("last_step", true);
+            tourpart3.restart();
+        };
+
         function changeLanguage(lang) {
                 if(lang=='en') {
                     location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=eng";

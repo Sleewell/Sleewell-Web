@@ -44,7 +44,7 @@ if (isset($_GET['lang']))
 
         <!-- OUR SCRIPTS -->
         <script type="text/javascript" src="js/login.js"></script>
-        <script src="js/spotify_get_access_token.js"></script>
+        <script src="js/spotify_get_access_token_modify.js"></script>
         <script src="js/modify_management.js"></script>
         <script src="js/load_routine.js"></script>
 

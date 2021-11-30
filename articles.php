@@ -14,11 +14,11 @@ if (isset($_GET['lang']))
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
     <head>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <title>Sleewell - Contact</title>
+        <title>Sleewell - Articles</title>
 
         <!-- Icon -->
         <link rel="icon" href="css/icons/sleewell.ico">
@@ -42,10 +42,8 @@ if (isset($_GET['lang']))
 
         <!-- OUR SCRIPTS -->
         <script type="text/javascript" src="js/login.js"></script>
-        <script type="text/javascript" src="js/google_login.js"></script>
 
         <!-- FROM WEB -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
 
     </head>
@@ -64,7 +62,7 @@ if (isset($_GET['lang']))
                 </label>
                 <input type="checkbox" id="btn">
                 <ul style="width:fit-content">
-                    <li><a id="ArticleButton" href="articles.php">Articles</a></li>
+                    <li><a id="TeamButton" href="team.php"><?php echo $lang['team-redirection'];?></a></li>
                     <?php if(!isset($_COOKIE["login"])) : ?>
                         <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
                     <?php else :?>
@@ -83,7 +81,7 @@ if (isset($_GET['lang']))
                 </ul>
             </nav>
         <div>
-
+        
         <!--################################-->
         <!-- ENTÊTE / LOGO SLEEWELL SECTION -->
         <!--################################-->
@@ -99,41 +97,32 @@ if (isset($_GET['lang']))
         </tr></table>
 
         <!--################################-->
-        <!--           FORM SECTION         -->
+        <!--           ARTICLES SECTION         -->
         <!--################################-->
         <div class="container-xxl">
-            <h4 class="AmeberText" style="text-align:center"><?php echo $lang['greetings'];?></h4><br><br>
+        <h4 class="AmeberText" style="text-align:center"><?php echo $lang['articles_welcome'];?></h4><br><br>
             <table width="100%" style="text-align:center">
                 <tr>
-                    <td width="5%"></td>
-                    <td width="10%"><img src="img/Hugo.jpg" width="75%" height="75%"><h4 style="text-align:center">Hugo</h4></td>
-                    <td width="10%"></td>
-                    <td width="10%"><img src="img/Titouan.jfif" width="75%" height="75%"><h4 style="text-align:center">Titouan</h4></td>
-                    <td width="10%"></td>
-                    <td width="10%"><img src="img/Romane.png" width="75%" height="75%"><h4 style="text-align:center">Romane</h4></td>
-                    <td width="10%"></td>
-                    <td width="10%"><img src="img/Fabien.jpg" width="75%" height="75%"><h4 style="text-align:center">Fabien</h4></td>
-                    <td width="10%"></td>
-                    <td width="10%"><img src="img/Jules.jpg" width="75%" height="75%"><h4 style="text-align:center">Jules</h4></td>
-                    <td width="5%"></td>
+                    <td><a href="https://hitek.fr/actualite/dormir-telephone-aullume-risques_2092"><img src="img/article_danger_telephone_sommeil.jpg" width="40%" height="40%"></a><a style="text-aling:center" href="https://hitek.fr/actualite/dormir-telephone-aullume-risques_2092"><?php echo "<br>Dormir avec son téléphone allumé comporte des risques"; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="5%"></td>
-                    <td width="10%"></td>
-                    <td width="10%"><img src="img/Gabin.jpeg" width="75%" height="75%"><h4 style="text-align:center">Gabin</h4></td>
-                    <td width="10%"></td>
-                    <td width="10%"><img src="img/Florent.jfif" width="75%" height="75%"><h4 style="text-align:center">Florent</h4></td>
-                    <td width="10%"></td>
-                    <td width="10%"><img src="img/Clément.jfif" width="75%" height="75%"><h4 style="text-align:center">Clément</h4></td>
-                    <td width="10%"></td>
-                    <td width="10%"><img src="img/Jean.jpg" width="75%" height="75%"><h4 style="text-align:center">Jean</h4></td>
-                    <td width="10%"></td>
-                    <td width="5%"></td>
+                    <td><a href="https://www.phonandroid.com/digital-detox-comment-deconnecter-smartphone-quand-accro.html"><img style="margin-top:2%" src="img/article_detox.jpeg" width="40%" height="40%"></a><a style="text-aling:center" href="https://www.phonandroid.com/digital-detox-comment-deconnecter-smartphone-quand-accro.html"><?php echo  "<br>Digital detox : comment se déconnecter de son smartphone ?"; ?></a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.santemagazine.fr/medecines-alternatives/relaxation/nos-exercices-de-respiration-pour-combattre-le-stress-et-lanxiete-895156"><img style="margin-top:2%" src="img/article_respiration.jpeg" width="40%" height="40%"></a><a style="text-aling:center" href="https://www.santemagazine.fr/medecines-alternatives/relaxation/nos-exercices-de-respiration-pour-combattre-le-stress-et-lanxiete-895156"><?php echo "<br>Nos exercices de respiration pour combattre le stress et l'anxiété
+"; ?></a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://hellocare.com/blog/exercice-de-respiration/"><img style="margin-top:2%" src="img/article_exercice_respiration.jpg" width="40%" height="40%"></a><a style="text-aling:center" href="https://hellocare.com/blog/exercice-de-respiration/"><?php echo "<br>Exercice de respiration profonde ou respiration diaphragmatique"; ?></a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.passeportsante.net/fr/Actualites/Dossiers/DossierComplexe.aspx?doc=10-choses-a-faire-pour-mieux-dormir"><img style="margin-top:2%" src="img/article_meilleur_sommeil.jpg" width="40%" height="40%"></a><a style="text-aling:center" href="https://www.passeportsante.net/fr/Actualites/Dossiers/DossierComplexe.aspx?doc=10-choses-a-faire-pour-mieux-dormir"><?php echo "<br>10 choses à faire pour mieux dormir
+"; ?></a></td>
                 </tr>
             </table></br></br>
         </div>
 
-        <!--################################-->
+<!--################################-->
         <!--      MODAL LOGIN REGISTER      -->
         <!--################################-->
 
@@ -174,9 +163,6 @@ if (isset($_GET['lang']))
                                     <button type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal"><?php echo $lang['modal-close'];?></button>
                                 </div>
                                 </form>
-                                <div class="text-center mt-2">
-                				    <button id="google-sign-in" class="btn waves-effect ml-auto Mango"><?php echo $lang['google-signIn'];?></button>
-                                </div>
                             </div>
 
                             <div class="tab-pane fade" id="panel2" role="tabpanel">
@@ -238,7 +224,6 @@ if (isset($_GET['lang']))
                 </div>
             </div>
         </div>
-
         <!--################################-->
         <!--          PIED DE PAGE          -->
         <!--################################-->
@@ -253,46 +238,5 @@ if (isset($_GET['lang']))
                 location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre";
             }
         }
-
-        var GoogleAuth;
-        var SCOPE = 'https://www.googleapis.com/auth/drive.metadata.readonly';
-        function handleClientLoad() {
-            // Load the API's client and auth2 modules.
-            // Call the initClient function after the modules load.
-            gapi.load('client:auth2', initClient);
-        }
-
-        function initClient() {
-            var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
-
-            gapi.client.init({
-                'apiKey': 'AIzaSyCHi7Tt53i3XMpSvj_n9fKeq1Z2cYC-N1U',
-                'clientId': '999967521500-l2cq62o0pafq2819obdrc60k2cn9al1l.apps.googleusercontent.com',
-                'discoveryDocs': [discoveryUrl],
-                'scope': SCOPE
-            }).then(function () {
-                GoogleAuth = gapi.auth2.getAuthInstance();
-
-                GoogleAuth.isSignedIn.listen(updateSigninStatus);
-
-                $('#google-sign-in').click(function() {
-                    GoogleAuth.signIn();
-                    updateSigninStatus();
-                });
-
-            });
-        }
-
-        function updateSigninStatus() {
-            var user = GoogleAuth.currentUser.get();
-                var isAuthorized = user.hasGrantedScopes(SCOPE);
-            if (isAuthorized) {
-                sendGoogleLoginForm(user.wc.id_token);
-            }
-        }
-    </script>
-    <script async defer src="https://apis.google.com/js/api.js"
-        onload="this.onload=function(){};handleClientLoad()"
-        onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
 </html>

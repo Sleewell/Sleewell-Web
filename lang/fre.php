@@ -159,4 +159,60 @@ $lang['epitech-exp'] = "Étape finale du Cycle de l'innovation.<br>Présentation
 //404Error
 $lang['404error'] = 'Erreur 404 : Page non trouvée.';
 $lang['404error-redirection'] = 'Retour à la page principale.';
+
+//Articles
+$lang['articles_welcome'] = "Bienvenue sur notre sélection d'articles parlant de bien être et de santé<br> Ci-dessous un panel d'articles pouvant vous donner des conseils pour maitriser votre respiration ou bien passer moins de temps sur votre smartphone!<br>";
+
+//Guide Tour
+$lang['tour-title-1'] = "C'est la première que vous vous connectez ?";
+$lang['tour-title-2'] = "Information Générale";
+$lang['tour-title-3'] = "Photo de Profil";
+$lang['tour-title-4'] = "Statistiques";
+$lang['tour-title-5'] = "Gestion des routines";
+$lang['tour-title-6'] = "La gestion de routine";
+$lang['tour-title-7'] = "Création d'une routine";
+$lang['tour-title-8'] = "La création de routine";
+$lang['tour-title-9'] = "Sélection du son d'ambiance";
+$lang['tour-title-10'] = "Sélection du halo";
+$lang['tour-title-11'] = "Finalisation de la création";
+$lang['tour-title-12'] = "Félicitation !!";
+
+$lang['tour-content-1'] = "Bienvenue chez Sleewell. Vous êtes ici sur votre page de profil";
+$lang['tour-content-2'] = "Vous pouvez modifiez vos informations et ajouter des informations supplémentaires dans la case à propos de vous.</br>Cela nous permettra de mieux vous connaitre, pas de prise de tête, ici on se repose.";
+$lang['tour-content-3'] = "Il y a également une photo de profil que vous avez la possibilité de modifier ou de supprimer.</br>Par défaut vous vendez des faritas à la plage.";
+$lang['tour-content-4'] = "La partie basse de la page de profil sont les statistiques.</br>Comme vous le savez déjà, vous pouvez obtenir les données de vos nuits à l'aide de Sleewell.</br>C'est ici que vos informations de sommeil sont disponibles.";
+$lang['tour-content-5'] = "Pour finir avec cette page, vous pouvez vous rediriger sur la gestion de vos routines à l'aide de ce bouton</br>Cliquer sur le bouton pour continuer la visite.";
+$lang['tour-content-6'] = "Sur cette page vous pouvez retrouver toutes les routines que vous avez déjà créer</br>Toutes vos routines sont à la fois disponibles sur l'application mais aussi sur le site web.</br>Il est donc également possible d'en créer, modifier et d'en supprimer une ici.";
+$lang['tour-content-7'] = "Et si nous en profitions pour créer une routine ensemble ?</br>Cliquez sur le bouton 'plus' pour procéder à la création d'une routine.";
+$lang['tour-content-8'] = "Bienvenue dans la création de routine. Notez que cette page est la même pour modifier une routine.</br>Cette page est divisée en 3 parties.";
+$lang['tour-content-9'] = "Dans la première partie, vous pouvez choisir le son d'ambiance.</br>Soit un son choisi par Sleewell. Soit une playlist via Spotify.";
+$lang['tour-content-10'] = "Ensuite vous pouvez choisir la couleur du halo lumineux à l'aide de palette de couleur.";
+$lang['tour-content-11'] = "Pour finir, le bandeau en bas de votre écran affiche vos choix!</br>Afin de finaliser, entrez un nom pour votre routine et valider.";
+$lang['tour-content-12'] = "Vous avez créé votre première routine sur le site.</br>La visite guidée est terminée, bonne continuation chez Sleewell.</br>Nous vous souhaitons une bonne nuit.";
+
+//Basics Guide Tour
+$lang['begin-tour'] = "Commencer la visite";
+$lang['next-tour'] = "SUIV";
+$lang['previous-tour'] = "PREC";
+$lang['end-tour'] = "STOPPER";
+
+//Modal login/register
+$lang['modal-login'] = "Se connecter";
+$lang['modal-login-username'] = "Votre identifiant";
+$lang['modal-login-password'] = "Votre superbe mot de passe";
+$lang['modal-login-forgot'] = "Oublie de ";
+$lang['modal-login-forgot-password'] = "mot de passe ?";
+$lang['modal-login-btn'] = "SE CONNECTER";
+$lang['modal-register'] = "S'enregistrer";
+$lang['modal-register-lastname'] = "Votre nom";
+$lang['modal-register-firstname'] = "Votre prénom";
+$lang['modal-register-username'] = "Votre identifiant";
+$lang['modal-register-email'] = "Votre adresse mail";
+$lang['modal-register-password'] = "Votre mot de passe";
+$lang['modal-register-confirm'] = "Votre mot de passe (le même)";
+$lang['modal-register-placeholder'] = "Votre superbe mot de passe doit au moins contenir 8 caractères et 1 chiffre";
+$lang['modal-register-btn'] = "S'ENREGISTRER";
+$lang['modal-close'] = "Fermer";
+$lang['google-signIn'] = "Se connecter avec Google";
+
 ?>

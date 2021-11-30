@@ -43,10 +43,11 @@ if (isset($_GET['lang']))
         <script type="text/javascript" src="js/toolkit/scrolly.js"></script>
 
         <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/google_login.js"></script>
         <script type="text/javascript" src="js/download_counter.js"></script>
         <script type="text/javascript" src="js/register.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
     </head>
@@ -66,6 +67,7 @@ if (isset($_GET['lang']))
                 </label>
                 <input type="checkbox" id="btn">
                 <ul>
+                    <li><a id="ArticleButton" href="articles.php">Articles</a></li>
                     <li><a id="TeamButton" href="team.php"><?php echo $lang['team-redirection'];?></a></li>
                     <?php if(!isset($_COOKIE["login"])) : ?>
                         <li><a id="logInBtn" href="" data-toggle="modal" data-target="#modalLRForm"><?php echo $lang['connexion-redirection'];?></a></li>
@@ -300,10 +302,10 @@ if (isset($_GET['lang']))
                     <div class="modal-c-tabs">
                         <ul class="nav nav-tabs md-tabs tabs-2 darken-3 SecondBackground" role="tablist">
                             <li class="nav-item">
-                                <a id="connectionTab" class="notActive nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i>Se connecter</a>
+                                <a id="connectionTab" class="notActive nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i><?php echo $lang['modal-login'];?></a>
                             </li>
                             <li class="nav-item">
-                                <a id="registerTab" class="notActive nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i>S'enregistrer</a>
+                                <a id="registerTab" class="notActive nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i><?php echo $lang['modal-register'];?></a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -313,24 +315,27 @@ if (isset($_GET['lang']))
                                     <div class="md-form form-sm mb-5">
                                         <i style="color:#ef952c;" class="fas fa-user prefix"></i>
                                         <input type="text" onkeyup="updateLoginInput()" name="id" id="loginUsername" class="form-control form-color form-control-sm validate">
-                                        <label data-success="Super !" for="loginUsername">Votre identifiant</label>
+                                        <label data-success="Super !" for="loginUsername"><?php echo $lang['modal-login-username'];?></label>
                                     </div>
                                     <div class="md-form form-sm mb-4">
                                         <i style="color:#ef952c;" class="fas fa-lock prefix"></i>
                                         <input type="password" onkeyup="updateLoginInput()" id="loginPassword" class="form-control form-color form-control-sm">
-                                        <label name="password" for="loginPassword">Votre superbe mot de passe</label>
+                                        <label name="password" for="loginPassword"><?php echo $lang['modal-login-password'];?></label>
                                     </div>
                                     <div class="text-center mt-2">
-                                        <input type="button" id="LoginButton" class="btn Mango" value="Se connecter" disabled></input>
+                                        <input type="button" id="LoginButton" class="btn Mango" value="<?php echo $lang['modal-login-btn'];?>" disabled></input>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <div class="options text-center text-md-right mt-1">
-                                        <p class="textMango">Forgot <a href="recovery.php">Password?</a></p>
+                                        <p class="textMango"><?php echo $lang['modal-login-forgot'];?><a href="recovery.php"><?php echo $lang['modal-login-forgot-password'];?></a></p>
                                     </div>
-                                    <button type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal"><?php echo $lang['modal-close'];?></button>
                                 </div>
                                 </form>
+                                <div class="text-center mt-2">
+                				    <button id="google-sign-in" class="btn waves-effect ml-auto Mango"><?php echo $lang['google-signIn'];?></button>
+                                </div>
                             </div>
 
                             <div class="tab-pane fade" id="panel2" role="tabpanel">
@@ -340,37 +345,37 @@ if (isset($_GET['lang']))
                                         <div class="col">
                                             <div class="md-form">
                                                 <input type="text" id="registerLastName" class="form-control form-color">
-                                                <label for="registerLastName">Votre nom</label>
+                                                <label for="registerLastName"><?php echo $lang['modal-register-lastname'];?></label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="md-form">
                                                 <input type="text" id="registerFirstName" class="form-control form-color">
-                                                <label for="registerFirstName">Votre prénom</label>
+                                                <label for="registerFirstName"><?php echo $lang['modal-register-firstname'];?></label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-form mt-0">
                                         <input type="text" id="registerUsername" name="id" class="form-control form-color">
-                                        <label for="registerUsername">Votre identifiant</label>
+                                        <label for="registerUsername"><?php echo $lang['modal-register-username'];?></label>
                                     </div>
                                     <div class="md-form mt-0">
                                         <input onchange="checkRegisterMail()" type="email" id="registerEmail" class="form-control  form-color validate">
-                                        <label data-error="Invalide" data-success="Super" for="registerEmail">Votre email</label>
+                                        <label data-error="Invalide" data-success="Super" for="registerEmail"><?php echo $lang['modal-register-email'];?></label>
                                         <!-- <small style="display: none;" id="registerPasswordHelpBlock" class="form-text text-muted mb-4">
                                             Votre email ne comporte pas @ ! -->
                                         </small>
                                     </div>
                                     <div class="md-form">
                                         <input type="password" onkeyup="checkRegisterPassword()" id="registerPassword" class="form-control form-color" aria-describedby="registerPasswordPasswordHelpBlock">
-                                        <label for="registerPassword">Votre mot de passe</label>
+                                        <label for="registerPassword"><?php echo $lang['modal-register-password'];?></label>
                                         <small id="registerPasswordHelpBlock" class="form-text text-muted mb-4">
-                                            Votre superbe mot de passe doit au moins contenir 8 caractères et 1 chiffre
+                                        <?php echo $lang['modal-register-placeholder'];?>
                                         </small>
                                     </div>
                                     <div class="md-form">
                                         <input type="password" onkeyup="checkRegisterPassword()" id="registerPasswordCheck" class="form-control form-color" aria-describedby="registerPasswordCheckPasswordHelpBlock">
-                                        <label for="registerPasswordCheck">Votre mot de passe (le même)</label>
+                                        <label for="registerPasswordCheck"><?php echo $lang['modal-register-confirm'];?></label>
                                     </div>
                                     <div class="card card-cascade" id="message">
                                     <h5>Votre mot de passe ne contient pas les éléments suivants:</h5>
@@ -379,11 +384,11 @@ if (isset($_GET['lang']))
                                         <p id="same" class="invalid">Ne sont pas <b>identiques</b></p>
                                     </div>
                                     <div class="text-center form-sm mt-2">
-                                        <input type="button" id="RegisterButton" class="btn Mango" value="S'enregistrer" disabled></input>
+                                        <input type="button" id="RegisterButton" class="btn Mango" value="<?php echo $lang['modal-register-btn'];?>" disabled></input>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn  waves-effect ml-auto Mango" data-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn  waves-effect ml-auto Mango" data-dismiss="modal"><?php echo $lang['modal-close'];?></button>
                                 </div>
                                 </form>
                             </div>
@@ -429,5 +434,47 @@ if (isset($_GET['lang']))
              }
            }
          });
+
+        var GoogleAuth;
+        var SCOPE = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+        function handleClientLoad() {
+            // Load the API's client and auth2 modules.
+            // Call the initClient function after the modules load.
+            gapi.load('client:auth2', initClient);
+        }
+
+        function initClient() {
+            var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+
+            gapi.client.init({
+                'apiKey': 'AIzaSyCRsK3Kknjjz1T22f_AYj1vypEKOeaL-_I',
+                'clientId': '999967521500-l2cq62o0pafq2819obdrc60k2cn9al1l.apps.googleusercontent.com',
+                'discoveryDocs': [discoveryUrl],
+                'scope': SCOPE
+            }).then(function () {
+                GoogleAuth = gapi.auth2.getAuthInstance();
+
+                GoogleAuth.isSignedIn.listen(updateSigninStatus);
+
+                $('#google-sign-in').click(function() {
+                    GoogleAuth.signIn();
+                    updateSigninStatus();
+                });
+
+            });
+        }
+
+        function updateSigninStatus() {
+            var user = GoogleAuth.currentUser.get();
+                var isAuthorized = user.hasGrantedScopes(SCOPE);
+            if (isAuthorized) {
+                sendGoogleLoginForm(user.wc.id_token);
+            }
+        }
     </script>
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
 </html>
