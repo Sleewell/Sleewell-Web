@@ -213,5 +213,6 @@ $lang['modal-register-confirm'] = "Votre mot de passe (le même)";
 $lang['modal-register-placeholder'] = "Votre superbe mot de passe doit au moins contenir 8 caractères et 1 chiffre";
 $lang['modal-register-btn'] = "S'ENREGISTRER";
 $lang['modal-close'] = "Fermer";
+$lang['google-signIn'] = "Se connecter avec Google";
 
 ?>

@@ -213,5 +213,6 @@ $lang['modal-register-confirm'] = "Your password (verification)";
 $lang['modal-register-placeholder'] = "Your great password must be at least 8 characters and 1 number";
 $lang['modal-register-btn'] = "Register";
 $lang['modal-close'] = "Close";
+$lang['google-signIn'] = "Sign in with Google";
 
 ?>
