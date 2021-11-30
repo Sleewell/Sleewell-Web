@@ -103,24 +103,19 @@ if (isset($_GET['lang']))
         <h4 class="AmeberText" style="text-align:center"><?php echo $lang['articles_welcome'];?></h4><br><br>
             <table width="100%" style="text-align:center">
                 <tr>
-                    <td width="10%"></td>
                     <td><a href="https://hitek.fr/actualite/dormir-telephone-aullume-risques_2092"><img src="img/article_danger_telephone_sommeil.jpg" width="40%" height="40%"></a><a style="text-aling:center" href="https://hitek.fr/actualite/dormir-telephone-aullume-risques_2092"><?php echo "<br>Dormir avec son téléphone allumé comporte des risques"; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="10%"></td>
                     <td><a href="https://www.phonandroid.com/digital-detox-comment-deconnecter-smartphone-quand-accro.html"><img style="margin-top:2%" src="img/article_detox.jpeg" width="40%" height="40%"></a><a style="text-aling:center" href="https://www.phonandroid.com/digital-detox-comment-deconnecter-smartphone-quand-accro.html"><?php echo  "<br>Digital detox : comment se déconnecter de son smartphone ?"; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="10%"></td>
                     <td><a href="https://www.santemagazine.fr/medecines-alternatives/relaxation/nos-exercices-de-respiration-pour-combattre-le-stress-et-lanxiete-895156"><img style="margin-top:2%" src="img/article_respiration.jpeg" width="40%" height="40%"></a><a style="text-aling:center" href="https://www.santemagazine.fr/medecines-alternatives/relaxation/nos-exercices-de-respiration-pour-combattre-le-stress-et-lanxiete-895156"><?php echo "<br>Nos exercices de respiration pour combattre le stress et l'anxiété
 "; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="10%"></td>
                     <td><a href="https://hellocare.com/blog/exercice-de-respiration/"><img style="margin-top:2%" src="img/article_exercice_respiration.jpg" width="40%" height="40%"></a><a style="text-aling:center" href="https://hellocare.com/blog/exercice-de-respiration/"><?php echo "<br>Exercice de respiration profonde ou respiration diaphragmatique"; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="10%"></td>
                     <td><a href="https://www.passeportsante.net/fr/Actualites/Dossiers/DossierComplexe.aspx?doc=10-choses-a-faire-pour-mieux-dormir"><img style="margin-top:2%" src="img/article_meilleur_sommeil.jpg" width="40%" height="40%"></a><a style="text-aling:center" href="https://www.passeportsante.net/fr/Actualites/Dossiers/DossierComplexe.aspx?doc=10-choses-a-faire-pour-mieux-dormir"><?php echo "<br>10 choses à faire pour mieux dormir
 "; ?></a></td>
                 </tr>
