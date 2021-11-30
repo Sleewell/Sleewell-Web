@@ -1,7 +1,7 @@
 function sendGoogleLoginForm(idToken)
 {
     var form = new FormData();
-form.append("token", idToken);
+    form.append("token", idToken);
 	console.log(idToken);
 
     var settings = {

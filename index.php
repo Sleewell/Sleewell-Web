@@ -451,14 +451,14 @@ if (isset($_GET['lang']))
                 'discoveryDocs': [discoveryUrl],
                 'scope': SCOPE
             }).then(function () {
-            GoogleAuth = gapi.auth2.getAuthInstance();
+                GoogleAuth = gapi.auth2.getAuthInstance();
 
-            GoogleAuth.isSignedIn.listen(updateSigninStatus);
+                GoogleAuth.isSignedIn.listen(updateSigninStatus);
 
-            $('#google-sign-in').click(function() {
-                GoogleAuth.signIn();
-                updateSigninStatus();
-            });
+                $('#google-sign-in').click(function() {
+                    GoogleAuth.signIn();
+                    updateSigninStatus();
+                });
 
             });
         }

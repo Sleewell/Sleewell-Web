@@ -42,8 +42,10 @@ if (isset($_GET['lang']))
 
         <!-- OUR SCRIPTS -->
         <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/google_login.js"></script>
 
         <!-- FROM WEB -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
 
     </head>
@@ -137,7 +139,7 @@ if (isset($_GET['lang']))
             </div>
         </div>
 
-<!--################################-->
+        <!--################################-->
         <!--      MODAL LOGIN REGISTER      -->
         <!--################################-->
 
@@ -178,6 +180,9 @@ if (isset($_GET['lang']))
                                     <button type="button" class="btn waves-effect ml-auto Mango" data-dismiss="modal"><?php echo $lang['modal-close'];?></button>
                                 </div>
                                 </form>
+                                <div class="text-center mt-2">
+                				    <button id="google-sign-in" class="btn waves-effect ml-auto Mango"><?php echo $lang['google-signIn'];?></button>
+                                </div>
                             </div>
 
                             <div class="tab-pane fade" id="panel2" role="tabpanel">
@@ -254,5 +259,46 @@ if (isset($_GET['lang']))
                 location = "<?php echo $_SERVER['PHP_SELF']; ?>?lang=fre";
             }
         }
+
+        var GoogleAuth;
+        var SCOPE = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+        function handleClientLoad() {
+            // Load the API's client and auth2 modules.
+            // Call the initClient function after the modules load.
+            gapi.load('client:auth2', initClient);
+        }
+
+        function initClient() {
+            var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+
+            gapi.client.init({
+                'apiKey': 'AIzaSyCHi7Tt53i3XMpSvj_n9fKeq1Z2cYC-N1U',
+                'clientId': '999967521500-l2cq62o0pafq2819obdrc60k2cn9al1l.apps.googleusercontent.com',
+                'discoveryDocs': [discoveryUrl],
+                'scope': SCOPE
+            }).then(function () {
+                GoogleAuth = gapi.auth2.getAuthInstance();
+
+                GoogleAuth.isSignedIn.listen(updateSigninStatus);
+
+                $('#google-sign-in').click(function() {
+                    GoogleAuth.signIn();
+                    updateSigninStatus();
+                });
+
+            });
+        }
+
+        function updateSigninStatus() {
+            var user = GoogleAuth.currentUser.get();
+                var isAuthorized = user.hasGrantedScopes(SCOPE);
+            if (isAuthorized) {
+                sendGoogleLoginForm(user.wc.id_token);
+            }
+        }
+    </script>
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
 </html>
