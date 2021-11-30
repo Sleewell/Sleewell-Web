@@ -1,4 +1,4 @@
-var redirect_uri = "https://poc.sleewell.fr/create_routine.php";
+var redirect_uri = "https://sleewell.fr/create_routine.php";
 
 var client_id = "2250fa92c9794ecd8e0812806e516270"; 
 var client_secret = "f2b21b5d9cd140569f1af0665e5b7479"; // In a real app you should not expose your client_secret to the user
