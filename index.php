@@ -446,7 +446,7 @@ if (isset($_GET['lang']))
             var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
 
             gapi.client.init({
-                'apiKey': 'AIzaSyCHi7Tt53i3XMpSvj_n9fKeq1Z2cYC-N1U',
+                'apiKey': 'AIzaSyCRsK3Kknjjz1T22f_AYj1vypEKOeaL-_I',
                 'clientId': '999967521500-l2cq62o0pafq2819obdrc60k2cn9al1l.apps.googleusercontent.com',
                 'discoveryDocs': [discoveryUrl],
                 'scope': SCOPE
